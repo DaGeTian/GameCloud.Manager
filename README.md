@@ -1,0 +1,32 @@
+﻿# GameCloud
+[![licence badge]][licence]
+[![stars badge]][stars]
+[![forks badge]][forks]
+[![issues badge]][issues]
+
+GameCloud专注于提供手游PaaS解决方案，推动游戏项目的闪电开发和智能运营。
+
+## GameCloud项目地址
+- https://github.com/CragonGame/GameCloud.Unity 
+- https://github.com/CragonGame/GameCloud.Orleans 
+- https://github.com/CragonGame/GameCloud.IM 
+- https://github.com/CragonGame/GameCloud.UCenter 
+- https://github.com/CragonGame/GameCloud.Manager
+
+## GameCloud第三方依赖
+- http://unity3d.com
+- http://dotnet.github.io/orleans
+- https://www.mongodb.com/
+
+## License
+[MIT](/LICENSE)
+
+[licence badge]:https://img.shields.io/badge/license-MIT-blue.svg
+[stars badge]:https://img.shields.io/github/stars/CragonGame/GameCloud.Manager.svg
+[forks badge]:https://img.shields.io/github/forks/CragonGame/GameCloud.Manager.svg
+[issues badge]:https://img.shields.io/github/issues/CragonGame/GameCloud.Manager.svg
+
+[licence]:https://github.com/CragonGame/GameCloud.Manager/blob/master/LICENSE
+[stars]:https://github.com/CragonGame/GameCloud.Manager/stargazers
+[forks]:https://github.com/CragonGame/GameCloud.Manager/network
+[issues]:https://github.com/CragonGame/GameCloud.Manager/issues
