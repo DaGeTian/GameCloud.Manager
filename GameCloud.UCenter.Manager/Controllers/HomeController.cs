@@ -39,7 +39,25 @@ namespace GameCloud.UCenter.Manager.Controllers
         /// Get the app list page.
         /// </summary>
         /// <returns>action result.</returns>
-        public ActionResult AppList()
+        public ActionResult Apps()
+        {
+            return this.View();
+        }
+
+        /// <summary>
+        /// Get the account event list page.
+        /// </summary>
+        /// <returns>action result.</returns>
+        public ActionResult AccountEvents()
+        {
+            return this.View();
+        }
+
+        /// <summary>
+        /// Get the error event list page.
+        /// </summary>
+        /// <returns>action result.</returns>
+        public ActionResult ErrorEvents()
         {
             return this.View();
         }

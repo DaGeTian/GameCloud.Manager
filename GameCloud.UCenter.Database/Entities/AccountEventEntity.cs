@@ -6,10 +6,10 @@ using GameCloud.UCenter.Common.Portable.Contracts;
 namespace GameCloud.UCenter.Database.Entities
 {
     /// <summary>
-    /// Provide a login record class.
+    /// Provide an account event entity class.
     /// </summary>
-    [CollectionName("LoginRecord")]
-    public class LoginRecordEntity : EntityBase
+    [CollectionName("AccountEvent")]
+    public class AccountEventEntity : EntityBase
     {
         /// <summary>
         /// Gets or sets the account name.
@@ -22,9 +22,9 @@ namespace GameCloud.UCenter.Database.Entities
         public string AccountId { get; set; }
 
         /// <summary>
-        /// Gets or sets the login time.
+        /// Gets or sets the account Id.
         /// </summary>
-        public DateTime LoginTime { get; set; }
+        public string EventName { get; set; }
 
         /// <summary>
         /// Gets or sets the client IP.
@@ -32,23 +32,18 @@ namespace GameCloud.UCenter.Database.Entities
         public string ClientIp { get; set; }
 
         /// <summary>
-        /// Gets or sets the user agent.
-        /// </summary>
-        public string UserAgent { get; set; }
-
-        /// <summary>
-        /// Gets or sets the error code.
-        /// </summary>
-        public UCenterErrorCode Code { get; set; }
-
-        /// <summary>
         /// Gets or sets the login area.
         /// </summary>
         public string LoginArea { get; set; }
 
         /// <summary>
+        /// Gets or sets the user agent.
+        /// </summary>
+        public string UserAgent { get; set; }
+
+        /// <summary>
         /// Gets or sets the comments.
         /// </summary>
-        public string Comments { get; set; }
+        public string Message { get; set; }
     }
 }

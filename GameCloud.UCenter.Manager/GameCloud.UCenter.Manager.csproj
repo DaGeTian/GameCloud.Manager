@@ -181,6 +181,8 @@
   <ItemGroup>
     <Compile Include="ApiControllers\ApiControllerBase.cs" />
     <Compile Include="ApiControllers\AppConfigurationsController.cs" />
+    <Compile Include="ApiControllers\AccountEventController.cs" />
+    <Compile Include="ApiControllers\EventsController.cs" />
     <Compile Include="ApiControllers\OrdersController.cs" />
     <Compile Include="ApiControllers\AppsController.cs" />
     <Compile Include="ApiControllers\UsersController.cs" />
@@ -300,14 +302,18 @@
     <Content Include="Views\Shared\Partial\_ListPageFootBar.cshtml" />
     <Content Include="Views\Shared\Partial\_ListPageHeadBar.cshtml" />
     <Content Include="Views\Shared\_AccountLayout.cshtml" />
-    <Content Include="Views\Home\AppList.cshtml" />
+    <Content Include="Views\Home\Apps.cshtml" />
     <Content Include="Views\Home\SingleAppConfiguration.cshtml" />
+    <Content Include="Views\Home\ErrorEvents.cshtml" />
+    <Content Include="Views\Home\AccountEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
