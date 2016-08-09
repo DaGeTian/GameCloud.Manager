@@ -262,6 +262,14 @@
       <Project>{f7dc340f-5b02-4c74-96b5-43db95112678}</Project>
       <Name>GameCloud.Manager.Contract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GameCloud.Manager.PluginDemo\GameCloud.Manager.PluginDemo.csproj">
+      <Project>{a6287399-6385-4b10-9206-1496556a487d}</Project>
+      <Name>GameCloud.Manager.PluginDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameCloud.Manager.UCenter\GameCloud.Manager.UCenter.csproj">
+      <Project>{657d7ff6-b2fe-4333-a581-a8258e5d3c8a}</Project>
+      <Name>GameCloud.Manager.UCenter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameCloud.UCenter.Common\GameCloud.UCenter.Common.csproj">
       <Project>{fce33a61-93fc-4077-b362-beb2d5e6d8b0}</Project>
       <Name>GameCloud.UCenter.Common</Name>

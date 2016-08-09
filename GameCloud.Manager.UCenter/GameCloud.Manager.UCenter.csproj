@@ -69,10 +69,6 @@
       <Project>{f7dc340f-5b02-4c74-96b5-43db95112678}</Project>
       <Name>GameCloud.Manager.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GameCloud.Manager\GameCloud.Manager.csproj">
-      <Project>{02ACADF2-A4EB-495B-A208-9F39676E71FA}</Project>
-      <Name>GameCloud.Manager</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GameCloud.UCenter.Common\GameCloud.UCenter.Common.csproj">
       <Project>{fce33a61-93fc-4077-b362-beb2d5e6d8b0}</Project>
       <Name>GameCloud.UCenter.Common</Name>
