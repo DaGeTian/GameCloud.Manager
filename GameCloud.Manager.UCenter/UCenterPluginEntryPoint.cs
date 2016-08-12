@@ -19,6 +19,7 @@ using MongoDB.Driver;
 namespace GameCloud.Manager.UCenter
 {
     [PluginMetadata(Name = "ucenter", DisplayName = "UCenter管理平台", Description = "This is a demo plugin.")]
+    [PluginCategoryMetadata(Name = "events", DisplayName = "事件查看", Description = "This is demo collection 1")]
     [PluginCategoryMetadata(Name = "player-analytics", DisplayName = "玩家分析", Description = "This is demo collection 1")]
     [PluginCategoryMetadata(Name = "online-analytics", DisplayName = "在线分析", Description = "This is demo collection 2")]
     public class UCenterPluginEntryPoint : PluginEntryPoint
@@ -60,6 +61,74 @@ namespace GameCloud.Manager.UCenter
 
             // todo: add orderby support.
             var model = new PluginPaginationResponse<AppEntity>
+            {
+                Page = page,
+                PageSize = count,
+                Raws = result,
+                Total = total
+            };
+
+            return model;
+        }
+
+        [PluginItemMetadata(Name = "account-event-search", Category = "events", DisplayName = "玩家事件", Type = PluginItemType.List)]
+        public async Task<PluginPaginationResponse<AccountEventEntity>> GetAccountEvents(PluginRequestInfo request)
+        {
+            Expression<Func<AccountEventEntity, bool>> filter = null;
+            string keyword = request.GetParameterValue<string>("keyword");
+            int page = request.GetParameterValue<int>("page", 1);
+            int count = request.GetParameterValue<int>("pageSize", 10);
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                filter = a => a.AccountName.Contains(keyword);
+            }
+
+            var total = await this.database.AccountEvents.CountAsync(filter, CancellationToken.None);
+
+            IQueryable<AccountEventEntity> queryable = this.database.AccountEvents.Collection.AsQueryable();
+            if (filter != null)
+            {
+                queryable = queryable.Where(filter);
+            }
+
+            var result = queryable.Skip((page - 1) * count).Take(count).ToList();
+
+            // todo: add orderby support.
+            var model = new PluginPaginationResponse<AccountEventEntity>
+            {
+                Page = page,
+                PageSize = count,
+                Raws = result,
+                Total = total
+            };
+
+            return model;
+        }
+
+        [PluginItemMetadata(Name = "error-event-search", Category = "events", DisplayName = "错误事件", Type = PluginItemType.List)]
+        public async Task<PluginPaginationResponse<ErrorEventEntity>> GetErrorEvents(PluginRequestInfo request)
+        {
+            Expression<Func<ErrorEventEntity, bool>> filter = null;
+            string keyword = request.GetParameterValue<string>("keyword");
+            int page = request.GetParameterValue<int>("page", 1);
+            int count = request.GetParameterValue<int>("pageSize", 10);
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                filter = a => a.AccountName.Contains(keyword);
+            }
+
+            var total = await this.database.ErrorEvents.CountAsync(filter, CancellationToken.None);
+
+            IQueryable<ErrorEventEntity> queryable = this.database.ErrorEvents.Collection.AsQueryable();
+            if (filter != null)
+            {
+                queryable = queryable.Where(filter);
+            }
+
+            var result = queryable.Skip((page - 1) * count).Take(count).ToList();
+
+            // todo: add orderby support.
+            var model = new PluginPaginationResponse<ErrorEventEntity>
             {
                 Page = page,
                 PageSize = count,

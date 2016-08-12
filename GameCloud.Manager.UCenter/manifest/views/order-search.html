@@ -25,8 +25,8 @@
             <td>{{row.AccountName}}</td>
             <td>{{row.AppName}}</td>
             <td>{{row.State|enums:'orderState'}}</td>
-            <td>{{row.CreatedTime | date:'yyyy/MM/dd HH:mm'}}</td>
-            <td>{{row.CompletedTime|date:'yyyy/MM/dd HH:mm'}}</td>
+            <td>{{row.CreatedTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.CompletedTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
             <td><a href="/home/singleorder?id={{row.Id}}">详情</>详情</a></td>
         </tr>
     </tbody>

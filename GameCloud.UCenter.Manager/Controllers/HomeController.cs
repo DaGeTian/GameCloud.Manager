@@ -45,6 +45,24 @@ namespace GameCloud.UCenter.Manager.Controllers
         }
 
         /// <summary>
+        /// Get the user list page.
+        /// </summary>
+        /// <returns>action result.</returns>
+        public ActionResult UserList()
+        {
+            return this.View();
+        }
+
+        /// <summary>
+        /// Get the device list page.
+        /// </summary>
+        /// <returns>action result.</returns>
+        public ActionResult DeviceList()
+        {
+            return this.View();
+        }
+
+        /// <summary>
         /// Get the account event list page.
         /// </summary>
         /// <returns>action result.</returns>
@@ -70,15 +88,6 @@ namespace GameCloud.UCenter.Manager.Controllers
         public ActionResult SingleAppConfiguration(string id)
         {
             ViewBag.AppId = id;
-            return this.View();
-        }
-
-        /// <summary>
-        /// Get the user list page.
-        /// </summary>
-        /// <returns>action result.</returns>
-        public ActionResult UserList()
-        {
             return this.View();
         }
 

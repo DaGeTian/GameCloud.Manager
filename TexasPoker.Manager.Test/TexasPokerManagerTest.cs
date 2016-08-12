@@ -10,7 +10,7 @@ namespace TexasPoker.Manager.Test
     [TestClass]
     public class TexasPokerManagerTest
     {
-        [TestMethod]
+        //[TestMethod]
         public async Task TestPumpingRate()
         {
             //var config = ClientConfiguration();

@@ -86,6 +86,12 @@ var app = angular.module("ucenter", ['ui.bootstrap', 'chart.js'])
             $scope.url = "/api/apps";
             $scope.fetch();
         }
+    ]).controller('devicesController', ['$scope', '$http', '$templateCache', '$controller',
+        function ($scope, $http, $templateCache, $controller) {
+            $controller('listController', { $scope: $scope });
+            $scope.url = "/api/devices";
+            $scope.fetch();
+        }
     ]).controller('accountEventsController', ['$scope', '$http', '$templateCache', '$controller',
         function ($scope, $http, $templateCache, $controller) {
             $controller('listController', { $scope: $scope });

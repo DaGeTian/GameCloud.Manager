@@ -179,6 +179,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\DevicesController.cs" />
     <Compile Include="ApiControllers\ApiControllerBase.cs" />
     <Compile Include="ApiControllers\AppConfigurationsController.cs" />
     <Compile Include="ApiControllers\AccountEventController.cs" />
@@ -218,7 +219,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="GF.UCenter.Common.Portable.csproj" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -306,9 +306,7 @@
     <Content Include="Views\Home\SingleAppConfiguration.cshtml" />
     <Content Include="Views\Home\ErrorEvents.cshtml" />
     <Content Include="Views\Home\AccountEvents.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <Content Include="Views\Home\DeviceList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

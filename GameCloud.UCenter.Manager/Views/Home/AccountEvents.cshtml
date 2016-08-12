@@ -13,7 +13,8 @@
                 <th>账号</th>
                 <th>账号Id</th>
                 <th>事件</th>
-                <th>登陆IP</th>
+                <th>设备Id</th>
+                <th>登录IP</th>
                 <th>IP所在地</th>
                 <th>事件消息</th>
                 <th>时间</th>
@@ -24,11 +25,12 @@
                 <td>{{row.AccountName}}</td>
                 <td>{{row.AccountId}}</td>
                 <td>{{row.EventName}}</td>
+                <td>{{row.DeviceId}}</td>
                 <td>{{row.ClientIp}}</td>
                 <td>{{row.LoginArea}}</td>
                 <td>{{row.UserAgent}}</td>
                 <td>{{row.Message}}</td>
-                <td>{{row.CreatedTime|date:'yyyy/MM/dd HH:mm'}}</td>
+                <td>{{row.CreatedTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
             </tr>
         </tbody>
     </table>

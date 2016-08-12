@@ -30,24 +30,29 @@
         AccountRegisterFailedInvalidName,
 
         /// <summary>
-        /// 登陆，密码错误
+        /// 登录，密码错误
         /// </summary>
         AccountLoginFailedPasswordNotMatch,
 
         /// <summary>
-        /// 登陆，Token错误
+        /// 登录，Token错误
         /// </summary>
         AccountLoginFailedTokenNotMatch,
 
         /// <summary>
-        /// 登陆，账号已禁用
+        /// 登录，账号已禁用
         /// </summary>
         AccountLoginFailedDisabled,
+
+        /// <summary>
+        /// 登录，设备信息缺失
+        /// </summary>
+        AccountLoginFailedMissingDeviceInfo,
 
         AppNotExit = 3000,
 
         /// <summary>
-        /// App登陆失败，secret错误
+        /// App登录失败，secret错误
         /// </summary>
         AppAuthFailedSecretNotMatch,
 
