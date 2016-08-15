@@ -184,7 +184,6 @@
     <Compile Include="ApiControllers\AppConfigurationsController.cs" />
     <Compile Include="ApiControllers\AccountEventController.cs" />
     <Compile Include="ApiControllers\EventsController.cs" />
-    <Compile Include="ApiControllers\OrdersController.cs" />
     <Compile Include="ApiControllers\AppsController.cs" />
     <Compile Include="ApiControllers\UsersController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -293,9 +292,7 @@
     <Content Include="Views\Home\NewUsers.cshtml" />
     <Content Include="Views\Home\OnlineAnalytics.cshtml" />
     <Content Include="Views\Home\OnlineBehaviour.cshtml" />
-    <Content Include="Views\Home\OrderList.cshtml" />
     <Content Include="Views\Home\RealtimeGlance.cshtml" />
-    <Content Include="Views\Home\SingleOrder.cshtml" />
     <Content Include="Views\Home\Stay.cshtml" />
     <Content Include="Views\Home\UserList.cshtml" />
     <Content Include="Views\Home\ActiveUsers.cshtml" />

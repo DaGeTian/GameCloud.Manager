@@ -90,7 +90,6 @@
     <EmbeddedResource Include="manifest\views\lost-statistics.html" />
     <EmbeddedResource Include="manifest\views\new-users.html" />
     <EmbeddedResource Include="manifest\views\online-behaviour.html" />
-    <EmbeddedResource Include="manifest\views\order-search.html" />
     <EmbeddedResource Include="manifest\views\realtime-glance.html" />
     <EmbeddedResource Include="manifest\views\stay-statistics.html" />
   </ItemGroup>

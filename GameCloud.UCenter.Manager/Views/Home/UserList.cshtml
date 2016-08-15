@@ -19,7 +19,6 @@
                 <th>手机</th>
                 <th>注册日期</th>
                 <th>最近登录日期</th>
-                <th>订单</th>
             </tr>
         </thead>
         <tbody>
@@ -33,7 +32,6 @@
                 <td>{{row.PhoneNum}}</td>
                 <td>{{row.CreatedTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
                 <td>{{row.LastLoginDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
-                <td><a href="/home/orderlist?accountId={{row.Id}}">订单</a></td>
             </tr>
         </tbody>
     </table>

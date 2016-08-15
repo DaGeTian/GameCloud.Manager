@@ -92,35 +92,6 @@ namespace GameCloud.UCenter.Manager.Controllers
         }
 
         /// <summary>
-        /// Get the order list page.
-        /// </summary>
-        /// <param name="token">Indicating the cancellation token.</param>
-        /// <param name="accountId">Indicating the account id.</param>
-        /// <returns>action result.</returns>
-        public async Task<ActionResult> OrderList(CancellationToken token, string accountId = null)
-        {
-            if (!string.IsNullOrEmpty(accountId))
-            {
-                var account = await this.database.Accounts.GetSingleAsync(accountId, token);
-                ViewBag.AccountId = account.Id;
-                ViewBag.AccountName = account.AccountName;
-            }
-
-            return this.View();
-        }
-        
-        /// <summary>
-        /// Gets the single order page.
-        /// </summary>
-        /// <param name="id">indicating the order id.</param>
-        /// <returns>action result.</returns>
-        public ActionResult SingleOrder(string id)
-        {
-            ViewBag.OrderId = id;
-            return this.View();
-        }
-
-        /// <summary>
         /// 
         /// </summary>
         /// <returns>action result.</returns>

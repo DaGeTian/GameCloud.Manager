@@ -36,7 +36,10 @@ namespace GameCloud.UCenter.Common.SDK
             var request = new HttpRequestMessage(method, new Uri(url));
             request.Headers.Clear();
             request.Headers.ExpectContinue = false;
-            request.Content = content;
+            if (method == HttpMethod.Post)
+            {
+                request.Content = content;
+            }
 
             var response = await this.httpClient.SendAsync(request);
 
@@ -59,7 +62,7 @@ namespace GameCloud.UCenter.Common.SDK
                 throw new UCenterException(response.Error.ErrorCode, response.Error.Message);
             }
 
-            throw new UCenterException(UCenterErrorCode.Failed, "Error occurred when sending http request");
+            throw new UCenterException(UCenterErrorCode.ClientError, "Error occurred when sending http request");
         }
 
         private HttpClient CreateHttpClient()

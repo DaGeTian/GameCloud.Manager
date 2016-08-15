@@ -55,7 +55,7 @@ namespace GameCloud.UCenter.Manager.ApiControllers
             {
                 filter = a => a.AccountName.Contains(keyword)
                     || a.Email.Contains(keyword)
-                    || a.PhoneNum.Contains(keyword);
+                    || a.Phone.Contains(keyword);
             }
 
             var total = await this.Database.Accounts.CountAsync(filter, token);

@@ -44,15 +44,13 @@
     <Compile Include="Entities\DeviceEntity.cs" />
     <Compile Include="Entities\ErrorEventEntity.cs" />
     <Compile Include="Entities\AccountEventEntity.cs" />
+    <Compile Include="Entities\KeyPlaceholderEntity.cs" />
+    <Compile Include="Entities\KeyType.cs" />
     <Compile Include="UCenterDatabaseContext.cs" />
     <Compile Include="Entities\AccountEntity.cs" />
     <Compile Include="Entities\AppAccountDataEntity.cs" />
     <Compile Include="Entities\AppConfigurationEntity.cs" />
     <Compile Include="Entities\AppEntity.cs" />
-    <Compile Include="Entities\KeyPlaceholderEntity.cs" />
-    <Compile Include="Entities\KeyType.cs" />
-    <Compile Include="Entities\OrderEntity.cs" />
-    <Compile Include="Entities\OrderState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

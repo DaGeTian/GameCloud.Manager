@@ -153,7 +153,7 @@ namespace GameCloud.Manager.UCenter
             {
                 filter = a => a.AccountName.Contains(keyword)
                     || a.Email.Contains(keyword)
-                    || a.PhoneNum.Contains(keyword);
+                    || a.Phone.Contains(keyword);
             }
 
             var total = await this.database.Accounts.CountAsync(filter, CancellationToken.None);
@@ -173,43 +173,6 @@ namespace GameCloud.Manager.UCenter
                 PageSize = count,
                 Raws = result,
                 Total = total
-            };
-
-            return model;
-        }
-
-        [PluginItemMetadata(Name = "order-search", DisplayName = "订单管理", Type = PluginItemType.List)]
-        public PluginPaginationResponse<OrderEntity> GetOrders(PluginRequestInfo request)
-        {
-            var accountId = request.GetParameterValue<string>("accountId");
-            var keyword = request.GetParameterValue<string>("keyword");
-            var page = request.GetParameterValue<int>("page", 1);
-            var count = request.GetParameterValue<int>("pageSize", 10);
-
-            IQueryable<OrderEntity> querable = this.database.Orders.Collection.AsQueryable();
-            if (!string.IsNullOrEmpty(accountId))
-            {
-                querable = querable.Where(a => a.AccountId == accountId);
-            }
-
-            if (!string.IsNullOrEmpty(keyword))
-            {
-                querable = querable.Where(a => a.Id.Contains(keyword)
-                    || a.AccountName.Contains(keyword)
-                    || a.AppName.Contains(keyword)
-                    || a.Content.Contains(keyword));
-            }
-
-            var orders = querable.Skip((page - 1) * count).Take(count).ToList();
-
-            var total = querable.LongCount();
-
-            var model = new PluginPaginationResponse<OrderEntity>
-            {
-                Page = page,
-                PageSize = count,
-                Total = total,
-                Raws = orders
             };
 
             return model;

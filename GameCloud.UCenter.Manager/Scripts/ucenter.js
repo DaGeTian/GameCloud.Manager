@@ -1,13 +1,5 @@
 ﻿var enums = null;
 (function (enums) {
-    var orderState = {};
-    orderState[orderState['Created'] = 0] = '已创建';
-    orderState[orderState['Success'] = 1] = '成功';
-    orderState[orderState['Failed'] = 2] = '失败';
-    orderState[orderState['Expired'] = 3] = '已过期';
-
-    enums.orderState = orderState;
-
     var gender = {};
     gender[gender['Male'] = 0] = '男';
     gender[gender['Female'] = 1] = '女';
@@ -133,25 +125,6 @@ var app = angular.module("ucenter", ['ui.bootstrap', 'chart.js'])
         function ($scope, $http, $templateCache, $controller) {
             $controller('listController', { $scope: $scope });
             $scope.url = "/api/orders";
-        }
-    ]).controller('orderController', ['$scope', '$http', '$templateCache', '$controller',
-        function ($scope, $http, $templateCache, $controller) {
-            $controller('listController', { $scope: $scope });
-            $scope.url = "/api/orders";
-            $scope.fetch = function () {
-                $http.get(
-                    '/api/orders?id=' + $scope.id,
-                    {
-                        responseType: 'json'
-                    }).
-                    then(function (response) {
-                        $scope.status = response.status;
-                        $scope.data = response.data;
-                    }, function (response) {
-                        $scope.data = response.data || "Request failed";
-                        $scope.status = response.status;
-                    });
-            };
         }
     ]).controller('activeUsersController', ['$scope', '$http', '$templateCache', '$controller',
         function ($scope, $http, $templateCache, $controller) {
