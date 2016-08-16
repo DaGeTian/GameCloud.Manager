@@ -65,6 +65,7 @@ namespace GameCloud.UCenter.Manager.ApiControllers
             {
                 queryable = queryable.Where(filter);
             }
+            queryable = queryable.OrderByDescending(a => a.CreatedTime);
 
             var result = queryable.Skip((page - 1) * count).Take(count).ToList();
 

@@ -46,11 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AppClient\AccountType.cs" />
     <Compile Include="Models\AppClient\AccountUploadProfileImageResponse.cs" />
+    <Compile Include="Models\AppClient\GuestAccessInfo.cs" />
     <Compile Include="Models\AppClient\GuestConvertInfo.cs" />
     <Compile Include="Models\AppClient\AccountLoginInfo.cs" />
     <Compile Include="Models\AppClient\AccountRegisterInfo.cs" />
-    <Compile Include="Models\AppClient\AccountConvertResponse.cs" />
+    <Compile Include="Models\AppClient\GuestConvertResponse.cs" />
     <Compile Include="Models\AppClient\AccountResetPasswordInfo.cs" />
     <Compile Include="Models\AppClient\AccountResourceType.cs" />
     <Compile Include="Models\AppClient\GuestAccessResponse.cs" />
@@ -77,8 +79,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>robocopy $(ProjectDir) $(SolutionDir)GameCloud.UCenter.SDK.Unity3D\Assets\GameCloud.Unity.UCenter\Common\  /mir /xd bin /xd obj /xd Properties /xf GameCloud.UCenter.Common.Portable.csproj /xf *.meta
-exit 0</PostBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

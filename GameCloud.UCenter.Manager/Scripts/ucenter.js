@@ -4,8 +4,18 @@
     gender[gender['Male'] = 0] = '男';
     gender[gender['Female'] = 1] = '女';
     gender[gender['DeclineToState'] = 2] = '拒绝透漏';
-
     enums.gender = gender;
+
+    var accountType = {};
+    accountType[accountType['NormalAccount'] = 0] = '普通账号';
+    accountType[accountType['Guest'] = 1] = '游客';
+    enums.accountType = accountType;
+
+    var accountStatus = {};
+    accountStatus[accountStatus['Active'] = 0] = '活跃';
+    accountStatus[accountStatus['Disabled'] = 1] = '禁用';
+    enums.accountStatus = accountStatus;
+
 })(enums || (enums = {}));
 
 var app = angular.module("ucenter", ['ui.bootstrap', 'chart.js'])
