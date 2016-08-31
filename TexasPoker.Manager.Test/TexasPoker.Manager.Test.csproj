@@ -86,12 +86,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TexasPoker.Manager.GrainInterface\TexasPoker.Manager.GrainInterface.csproj">
-      <Project>{39f4f6dd-3c91-4175-8266-e0b926a36f24}</Project>
-      <Name>TexasPoker.Manager.GrainInterface</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +96,12 @@
     <Content Include="ClientConfiguration.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TexasPoker.GrainInterface\TexasPoker.GrainInterface.csproj">
+      <Project>{39F4F6DD-3C91-4175-8266-E0B926A36F24}</Project>
+      <Name>TexasPoker.GrainInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

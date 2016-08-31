@@ -2,7 +2,7 @@
 using GameCloud.Manager.Contract.Attributes;
 using GameCloud.Manager.Contract.Requests;
 using Orleans;
-using TexasPoker.Manager.GrainInterface;
+using TexasPoker.GrainInterface;
 
 namespace GameCloud.Manager.OrleansPlugin
 {

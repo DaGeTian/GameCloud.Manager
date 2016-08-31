@@ -1,9 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Orleans;
-using Orleans.Runtime.Configuration;
-using TexasPoker.Manager.GrainInterface;
 using System.Threading.Tasks;
+using TexasPoker.GrainInterface;
 
 namespace TexasPoker.Manager.Test
 {

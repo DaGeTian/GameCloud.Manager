@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using TexasPoker.Manager.GrainInterface;
+using TexasPoker.GrainInterface;
 
-namespace TexasPoker.Manager.Grain
+namespace TexasPoker.Grain
 {
     public class TexasPokerManagerGrain : Orleans.Grain, ITexasPokerManager
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace TexasPoker.Manager.GrainInterface
+namespace TexasPoker.GrainInterface
 {
     public interface ITexasPokerManager : Orleans.IGrainWithStringKey
     {

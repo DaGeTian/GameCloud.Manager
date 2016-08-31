@@ -91,9 +91,9 @@
       <Project>{f7dc340f-5b02-4c74-96b5-43db95112678}</Project>
       <Name>GameCloud.Manager.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TexasPoker.Manager.GrainInterface\TexasPoker.Manager.GrainInterface.csproj">
+    <ProjectReference Include="..\TexasPoker.GrainInterface\TexasPoker.GrainInterface.csproj">
       <Project>{39f4f6dd-3c91-4175-8266-e0b926a36f24}</Project>
-      <Name>TexasPoker.Manager.GrainInterface</Name>
+      <Name>TexasPoker.GrainInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

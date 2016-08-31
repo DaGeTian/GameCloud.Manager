@@ -7,8 +7,8 @@
     <ProjectGuid>{39F4F6DD-3C91-4175-8266-E0B926A36F24}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TexasPoker.Manager.GrainInterface</RootNamespace>
-    <AssemblyName>TexasPoker.Manager.GrainInterface</AssemblyName>
+    <RootNamespace>TexasPoker.GrainInterface</RootNamespace>
+    <AssemblyName>TexasPoker.GrainInterface</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
