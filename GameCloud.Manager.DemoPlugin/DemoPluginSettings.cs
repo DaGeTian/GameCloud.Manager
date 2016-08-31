@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameCloud.Manager.PluginDemo
+namespace GameCloud.Manager.DemoPlugin
 {
     public class DemoPluginSettings
     {

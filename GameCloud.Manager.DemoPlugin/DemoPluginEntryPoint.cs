@@ -6,7 +6,7 @@ using GameCloud.Manager.Contract.Attributes;
 using GameCloud.Manager.Contract.Requests;
 using GameCloud.Manager.Contract.Responses;
 
-namespace GameCloud.Manager.PluginDemo
+namespace GameCloud.Manager.DemoPlugin
 {
     [PluginMetadata(Name = "demoplugin", DisplayName = "Demo插件", Description = "示例插件，包括列表，报表，更新数据")]
     [PluginCategoryMetadata(Name = "list", DisplayName = "分类-LIST", Description = "分类示例1")]

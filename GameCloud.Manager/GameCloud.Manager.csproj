@@ -279,9 +279,13 @@
       <Project>{f7dc340f-5b02-4c74-96b5-43db95112678}</Project>
       <Name>GameCloud.Manager.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GameCloud.Manager.PluginDemo\GameCloud.Manager.PluginDemo.csproj">
+    <ProjectReference Include="..\GameCloud.Manager.DemoPlugin\GameCloud.Manager.DemoPlugin.csproj">
       <Project>{a6287399-6385-4b10-9206-1496556a487d}</Project>
-      <Name>GameCloud.Manager.PluginDemo</Name>
+      <Name>GameCloud.Manager.DemoPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameCloud.Manager.OrleansPlugin\GameCloud.Manager.OrleansPlugin.csproj">
+      <Project>{74dbbb00-00f2-49aa-94d8-c06c2496bed2}</Project>
+      <Name>GameCloud.Manager.OrleansPlugin</Name>
     </ProjectReference>
     <ProjectReference Include="..\GameCloud.Manager.UCenter\GameCloud.Manager.UCenter.csproj">
       <Project>{657d7ff6-b2fe-4333-a581-a8258e5d3c8a}</Project>
