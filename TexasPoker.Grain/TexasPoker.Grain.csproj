@@ -101,7 +101,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TexasPoker.Manager.GrainInterface\TexasPoker.Manager.GrainInterface.csproj">
+    <ProjectReference Include="..\TexasPoker.GrainInterface\TexasPoker.GrainInterface.csproj">
       <Project>{39f4f6dd-3c91-4175-8266-e0b926a36f24}</Project>
       <Name>TexasPoker.Manager.GrainInterface</Name>
     </ProjectReference>
