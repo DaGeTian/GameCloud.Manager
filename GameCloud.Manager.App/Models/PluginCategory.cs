@@ -8,7 +8,7 @@ namespace GameCloud.Manager.App.Models
     [DataContract]
     public class PluginCategory : PluginBase
     {
-        [DataMember(Name = "pages")]
-        public List<PluginPage> Pages { get; set; }
+        [DataMember(Name = "items")]
+        public List<PluginItem> Items { get; set; }
     }
 }

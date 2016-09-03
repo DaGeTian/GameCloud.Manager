@@ -163,7 +163,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
 
                 group.push(items[i]);
             }
-            console.log(length, groups);
+
             return groups;
         }
 
@@ -209,11 +209,11 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
             }
 
             $http.post(
-                '/pluginrequest',
+                '/api/plugins',
                 {
                     pluginName: $scope.plugin.name,
-                    category: $scope.category ? $scope.category.name : null,
-                    item: $scope.item.name,
+                    categoryName: $scope.category ? $scope.category.name : null,
+                    itemName: $scope.item.name,
                     method: method,
                     content: $scope.params
                 },
@@ -222,6 +222,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                     cache: $templateCache
                 }).
                 then(function (response) {
+                    console.log(response);
                     $scope.status = response.status;
                     $scope.data = response.data;
                 }, function (response) {

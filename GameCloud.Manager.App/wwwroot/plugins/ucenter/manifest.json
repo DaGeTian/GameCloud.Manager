@@ -3,29 +3,26 @@
   "DisplayName": "UCenter管理平台",
   "Description": "UCenter plugin",
   "Certificate": { "Thumbnail": "abfdasfasf" },
+  "Url": "http://tp-uc.chinacloudapp.cn:5000/api",
   "Categories": [
     {
       "Name": "events",
       "DisplayName": "事件查看",
       "Description": "事件管理",
-      "Pages": [
+      "Items": [
         {
           "Name": "accounteventsearch",
           "DisplayName": "玩家事件",
           "Type": "List",
-          "Method": "GET"
+          "Method": "GET",
+          "View": "account-event-search.html"
         },
         {
           "Name": "erroreventsearch",
           "DisplayName": "错误事件",
           "Type": "List",
-          "Method": "GET"
-        },
-        {
-          "Name": "accounteventsearch",
-          "DisplayName": "玩家事件",
-          "Type": "List",
-          "Method": "GET"
+          "Method": "GET",
+          "View": "error-event-search.html"
         }
       ]
     },
@@ -33,30 +30,34 @@
       "Name": "playeranalytics",
       "DisplayName": "玩家分析",
       "Description": "玩家分析",
-      "Pages": [
+      "Items": [
         {
           "Name": "newusers",
           "DisplayName": "新增玩家",
           "Type": "Report",
-          "Method": "GET"
+          "Method": "GET",
+          "View": "new-users.html"
         },
         {
           "Name": "activeusers",
           "DisplayName": "活跃玩家",
           "Type": "Report",
-          "Method": "GET"
+          "Method": "GET",
+          "View": "active-users.html"
         },
         {
           "Name": "staystatistics",
           "DisplayName": "留存统计",
           "Type": "Report",
-          "Method": "GET"
+          "Method": "GET",
+          "View": "stay-statistics.html"
         },
         {
           "Name": "loststatistics",
           "DisplayName": "流失统计",
           "Type": "Report",
-          "Method": "GET"
+          "Method": "GET",
+          "View": "lost-statistics.html"
         }
       ]
     },
@@ -64,34 +65,48 @@
       "Name": "onlineanalytics",
       "DisplayName": "在线分析",
       "Description": "在线分析",
-      "Pages": [
+      "Items": [
         {
           "Name": "onlineanalytics",
           "DisplayName": "在线分析",
           "Type": "Report",
-          "Method": "GET"
+          "Method": "GET",
+          "View": "online-behaviour.html"
         }
       ]
     },
     {
-      "Pages": [
+      "Name": "others",
+      "DisplayName": "其他",
+      "Description": "其他",
+      "Items": [
         {
           "Name": "appsearch",
           "DisplayName": "App管理",
           "Type": "List",
-          "Method": "GET"
+          "Route": "apps",
+          "View": "app-search.html"
+        },
+        {
+          "Name": "account-search",
+          "DisplayName": "玩家管理",
+          "Type": "List",
+          "Route": "users",
+          "View": "account-search.html"
         },
         {
           "Name": "realtimeglance",
           "DisplayName": "实时状况",
           "Type": "Report",
-          "Method": "GET"
+          "Method": "GET",
+          "View": "realtime-glance.html"
         },
         {
           "Name": "onlinebehaviour",
           "DisplayName": "在线习惯",
           "Type": "Report",
-          "Method": "GET"
+          "Method": "GET",
+          "View": "online-behaviour.html"
         }
       ]
     }

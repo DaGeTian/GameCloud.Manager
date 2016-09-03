@@ -3,7 +3,6 @@ using GameCloud.Database;
 using GameCloud.UCenter.Common.MEF;
 using GameCloud.UCenter.Common.Settings;
 using GameCloud.UCenter.Database;
-using GameCloud.UCenter.Web.Common.Logger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

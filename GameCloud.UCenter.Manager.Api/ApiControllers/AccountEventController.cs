@@ -5,13 +5,13 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using GameCloud.Database.Adapters;
+using GameCloud.Manager.PluginContract.Requests;
+using GameCloud.Manager.PluginContract.Responses;
 using GameCloud.UCenter.Common.Settings;
 using GameCloud.UCenter.Database;
 using GameCloud.UCenter.Database.Entities;
-using GameCloud.UCenter.Web.Common.Modes;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
-using GameCloud.Database.Adapters;
 
 namespace GameCloud.UCenter.Manager.Api.ApiControllers
 {
@@ -40,20 +40,15 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <summary>
         /// Get user list.
         /// </summary>
-        /// <param name="token">Indicating the cancellation token.</param>
-        /// <param name="keyword">Indicating the keyword.</param>
-        /// <param name="orderby">Indicating the order by name.</param>
-        /// <param name="page">Indicating the page number.</param>
-        /// <param name="count">Indicating the count.</param>
-        /// <returns>Async return user list.</returns>
+        /// <param name="request">Indicating the count.</param>
+        /// <returns>Async return account event list.</returns>
         [Route("api/accountEvents")]
-        public async Task<PaginationResponse<AccountEventEntity>> Get(
-            CancellationToken token,
-            string keyword = null,
-            string orderby = null,
-            int page = 1,
-            int count = 1000)
+        public async Task<PluginPaginationResponse<AccountEventEntity>> Post([FromBody]PluginRequestInfo request)
         {
+            string keyword = request.GetParameterValue<string>("keyword");
+            int page = request.GetParameterValue<int>("page", 1);
+            int count = request.GetParameterValue<int>("pageSize", 10);
+
             Expression<Func<AccountEventEntity, bool>> filter = null;
 
             if (!string.IsNullOrEmpty(keyword))
@@ -61,7 +56,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
                 filter = a => a.AccountName.Contains(keyword);
             }
 
-            var total = await this.UCenterEventDatabase.AccountEvents.CountAsync(filter, token);
+            var total = await this.UCenterEventDatabase.AccountEvents.CountAsync(filter, CancellationToken.None);
 
             IQueryable<AccountEventEntity> queryable = this.UCenterEventDatabase.AccountEvents.Collection.AsQueryable();
             if (filter != null)
@@ -73,7 +68,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             var result = queryable.Skip((page - 1) * count).Take(count).ToList();
 
             // todo: add orderby support.
-            var model = new PaginationResponse<AccountEventEntity>
+            var model = new PluginPaginationResponse<AccountEventEntity>
             {
                 Page = page,
                 PageSize = count,
@@ -82,19 +77,6 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             };
 
             return model;
-        }
-
-        /// <summary>
-        /// Get single user details.
-        /// </summary>
-        /// <param name="id">Indicating the user id.</param>
-        /// <param name="token">Indicating the cancellation token.</param>
-        /// <returns>Async return user details.</returns>
-        public async Task<AccountEventEntity> Get(string id, CancellationToken token)
-        {
-            var result = await this.UCenterEventDatabase.AccountEvents.GetSingleAsync(id, token);
-
-            return result;
         }
     }
 }

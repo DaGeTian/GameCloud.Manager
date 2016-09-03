@@ -1,4 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using GameCloud.Manager.App.Manager;
+using GameCloud.Manager.App.Models;
+using GameCloud.Manager.PluginContract.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
@@ -8,36 +15,38 @@ namespace GameCloud.Manager.App.ApiControllers
     [Route("api/[controller]")]
     public class PluginsController : Controller
     {
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly PluginManager manager;
+
+        public PluginsController(PluginManager manager)
         {
-            return new string[] { "value1", "value2" };
+            this.manager = manager;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        public IReadOnlyList<Plugin> Get()
         {
-            return "value";
+            return this.manager.Plugins;
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<object> Post([FromBody]PluginRequest request, CancellationToken token)
         {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var client = this.manager.GetClient(request.PluginName);
+            var item = this.manager.GetPluginItem(request.PluginName, request.CategoryName, request.ItemName);
+            var parameters = request.Content
+                .Select(kv => new PluginRequestParameter() { Name = kv.Key, Value = kv.Value })
+                .ToList();
+            var requestInfo = new PluginRequestInfo(request.Method, parameters);
+            try
+            {
+                return await client.SendAsync<PluginRequestInfo, object>(item, requestInfo, token);
+            }
+            catch (Exception ex)
+            {
+                // CustomTrace.TraceError(ex, "Execute plugin action error: Plugin:{0}, Item: {2}", plugin.Name, item.Name);
+                return null;
+            }
         }
     }
 }

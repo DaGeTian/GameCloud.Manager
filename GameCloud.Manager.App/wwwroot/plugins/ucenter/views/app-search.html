@@ -8,10 +8,10 @@
     </thead>
     <tbody>
         <tr ng-repeat="row in data.raws">
-            <td>{{row.Name}}</td>
-            <td>{{row.AppSecret}}</td>
-            <td>{{row.CreatedTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
-            <td><a href="/home/singleappconfiguration?id={{row.Id}}">详情</a></td>
+            <td>{{row.name}}</td>
+            <td>{{row.appSecret}}</td>
+            <td>{{row.createdTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td><a href="/home/singleappconfiguration?id={{row.id}}">详情</a></td>
         </tr>
     </tbody>
 </table>

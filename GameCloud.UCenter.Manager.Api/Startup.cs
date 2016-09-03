@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Composition.Hosting;
 using GameCloud.Database;
+using GameCloud.Manager.PluginContract.Requests;
 using GameCloud.UCenter.Common.MEF;
 using GameCloud.UCenter.Common.Settings;
 using GameCloud.UCenter.Database;

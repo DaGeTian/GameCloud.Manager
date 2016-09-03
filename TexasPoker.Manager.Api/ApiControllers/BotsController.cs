@@ -5,8 +5,9 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using GameCloud.Database.Adapters;
+using GameCloud.Manager.PluginContract.Requests;
+using GameCloud.Manager.PluginContract.Responses;
 using GameCloud.UCenter.Common.Settings;
-using GameCloud.UCenter.Web.Common.Modes;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using TexasPoker.Database;
@@ -42,13 +43,12 @@ namespace TexasPoker.Manager.Api.ApiControllers
         /// <param name="count">Indicating the count.</param>
         /// <returns>Async return event list.</returns>
         [Route("api/bots")]
-        public async Task<PaginationResponse<PlayerEntity>> Get(
-            CancellationToken token,
-            string keyword = null,
-            string orderby = null,
-            int page = 1,
-            int count = 1000)
+        public async Task<PluginPaginationResponse<PlayerEntity>> Post([FromBody]PluginRequestInfo request)
         {
+            string keyword = request.GetParameterValue<string>("keyword");
+            int page = request.GetParameterValue<int>("page", 1);
+            int count = request.GetParameterValue<int>("pageSize", 10);
+
             Expression<Func<PlayerEntity, bool>> filter = null;
 
             if (!string.IsNullOrEmpty(keyword))
@@ -62,7 +62,7 @@ namespace TexasPoker.Manager.Api.ApiControllers
                 filter = p => p.map_component.DefActor.IsBot == "true";
             }
 
-            var total = await this.Database.Players.CountAsync(filter, token);
+            var total = await this.Database.Players.CountAsync(filter, CancellationToken.None);
 
             IQueryable<PlayerEntity> queryable = this.Database.Players.Collection.AsQueryable();
             if (filter != null)
@@ -75,7 +75,7 @@ namespace TexasPoker.Manager.Api.ApiControllers
             var result = queryable.Skip((page - 1) * count).Take(count).ToList();
 
             // todo: add orderby support.
-            var model = new PaginationResponse<PlayerEntity>
+            var model = new PluginPaginationResponse<PlayerEntity>
             {
                 Page = page,
                 PageSize = count,
@@ -84,19 +84,6 @@ namespace TexasPoker.Manager.Api.ApiControllers
             };
 
             return model;
-        }
-
-        /// <summary>
-        /// Get single user details.
-        /// </summary>
-        /// <param name="id">Indicating the user id.</param>
-        /// <param name="token">Indicating the cancellation token.</param>
-        /// <returns>Async return user details.</returns>
-        public async Task<PlayerEntity> Get(string id, CancellationToken token)
-        {
-            var result = await this.Database.Players.GetSingleAsync(id, token);
-
-            return result;
         }
     }
 }

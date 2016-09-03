@@ -1,9 +1,0 @@
-﻿<Plugin Name="UCenter" DisplayName="UCenter管理平台" Description="UCenter plugin">
-  <Categories>
-    <Category Name="events" DisplayName="" Description="">
-      <Pages>
-
-      </Pages>
-    </Category>
-  </Categories>
-</Plugin>

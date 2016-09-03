@@ -5,6 +5,7 @@
 /// <reference path="js/angular-ui/ui-bootstrap.js" />
 /// <reference path="js/angular-ui/ui-bootstrap-tpls.js" />
 /// <reference path="js/chart.js" />
+/// <reference path="js/metismenu.js" />
 /// <reference path="js/plugin.js" />
 /// <reference path="js/site.js" />
 /// <reference path="lib/angular/angular.js" />

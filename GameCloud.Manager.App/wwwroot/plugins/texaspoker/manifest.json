@@ -1,0 +1,162 @@
+﻿{
+  "Name": "TexasPoker",
+  "DisplayName": "TexasPoker管理平台",
+  "Description": "TexasPoker插件",
+  "Certificate": { "Thumbnail": "" },
+  "Categories": [
+    {
+      "Name": "player",
+      "DisplayName": "玩家管理",
+      "Description": "玩家管理",
+      "Items": [
+        {
+          "Name": "player-search",
+          "DisplayName": "玩家查询",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "bot-search",
+          "DisplayName": "机器人查询",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        }
+      ]
+    },
+    {
+      "Name": "event",
+      "DisplayName": "玩家分析",
+      "Description": "玩家分析",
+      "Items": [
+        {
+          "Name": "newusers",
+          "DisplayName": "购买筹码",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "activeusers",
+          "DisplayName": "购买金币",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "staystatistics",
+          "DisplayName": "购买VIP",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "筹码购买礼物",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "筹码购买道具",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "管理员修改筹码",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "金币购买礼物",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "金币购买道具",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "每日领取筹码",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "输光赠送筹码",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "玩家赠送筹码",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "玩家接收筹码",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "玩家举报",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "牌局",
+          "Type": "List",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        }
+      ]
+    },
+    {
+      "Name": "onlineanalytics",
+      "DisplayName": "整体统计",
+      "Description": "整体统计",
+      "Items": [
+        {
+          "Name": "onlineanalytics",
+          "DisplayName": "整体统计",
+          "Type": "Report",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        }
+      ]
+    },
+    {
+      "Name": "onlineanalytics",
+      "DisplayName": "游戏配置",
+      "Description": "游戏配置",
+      "Items": [
+        {
+          "Name": "onlineanalytics",
+          "DisplayName": "抽水率",
+          "Type": "Report",
+          "Method": "GET",
+          "View": "xxxxxxxxxxxxxxxxxx.html"
+        }
+      ]
+    }
+  ]
+}

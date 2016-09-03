@@ -4,6 +4,7 @@ using System.IO;
 using GameCloud.Manager.App.Manager;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
 
@@ -12,10 +13,12 @@ namespace GameCloud.Manager.App.Controllers
     public class HomeController : Controller
     {
         private readonly IHostingEnvironment hostingEnvironment;
+        private readonly PluginManager manager;
 
-        public HomeController(IHostingEnvironment hostingEnvironment)
+        public HomeController(PluginManager manager, IHostingEnvironment hostingEnvironment)
         {
             this.hostingEnvironment = hostingEnvironment;
+            this.manager = manager;
         }
 
         public IActionResult Index()
@@ -51,16 +54,13 @@ namespace GameCloud.Manager.App.Controllers
         {
             try
             {
-                string path = this.hostingEnvironment.WebRootPath ;
-                var manager = new PluginManager();
-                var plugins= manager.GetPlugins(Path.Combine(path, "plugins"));
-                var actionName = context.ActionDescriptor.DisplayName.ToLower();
-                if (actionName.Contains("plugin") || actionName == "index")
+                var descriptor = context.ActionDescriptor as ControllerActionDescriptor;
+                if (descriptor != null && (descriptor.ActionName.ToLower() == "index" || descriptor.ActionName.ToLower() == "plugin"))
                 {
                     this.ViewBag.StartupScript =
-                            string.Format(CultureInfo.InvariantCulture,
-                            "var $plugins={0};",
-                            JsonConvert.SerializeObject(plugins));
+                        string.Format(CultureInfo.InvariantCulture,
+                        "var $plugins={0};",
+                        JsonConvert.SerializeObject(this.manager.Plugins));
                 }
             }
             catch (Exception ex)

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "GameCloud.Manager.PluginContract": "1.0.0-*",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
@@ -27,9 +28,6 @@
           "target": "project"
         },
         "GameCloud.UCenter.Database": {
-          "target": "project"
-        },
-        "GameCloud.UCenter.Web.Common": {
           "target": "project"
         }
       }

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using GameCloud.Manager.App.Manager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -12,6 +14,8 @@ namespace GameCloud.Manager.App
 {
     public class Startup
     {
+        private readonly PluginManager manager;
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -20,6 +24,9 @@ namespace GameCloud.Manager.App
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            string path = Path.Combine(env.WebRootPath, "plugins");
+            this.manager = new PluginManager(path);
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -28,6 +35,7 @@ namespace GameCloud.Manager.App
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddSingleton<PluginManager>(manager);
             services.AddMvc();
         }
 

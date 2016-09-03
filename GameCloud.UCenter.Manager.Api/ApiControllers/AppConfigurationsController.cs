@@ -5,10 +5,11 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using GameCloud.Database.Adapters;
+using GameCloud.Manager.PluginContract.Requests;
+using GameCloud.Manager.PluginContract.Responses;
 using GameCloud.UCenter.Common.Settings;
 using GameCloud.UCenter.Database;
 using GameCloud.UCenter.Database.Entities;
-using GameCloud.UCenter.Web.Common.Modes;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 
@@ -39,20 +40,15 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <summary>
         /// Get user list.
         /// </summary>
-        /// <param name="token">Indicating the cancellation token.</param>
-        /// <param name="keyword">Indicating the keyword.</param>
-        /// <param name="orderby">Indicating the order by name.</param>
-        /// <param name="page">Indicating the page number.</param>
-        /// <param name="count">Indicating the count.</param>
+        /// <param name="request">Indicating the count.</param>
         /// <returns>Async return user list.</returns>
         [Route("api/appconfigurations")]
-        public async Task<PaginationResponse<AppConfigurationEntity>> Get(
-            CancellationToken token,
-            string keyword = null,
-            string orderby = null,
-            int page = 1,
-            int count = 1000)
+        public async Task<PluginPaginationResponse<AppConfigurationEntity>> Get(PluginRequestInfo request)
         {
+            string keyword = request.GetParameterValue<string>("keyword");
+            int page = request.GetParameterValue<int>("page", 1);
+            int count = request.GetParameterValue<int>("pageSize", 10);
+
             Expression<Func<AppConfigurationEntity, bool>> filter = null;
 
             if (!string.IsNullOrEmpty(keyword))
@@ -60,7 +56,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
                 filter = a => a.Name.Contains(keyword);
             }
 
-            var total = await this.UCenterDatabase.AppConfigurations.CountAsync(filter, token);
+            var total = await this.UCenterDatabase.AppConfigurations.CountAsync(filter, CancellationToken.None);
 
             IQueryable<AppConfigurationEntity> queryable = this.UCenterDatabase.AppConfigurations.Collection.AsQueryable();
             if (filter != null)
@@ -71,7 +67,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             var result = queryable.Skip((page - 1) * count).Take(count).ToList();
 
             // todo: add orderby support.
-            var model = new PaginationResponse<AppConfigurationEntity>
+            var model = new PluginPaginationResponse<AppConfigurationEntity>
             {
                 Page = page,
                 PageSize = count,
@@ -80,19 +76,6 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             };
 
             return model;
-        }
-
-        /// <summary>
-        /// Get single user details.
-        /// </summary>
-        /// <param name="id">Indicating the user id.</param>
-        /// <param name="token">Indicating the cancellation token.</param>
-        /// <returns>Async return user details.</returns>
-        public async Task<AppConfigurationEntity> Get(string id, CancellationToken token)
-        {
-            var result = await this.UCenterDatabase.AppConfigurations.GetSingleAsync(id, token);
-
-            return result;
         }
     }
 }
