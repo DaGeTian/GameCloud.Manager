@@ -1,0 +1,99 @@
+﻿{
+  "Name": "UCenter",
+  "DisplayName": "UCenter管理平台",
+  "Description": "UCenter plugin",
+  "Certificate": { "Thumbnail": "abfdasfasf" },
+  "Categories": [
+    {
+      "Name": "events",
+      "DisplayName": "事件查看",
+      "Description": "事件管理",
+      "Pages": [
+        {
+          "Name": "accounteventsearch",
+          "DisplayName": "玩家事件",
+          "Type": "List",
+          "Method": "GET"
+        },
+        {
+          "Name": "erroreventsearch",
+          "DisplayName": "错误事件",
+          "Type": "List",
+          "Method": "GET"
+        },
+        {
+          "Name": "accounteventsearch",
+          "DisplayName": "玩家事件",
+          "Type": "List",
+          "Method": "GET"
+        }
+      ]
+    },
+    {
+      "Name": "playeranalytics",
+      "DisplayName": "玩家分析",
+      "Description": "玩家分析",
+      "Pages": [
+        {
+          "Name": "newusers",
+          "DisplayName": "新增玩家",
+          "Type": "Report",
+          "Method": "GET"
+        },
+        {
+          "Name": "activeusers",
+          "DisplayName": "活跃玩家",
+          "Type": "Report",
+          "Method": "GET"
+        },
+        {
+          "Name": "staystatistics",
+          "DisplayName": "留存统计",
+          "Type": "Report",
+          "Method": "GET"
+        },
+        {
+          "Name": "loststatistics",
+          "DisplayName": "流失统计",
+          "Type": "Report",
+          "Method": "GET"
+        }
+      ]
+    },
+    {
+      "Name": "onlineanalytics",
+      "DisplayName": "在线分析",
+      "Description": "在线分析",
+      "Pages": [
+        {
+          "Name": "onlineanalytics",
+          "DisplayName": "在线分析",
+          "Type": "Report",
+          "Method": "GET"
+        }
+      ]
+    },
+    {
+      "Pages": [
+        {
+          "Name": "appsearch",
+          "DisplayName": "App管理",
+          "Type": "List",
+          "Method": "GET"
+        },
+        {
+          "Name": "realtimeglance",
+          "DisplayName": "实时状况",
+          "Type": "Report",
+          "Method": "GET"
+        },
+        {
+          "Name": "onlinebehaviour",
+          "DisplayName": "在线习惯",
+          "Type": "Report",
+          "Method": "GET"
+        }
+      ]
+    }
+  ]
+}

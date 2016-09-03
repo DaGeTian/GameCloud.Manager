@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "Angular.UI.Bootstrap": "2.1.3",
+    "AngularJS.Core": "1.5.8",
+    "AngularJS.Route": "1.5.8",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Razor.Tools": {

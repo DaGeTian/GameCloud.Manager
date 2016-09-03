@@ -298,15 +298,6 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                             })
                         }
                     });
-
-                    if (p.items) {
-                        p.items.forEach(function (i) {
-                            $routeProvider.when('/p:' + p.name + '/i:' + i.name, {
-                                templateUrl: '/plugins/_templates/views/' + i.type + '.html',
-                                controller: i.controller
-                            });
-                        })
-                    }
                 }
             });
             $routeProvider.otherwise({
