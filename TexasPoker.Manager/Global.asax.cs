@@ -5,6 +5,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using GameCloud.UCenter.Common.MEF;
 using GameCloud.UCenter.Common.Settings;
+using GameCloud.UCenter.Database;
 using GameCloud.UCenter.Web.Common;
 
 namespace Manager.TexasPoker
@@ -31,6 +32,10 @@ namespace Manager.TexasPoker
             SettingsInitializer.Initialize<Settings>(
                 exportProvider,
                 SettingsDefaultValueProvider<Settings>.Default,
+                AppConfigurationValueProvider.Default);
+            SettingsInitializer.Initialize<TexasPokerDatabaseContextSettings>(
+                exportProvider,
+                SettingsDefaultValueProvider<TexasPokerDatabaseContextSettings>.Default,
                 AppConfigurationValueProvider.Default);
         }
     }
