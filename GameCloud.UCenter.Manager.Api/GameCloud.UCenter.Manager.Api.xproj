@@ -16,6 +16,7 @@
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameCloud.Database\GameCloud.Database.csproj" />
     <ProjectReference Include="..\GameCloud.UCenter.Database\GameCloud.UCenter.Database.csproj" />
     <ProjectReference Include="..\GameCloud.UCenter.Web.Common\GameCloud.UCenter.Web.Common.csproj" />
   </ItemGroup>

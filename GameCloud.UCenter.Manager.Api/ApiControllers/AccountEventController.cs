@@ -1,11 +1,17 @@
-﻿using System.ComponentModel.Composition;
+﻿using System;
+using System.ComponentModel.Composition;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
+using GameCloud.Database.Adapters;
 using GameCloud.UCenter.Common.Settings;
 using GameCloud.UCenter.Database;
 using GameCloud.UCenter.Database.Entities;
 using GameCloud.UCenter.Web.Common.Modes;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
+using GameCloud.Database.Adapters;
 
 namespace GameCloud.UCenter.Manager.Api.ApiControllers
 {
@@ -19,11 +25,15 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorEventsController" /> class.
         /// </summary>
-        /// <param name="database">Indicating the database context.</param>
+        /// <param name="ucenterDb">Indicating the database context.</param>
+        /// <param name="ucenterventDb">Indicating the database context.</param>
         /// <param name="settings">Indicating the settings.</param>
         [ImportingConstructor]
-        public AccountEventsController(UCenterDatabaseContext database, Settings settings)
-            : base(database, settings)
+        public AccountEventsController(
+            UCenterDatabaseContext ucenterDb,
+            UCenterEventDatabaseContext ucenterventDb,
+            Settings settings)
+            : base(ucenterDb, ucenterventDb, settings)
         {
         }
 
@@ -44,35 +54,34 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             int page = 1,
             int count = 1000)
         {
-            //Expression<Func<AccountEventEntity, bool>> filter = null;
+            Expression<Func<AccountEventEntity, bool>> filter = null;
 
-            //if (!string.IsNullOrEmpty(keyword))
-            //{
-            //    filter = a => a.AccountName.Contains(keyword);
-            //}
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                filter = a => a.AccountName.Contains(keyword);
+            }
 
-            //var total = await this.Database.AccountEvents.CountAsync(filter, token);
+            var total = await this.UCenterEventDatabase.AccountEvents.CountAsync(filter, token);
 
-            //IQueryable<AccountEventEntity> queryable = this.Database.AccountEvents.Collection.AsQueryable();
-            //if (filter != null)
-            //{
-            //    queryable = queryable.Where(filter);
-            //}
-            //queryable = queryable.OrderByDescending(a => a.CreatedTime);
+            IQueryable<AccountEventEntity> queryable = this.UCenterEventDatabase.AccountEvents.Collection.AsQueryable();
+            if (filter != null)
+            {
+                queryable = queryable.Where(filter);
+            }
+            queryable = queryable.OrderByDescending(a => a.CreatedTime);
 
-            //var result = queryable.Skip((page - 1) * count).Take(count).ToList();
+            var result = queryable.Skip((page - 1) * count).Take(count).ToList();
 
-            //// todo: add orderby support.
-            //var model = new PaginationResponse<AccountEventEntity>
-            //{
-            //    Page = page,
-            //    PageSize = count,
-            //    Raws = result,
-            //    Total = total
-            //};
+            // todo: add orderby support.
+            var model = new PaginationResponse<AccountEventEntity>
+            {
+                Page = page,
+                PageSize = count,
+                Raws = result,
+                Total = total
+            };
 
-            //return model;
-            return null;
+            return model;
         }
 
         /// <summary>
@@ -83,10 +92,9 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <returns>Async return user details.</returns>
         public async Task<AccountEventEntity> Get(string id, CancellationToken token)
         {
-            //var result = await this.Database.AccountEvents.GetSingleAsync(id, token);
+            var result = await this.UCenterEventDatabase.AccountEvents.GetSingleAsync(id, token);
 
-            //return result;
-            return null;
+            return result;
         }
     }
 }

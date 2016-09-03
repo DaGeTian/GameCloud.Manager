@@ -49,6 +49,7 @@ namespace GameCloud.UCenter.Manager.Api
             services.AddMvc();
             services.AddSingleton<Settings>(this.exportProvider.GetExportedValue<Settings>());
             services.AddSingleton<UCenterDatabaseContext>(this.exportProvider.GetExportedValue<UCenterDatabaseContext>());
+            services.AddSingleton<UCenterEventDatabaseContext>(this.exportProvider.GetExportedValue<UCenterEventDatabaseContext>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -23,6 +23,9 @@
         "System.ComponentModel.Composition": "4.0.0.0"
       },
       "dependencies": {
+        "GameCloud.Database": {
+          "target": "project"
+        },
         "GameCloud.UCenter.Database": {
           "target": "project"
         },

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Composition;
 using GameCloud.UCenter.Common.Settings;
+using GameCloud.UCenter;
 using GameCloud.UCenter.Database;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,19 +15,29 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiControllerBase" /> class.
         /// </summary>
-        /// <param name="database">Indicating the database.</param>
+        /// <param name="ucenterDb">Indicating the database.</param>
+        /// <param name="ucenterEventDb">Indicating the database.</param>
         /// <param name="settings">Indicating the settings.</param>
         [ImportingConstructor]
-        public ApiControllerBase(UCenterDatabaseContext database, Settings settings)
+        public ApiControllerBase(
+            UCenterDatabaseContext ucenterDb,
+            UCenterEventDatabaseContext ucenterEventDb,
+            Settings settings)
         {
-            this.Database = database;
+            this.UCenterDatabase = ucenterDb;
+            this.UCenterEventDatabase = ucenterEventDb;
             this.Settings = settings;
         }
 
         /// <summary>
         /// Gets the database context.
         /// </summary>
-        protected UCenterDatabaseContext Database { get; private set; }
+        protected UCenterDatabaseContext UCenterDatabase { get; private set; }
+
+        /// <summary>
+        /// Gets the database context.
+        /// </summary>
+        protected UCenterEventDatabaseContext UCenterEventDatabase { get; private set; }
 
         /// <summary>
         /// Gets the settings.

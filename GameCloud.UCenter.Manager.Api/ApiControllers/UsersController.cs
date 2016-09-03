@@ -24,11 +24,15 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <summary>
         /// Initializes a new instance of the <see cref="UsersController" /> class.
         /// </summary>
-        /// <param name="database">Indicating the database context.</param>
+        /// <param name="ucenterDb">Indicating the database context.</param>
+        /// <param name="ucenterventDb">Indicating the database context.</param>
         /// <param name="settings">Indicating the settings.</param>
         [ImportingConstructor]
-        public UsersController(UCenterDatabaseContext database, Settings settings)
-            : base(database, settings)
+        public UsersController(
+            UCenterDatabaseContext ucenterDb,
+            UCenterEventDatabaseContext ucenterventDb,
+            Settings settings)
+            : base(ucenterDb, ucenterventDb, settings)
         {
         }
 
@@ -58,9 +62,9 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
                     || a.Phone.Contains(keyword);
             }
 
-            var total = await this.Database.Accounts.CountAsync(filter, token);
+            var total = await this.UCenterDatabase.Accounts.CountAsync(filter, token);
 
-            IQueryable<AccountEntity> queryable = this.Database.Accounts.Collection.AsQueryable();
+            IQueryable<AccountEntity> queryable = this.UCenterDatabase.Accounts.Collection.AsQueryable();
             if (filter != null)
             {
                 queryable = queryable.Where(filter);
@@ -89,7 +93,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <returns>Async return user details.</returns>
         public async Task<AccountEntity> Get(string id, CancellationToken token)
         {
-            var result = await this.Database.Accounts.GetSingleAsync(id, token);
+            var result = await this.UCenterDatabase.Accounts.GetSingleAsync(id, token);
 
             return result;
         }

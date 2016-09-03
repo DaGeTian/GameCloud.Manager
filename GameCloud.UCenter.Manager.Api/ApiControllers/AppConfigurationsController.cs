@@ -24,11 +24,15 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <summary>
         /// Initializes a new instance of the <see cref="AppsController" /> class.
         /// </summary>
-        /// <param name="database">Indicating the database context.</param>
+        /// <param name="ucenterDb">Indicating the database context.</param>
+        /// <param name="ucenterventDb">Indicating the database context.</param>
         /// <param name="settings">Indicating the settings.</param>
         [ImportingConstructor]
-        public AppConfigurationsController(UCenterDatabaseContext database, Settings settings)
-            : base(database, settings)
+        public AppConfigurationsController(
+            UCenterDatabaseContext ucenterDb,
+            UCenterEventDatabaseContext ucenterventDb,
+            Settings settings)
+            : base(ucenterDb, ucenterventDb, settings)
         {
         }
 
@@ -56,9 +60,9 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
                 filter = a => a.Name.Contains(keyword);
             }
 
-            var total = await this.Database.AppConfigurations.CountAsync(filter, token);
+            var total = await this.UCenterDatabase.AppConfigurations.CountAsync(filter, token);
 
-            IQueryable<AppConfigurationEntity> queryable = this.Database.AppConfigurations.Collection.AsQueryable();
+            IQueryable<AppConfigurationEntity> queryable = this.UCenterDatabase.AppConfigurations.Collection.AsQueryable();
             if (filter != null)
             {
                 queryable = queryable.Where(filter);
@@ -86,7 +90,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <returns>Async return user details.</returns>
         public async Task<AppConfigurationEntity> Get(string id, CancellationToken token)
         {
-            var result = await this.Database.AppConfigurations.GetSingleAsync(id, token);
+            var result = await this.UCenterDatabase.AppConfigurations.GetSingleAsync(id, token);
 
             return result;
         }

@@ -11,6 +11,7 @@ using GameCloud.UCenter.Database.Entities;
 using GameCloud.UCenter.Web.Common.Modes;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using GameCloud.Database.Adapters;
 
 namespace GameCloud.UCenter.Manager.Api.ApiControllers
 {
@@ -24,11 +25,15 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <summary>
         /// Initializes a new instance of the <see cref="AppsController" /> class.
         /// </summary>
-        /// <param name="database">Indicating the database context.</param>
+        /// <param name="ucenterDb">Indicating the database context.</param>
+        /// <param name="ucenterventDb">Indicating the database context.</param>
         /// <param name="settings">Indicating the settings.</param>
         [ImportingConstructor]
-        public AppsController(UCenterDatabaseContext database, Settings settings)
-            : base(database, settings)
+        public AppsController(
+            UCenterDatabaseContext ucenterDb,
+            UCenterEventDatabaseContext ucenterventDb,
+            Settings settings)
+            : base(ucenterDb, ucenterventDb, settings)
         {
         }
 
@@ -56,9 +61,9 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
                 filter = a => a.Name.Contains(keyword);
             }
 
-            var total = await this.Database.Apps.CountAsync(filter, token);
+            var total = await this.UCenterDatabase.Apps.CountAsync(filter, token);
 
-            IQueryable<AppEntity> queryable = this.Database.Apps.Collection.AsQueryable();
+            IQueryable<AppEntity> queryable = this.UCenterDatabase.Apps.Collection.AsQueryable();
             if (filter != null)
             {
                 queryable = queryable.Where(filter);
@@ -87,7 +92,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <returns>Async return user details.</returns>
         public async Task<AppEntity> Get(string id, CancellationToken token)
         {
-            var result = await this.Database.Apps.GetSingleAsync(id, token);
+            var result = await this.UCenterDatabase.Apps.GetSingleAsync(id, token);
 
             return result;
         }
