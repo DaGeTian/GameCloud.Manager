@@ -10,8 +10,9 @@ using GameCloud.UCenter.Web.Common.Modes;
 using MongoDB.Driver;
 using TexasPoker.Database;
 using TexasPoker.Database.Entities;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Manager.TexasPoker.ApiControllers
+namespace TexasPoker.Manager.Api.ApiControllers
 {
     /// <summary>
     /// Provide a controller for players
@@ -40,6 +41,7 @@ namespace Manager.TexasPoker.ApiControllers
         /// <param name="page">Indicating the page number.</param>
         /// <param name="count">Indicating the count.</param>
         /// <returns>Async return event list.</returns>
+        [Route("api/players")]
         public async Task<PaginationResponse<PlayerEntity>> Get(
             CancellationToken token,
             string keyword = null,

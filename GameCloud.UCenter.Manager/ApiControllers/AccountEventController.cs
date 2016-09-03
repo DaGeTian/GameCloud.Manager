@@ -49,34 +49,35 @@ namespace GameCloud.UCenter.Manager.ApiControllers
             [FromUri] int page = 1,
             [FromUri] int count = 1000)
         {
-            Expression<Func<AccountEventEntity, bool>> filter = null;
+            //Expression<Func<AccountEventEntity, bool>> filter = null;
 
-            if (!string.IsNullOrEmpty(keyword))
-            {
-                filter = a => a.AccountName.Contains(keyword);
-            }
+            //if (!string.IsNullOrEmpty(keyword))
+            //{
+            //    filter = a => a.AccountName.Contains(keyword);
+            //}
 
-            var total = await this.Database.AccountEvents.CountAsync(filter, token);
+            //var total = await this.Database.AccountEvents.CountAsync(filter, token);
 
-            IQueryable<AccountEventEntity> queryable = this.Database.AccountEvents.Collection.AsQueryable();
-            if (filter != null)
-            {
-                queryable = queryable.Where(filter);
-            }
-            queryable = queryable.OrderByDescending(a => a.CreatedTime);
+            //IQueryable<AccountEventEntity> queryable = this.Database.AccountEvents.Collection.AsQueryable();
+            //if (filter != null)
+            //{
+            //    queryable = queryable.Where(filter);
+            //}
+            //queryable = queryable.OrderByDescending(a => a.CreatedTime);
 
-            var result = queryable.Skip((page - 1) * count).Take(count).ToList();
+            //var result = queryable.Skip((page - 1) * count).Take(count).ToList();
 
-            // todo: add orderby support.
-            var model = new PaginationResponse<AccountEventEntity>
-            {
-                Page = page,
-                PageSize = count,
-                Raws = result,
-                Total = total
-            };
+            //// todo: add orderby support.
+            //var model = new PaginationResponse<AccountEventEntity>
+            //{
+            //    Page = page,
+            //    PageSize = count,
+            //    Raws = result,
+            //    Total = total
+            //};
 
-            return model;
+            //return model;
+            return null;
         }
 
         /// <summary>
@@ -87,9 +88,10 @@ namespace GameCloud.UCenter.Manager.ApiControllers
         /// <returns>Async return user details.</returns>
         public async Task<AccountEventEntity> Get(string id, CancellationToken token)
         {
-            var result = await this.Database.AccountEvents.GetSingleAsync(id, token);
+            //var result = await this.Database.AccountEvents.GetSingleAsync(id, token);
 
-            return result;
+            //return result;
+            return null;
         }
     }
 }

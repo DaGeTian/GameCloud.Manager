@@ -3,7 +3,7 @@ using GameCloud.UCenter.Common.Settings;
 using Microsoft.AspNetCore.Mvc;
 using TexasPoker.Database;
 
-namespace Manager.TexasPoker.ApiControllers
+namespace TexasPoker.Manager.Api.ApiControllers
 {
     /// <summary>
     /// Provide an API controller base class.

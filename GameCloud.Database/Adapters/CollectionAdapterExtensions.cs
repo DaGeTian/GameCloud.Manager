@@ -20,7 +20,10 @@ namespace GameCloud.Database.Adapters
         /// <param name="entity">Indicating the document entity.</param>
         /// <param name="token">Indicating the cancellation token.</param>
         /// <returns>Async task.</returns>
-        public static Task DeleteAsync<TEntity>(this ICollectionAdapter<TEntity> adapter, TEntity entity, CancellationToken token)
+        public static Task DeleteAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            TEntity entity,
+            CancellationToken token)
             where TEntity : EntityBase
         {
             return adapter.DeleteAsync(entity.Id, token);
@@ -35,7 +38,10 @@ namespace GameCloud.Database.Adapters
         /// <param name="token">Indicating the cancellation token.</param>
         /// <returns>Async task.</returns>
         /// <returns></returns>
-        public static Task DeleteAsync<TEntity>(this ICollectionAdapter<TEntity> adapter, string id, CancellationToken token)
+        public static Task DeleteAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            string id,
+            CancellationToken token)
             where TEntity : EntityBase
         {
             return adapter.DeleteAsync(e => e.Id == id, token);
@@ -49,7 +55,10 @@ namespace GameCloud.Database.Adapters
         /// <param name="id">Indicating the document id.</param>
         /// <param name="token">Indicating the cancellation token.</param>
         /// <returns>Async return document entity.</returns>
-        public static Task<TEntity> GetSingleAsync<TEntity>(this ICollectionAdapter<TEntity> adapter, string id, CancellationToken token)
+        public static Task<TEntity> GetSingleAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            string id,
+            CancellationToken token)
             where TEntity : EntityBase
         {
             return adapter.GetSingleAsync(e => e.Id == id, token);
@@ -63,7 +72,10 @@ namespace GameCloud.Database.Adapters
         /// <param name="filter">Indicating the filter expression.</param>
         /// <param name="token">Indicating the cancellation token.</param>
         /// <returns>Async return count.</returns>
-        public static Task<long> CountAsync<TEntity>(this ICollectionAdapter<TEntity> adapter, Expression<Func<TEntity, bool>> filter, CancellationToken token)
+        public static Task<long> CountAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            Expression<Func<TEntity, bool>> filter,
+            CancellationToken token)
             where TEntity : EntityBase
         {
             return adapter.CountAsync(filter, null, token);
@@ -77,10 +89,30 @@ namespace GameCloud.Database.Adapters
         /// <param name="entity">Indicating the document entity.</param>
         /// <param name="token">Indicating the cancellation token.</param>
         /// <returns>Async task.</returns>
-        public static Task<TEntity> InsertAsync<TEntity>(this ICollectionAdapter<TEntity> adapter, TEntity entity, CancellationToken token)
+        public static Task<TEntity> InsertAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            TEntity entity,
+            CancellationToken token)
             where TEntity : EntityBase
         {
             return adapter.InsertAsync(entity, null, token);
+        }
+
+        /// <summary>
+        /// Batch insert document entity.
+        /// </summary>
+        /// <typeparam name="TEntity">Indicating the document type.</typeparam>
+        /// <param name="adapter">Indicating the document adapter.</param>
+        /// <param name="entities">Indicating the document entity list for batch insert.</param>
+        /// <param name="token">Indicating the cancellation token.</param>
+        /// <returns>Async task.</returns>
+        public static Task<IReadOnlyList<TEntity>> InsertManyAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            IReadOnlyList<TEntity> entities,
+            CancellationToken token)
+            where TEntity : EntityBase
+        {
+            return adapter.InsertManyAsync(entities, null, token);
         }
 
         /// <summary>
@@ -89,12 +121,24 @@ namespace GameCloud.Database.Adapters
         /// <typeparam name="TEntity">Indicating the document type.</typeparam>
         /// <param name="adapter">Indicating the document adapter.</param>
         /// <param name="entity">Indicating the document entity.</param>
+        /// <param name="filter">Indicating the filter for filter.</param>
+        /// <param name="update">Indicating the update for update.</param>
         /// <param name="token">Indicating the cancellation token.</param>
         /// <returns>Async task.</returns>
-        public static Task<TEntity> UpdateAsync<TEntity>(this ICollectionAdapter<TEntity> adapter, TEntity entity, CancellationToken token)
+        public static Task<UpdateResult> UpdateOneAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            TEntity entity,
+            FilterDefinition<TEntity> filter,
+            UpdateDefinition<TEntity> update,
+            CancellationToken token)
            where TEntity : EntityBase
         {
-            return adapter.UpdateAsync(entity, null, token);
+            return adapter.UpdateOneAsync(
+                entity,
+                filter,
+                update,
+                new UpdateOptions { IsUpsert = true },
+                token);
         }
 
         /// <summary>
@@ -105,10 +149,13 @@ namespace GameCloud.Database.Adapters
         /// <param name="entity">Indicating the document entity.</param>
         /// <param name="token">Indicating the cancellation token.</param>
         /// <returns>Async task.</returns>
-        public static Task<TEntity> UpsertAsync<TEntity>(this ICollectionAdapter<TEntity> adapter, TEntity entity, CancellationToken token)
+        public static Task<TEntity> UpsertAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            TEntity entity,
+            CancellationToken token)
            where TEntity : EntityBase
         {
-            return adapter.UpdateAsync(
+            return adapter.ReplaceOneAsync(
                 entity,
                 new UpdateOptions { IsUpsert = true },
                 token);
@@ -122,13 +169,20 @@ namespace GameCloud.Database.Adapters
         /// <param name="filter">Indicating the filter expression.</param>
         /// <param name="token">Indicating the cancellation token.</param>
         /// <returns>Async return list.</returns>
-        public static Task<IReadOnlyList<TEntity>> GetListAsync<TEntity>(this ICollectionAdapter<TEntity> adapter, Expression<Func<TEntity, bool>> filter, CancellationToken token)
+        public static Task<IReadOnlyList<TEntity>> GetListAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            Expression<Func<TEntity, bool>> filter,
+            CancellationToken token)
            where TEntity : EntityBase
         {
             return adapter.GetListAsync(filter, null, token);
         }
 
-        public static Task<string> CreateIndexIfNotExistAsync<TEntity>(this ICollectionAdapter<TEntity> adapter, IndexKeysDefinition<TEntity> keys, CreateIndexOptions options, CancellationToken token)
+        public static Task<string> CreateIndexIfNotExistAsync<TEntity>(
+            this ICollectionAdapter<TEntity> adapter,
+            IndexKeysDefinition<TEntity> keys,
+            CreateIndexOptions options,
+            CancellationToken token)
            where TEntity : EntityBase
         {
             return adapter.CreateIndexIfNotExistAsync(keys, options, token);

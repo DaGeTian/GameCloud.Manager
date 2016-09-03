@@ -4,15 +4,15 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
-using GameCloud.UCenter.Common.Settings;
 using GameCloud.Database.Adapters;
+using GameCloud.UCenter.Common.Settings;
 using GameCloud.UCenter.Web.Common.Modes;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using TexasPoker.Database;
 using TexasPoker.Database.Entities;
 
-
-namespace Manager.TexasPoker.ApiControllers
+namespace TexasPoker.Manager.Api.ApiControllers
 {
     /// <summary>
     /// Provide a controller for players
@@ -41,6 +41,7 @@ namespace Manager.TexasPoker.ApiControllers
         /// <param name="page">Indicating the page number.</param>
         /// <param name="count">Indicating the count.</param>
         /// <returns>Async return event list.</returns>
+        [Route("api/bots")]
         public async Task<PaginationResponse<PlayerEntity>> Get(
             CancellationToken token,
             string keyword = null,

@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition.Hosting;
 using GameCloud.Database;
 using GameCloud.Database.Adapters;
+using GameCloud.UCenter.Database;
 using TexasPoker.Database.Entities;
 
 namespace TexasPoker.Database
@@ -10,7 +11,7 @@ namespace TexasPoker.Database
     public class TexasPokerDatabaseContext : DatabaseContext
     {
         [ImportingConstructor]
-        public TexasPokerDatabaseContext(ExportProvider exportProvider, DatabaseContextSettings settings)
+        public TexasPokerDatabaseContext(ExportProvider exportProvider, TexasPokerDatabaseContextSettings settings)
             : base(exportProvider, settings)
         {
         }

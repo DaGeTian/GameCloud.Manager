@@ -19,7 +19,6 @@ namespace Manager.TexasPoker.ApiControllers
     /// </summary>
     [Export]
     [PartCreationPolicy(CreationPolicy.NonShared)]
-    [RoutePrefix("api/events")]
     public class BuyChipsEventsController : ApiControllerBase
     {
         /// <summary>
@@ -42,13 +41,13 @@ namespace Manager.TexasPoker.ApiControllers
         /// <param name="page">Indicating the page number.</param>
         /// <param name="count">Indicating the count.</param>
         /// <returns>Async return event list.</returns>
-        [Route("BuyChips")]
+        [Route("api/events/BuyChips")]
         public async Task<PaginationResponse<BuyChipsEventEntity>> Get(
             CancellationToken token,
-            [FromUri] string keyword = null,
-            [FromUri] string orderby = null,
-            [FromUri] int page = 1,
-            [FromUri] int count = 1000)
+            string keyword = null,
+            string orderby = null,
+            int page = 1,
+            int count = 1000)
         {
             Expression<Func<BuyChipsEventEntity, bool>> filter = null;
 

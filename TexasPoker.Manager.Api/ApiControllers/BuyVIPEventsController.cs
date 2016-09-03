@@ -12,7 +12,7 @@ using MongoDB.Driver;
 using TexasPoker.Database;
 using TexasPoker.Database.Entities;
 
-namespace Manager.TexasPoker.ApiControllers
+namespace TexasPoker.Manager.Api.ApiControllers
 {
     /// <summary>
     /// Provide a controller for events.
