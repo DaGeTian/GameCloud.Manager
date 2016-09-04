@@ -1,0 +1,37 @@
+﻿{
+  "Name": "DemoPlugin",
+  "DisplayName": "Demo管理平台",
+  "Description": "UCenter plugin",
+  "Certificate": { "Thumbnail": "abfdasfasf" },
+  "Url": "http://tp-uc.chinacloudapp.cn:5000/api",
+  "Categories": [
+    {
+      "Name": "plugindemo",
+      "DisplayName": "插件示例",
+      "Description": "插件示例",
+      "Items": [
+        {
+          "Name": "list",
+          "DisplayName": "列表示例",
+          "Type": "List",
+          "Method": "GET",
+          "View": "demo-list.html"
+        },
+        {
+          "Name": "update",
+          "DisplayName": "更新数据示例",
+          "Type": "List",
+          "Method": "GET",
+          "View": "demo-update.html"
+        },
+        {
+          "Name": "report",
+          "DisplayName": "错误事件",
+          "Type": "List",
+          "Method": "GET",
+          "View": "demo-report.html"
+        }
+      ]
+    }
+  ]
+}
