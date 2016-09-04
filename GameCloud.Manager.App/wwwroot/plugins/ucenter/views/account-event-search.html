@@ -12,16 +12,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="row in raws">
-            <td>{{row.AccountName}}</td>
-            <td>{{row.AccountId}}</td>
-            <td>{{row.EventName}}</td>
-            <td>{{row.DeviceId}}</td>
-            <td>{{row.ClientIp}}</td>
-            <td>{{row.LoginArea}}</td>
-            <td>{{row.UserAgent}}</td>
-            <td>{{row.Message}}</td>
-            <td>{{row.CreatedTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+        <tr ng-repeat="row in data.raws">
+            <td>{{row.accountName}}</td>
+            <td>{{row.accountId}}</td>
+            <td>{{row.eventName}}</td>
+            <td>{{row.deviceId}}</td>
+            <td>{{row.clientIp}}</td>
+            <td>{{row.loginArea}}</td>
+            <td>{{row.userAgent}}</td>
+            <td>{{row.message}}</td>
+            <td>{{row.createdTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>

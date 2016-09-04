@@ -8,11 +8,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="row in raws">
-            <td>{{row.PlayerEtGuid}}</td>
-            <td>{{row.ChangeChips}}</td>
-            <td>{{row.AfterChangeChipsNum}}</td>
-            <td>{{row.EventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+        <tr ng-repeat="row in data.raws">
+            <td>{{row.playerEtGuid}}</td>
+            <td>{{row.changeChips}}</td>
+            <td>{{row.afterChangeChipsNum}}</td>
+            <td>{{row.eventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>

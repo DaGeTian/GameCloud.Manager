@@ -10,13 +10,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="row in raws">
-            <td>{{row.BuyPlayerEtGuid}}</td>
-            <td>{{row.Target}}</td>
-            <td>{{row.GiftTbId}}</td>
-            <td>{{row.CostChips}}</td>
-            <td>{{row.AfterBuyChipsNum}}</td>
-            <td>{{row.EventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+        <tr ng-repeat="row in data.raws">
+            <td>{{row.buyPlayerEtGuid}}</td>
+            <td>{{row.target}}</td>
+            <td>{{row.giftTbId}}</td>
+            <td>{{row.costChips}}</td>
+            <td>{{row.afterBuyChipsNum}}</td>
+            <td>{{row.eventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>

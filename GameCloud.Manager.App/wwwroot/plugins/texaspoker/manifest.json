@@ -2,6 +2,7 @@
   "Name": "TexasPoker",
   "DisplayName": "TexasPoker管理平台",
   "Description": "TexasPoker插件",
+  "Url": "http://tp-uc.chinacloudapp.cn:5001/api",
   "Certificate": { "Thumbnail": "" },
   "Categories": [
     {
@@ -13,120 +14,121 @@
           "Name": "player-search",
           "DisplayName": "玩家查询",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "players",
+          "View": "player-search.html"
         },
         {
           "Name": "bot-search",
           "DisplayName": "机器人查询",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "bots",
+          "View": "bot-search.html"
         }
       ]
     },
     {
       "Name": "event",
-      "DisplayName": "玩家分析",
-      "Description": "玩家分析",
+      "DisplayName": "事件查看",
+      "Description": "事件查看",
       "Items": [
         {
-          "Name": "newusers",
+          "Name": "events-buy-chips",
           "DisplayName": "购买筹码",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/BuyChips",
+          "View": "events-buy-chips.html"
         },
         {
-          "Name": "activeusers",
+          "Name": "event-buy-coins",
           "DisplayName": "购买金币",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/BuyCoins",
+          "View": "events-buy-coins.html"
         },
         {
-          "Name": "staystatistics",
+          "Name": "events-buy-vip",
           "DisplayName": "购买VIP",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/BuyVIP",
+          "View": "events-buy-vip.html"
         },
         {
-          "Name": "loststatistics",
+          "Name": "events-chip-buy-gift",
           "DisplayName": "筹码购买礼物",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/ChipBuyGift",
+          "View": "events-chip-buy-gift.html"
         },
         {
-          "Name": "loststatistics",
+          "Name": "events-chip-buy-item",
           "DisplayName": "筹码购买道具",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/ChipBuyItem",
+          "View": "events-chip-buy-item.html"
         },
         {
-          "Name": "loststatistics",
+          "Name": "events-chips-change-by-manager",
           "DisplayName": "管理员修改筹码",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/ChipsChangeByManager",
+          "View": "events-chips-change-by-manager.html"
         },
         {
-          "Name": "loststatistics",
+          "Name": "events-coin-buy-gift",
           "DisplayName": "金币购买礼物",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/CoinBuyGift",
+          "View": "events-coin-buy-gift.html"
         },
         {
-          "Name": "loststatistics",
+          "Name": "events-coin-buy-item",
           "DisplayName": "金币购买道具",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/CoinBuyItem",
+          "View": "events-coin-buy-item.html"
         },
         {
-          "Name": "loststatistics",
+          "Name": "events-daily-get-chips-events",
           "DisplayName": "每日领取筹码",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/DailyGetChips",
+          "View": "events-daily-get-chips-events.html"
         },
         {
-          "Name": "loststatistics",
+          "Name": "events-lost-all-send-chips",
           "DisplayName": "输光赠送筹码",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/LostAllSendChips",
+          "View": "events-lost-all-send-chips.html"
         },
         {
-          "Name": "loststatistics",
-          "DisplayName": "玩家赠送筹码",
-          "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
-        },
-        {
-          "Name": "loststatistics",
+          "Name": "events-player-get-chips-from-other",
           "DisplayName": "玩家接收筹码",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/PlayerGetChipsFromOther",
+          "View": "events-player-get-chips-from-other.html"
         },
         {
-          "Name": "loststatistics",
+          "Name": "events-player-report",
           "DisplayName": "玩家举报",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "events/PlayerReport",
+          "View": "events-player-report.html"
         },
         {
-          "Name": "loststatistics",
+          "Name": "events-player-send-other-chips",
+          "DisplayName": "玩家赠送筹码",
+          "Type": "List",
+          "Route": "events/PlayerSendOtherChips",
+          "View": "events-player-send-other-chips.html"
+        },
+
+        {
+          "Name": "events-texaspoker",
           "DisplayName": "牌局",
           "Type": "List",
-          "Method": "GET",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "api/events/TexasPoker",
+          "View": "events-texaspoker.html"
         }
       ]
     },
@@ -139,7 +141,7 @@
           "Name": "onlineanalytics",
           "DisplayName": "整体统计",
           "Type": "Report",
-          "Method": "GET",
+          "Route": "xxxxxxxxxx",
           "View": "xxxxxxxxxxxxxxxxxx.html"
         }
       ]
@@ -153,7 +155,7 @@
           "Name": "onlineanalytics",
           "DisplayName": "抽水率",
           "Type": "Report",
-          "Method": "GET",
+          "Route": "xxxxxxxxxx",
           "View": "xxxxxxxxxxxxxxxxxx.html"
         }
       ]

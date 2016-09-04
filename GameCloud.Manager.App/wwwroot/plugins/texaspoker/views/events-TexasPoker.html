@@ -18,21 +18,21 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="row in raws">
-            <td>{{row.CardGameType}}</td>
-            <td>{{row.SysPumpingPersent}}</td>
-            <td>{{row.SeatNum}}</td>
-            <td>{{row.GameSpeed}}</td>
-            <td>{{row.DesktopTbId}}</td>
-            <td>{{row.MegaBetNum}}</td>
-            <td>{{row.DesktopEtGuid}}</td>
-            <td>{{row.PlayerCommonInfo}}</td>
-            <td>{{row.PreflopInfo}}</td>
-            <td>{{row.FlopInfo}}</td>
-            <td>{{row.TurnInfo}}</td>
-            <td>{{row.RiverInfo}}</td>
-            <td>{{row.ShowDownInfo}}</td>
-            <td>{{row.EndInfo|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+        <tr ng-repeat="row in data.raws">
+            <td>{{row.cardGameType}}</td>
+            <td>{{row.sysPumpingPersent}}</td>
+            <td>{{row.seatNum}}</td>
+            <td>{{row.gameSpeed}}</td>
+            <td>{{row.desktopTbId}}</td>
+            <td>{{row.megaBetNum}}</td>
+            <td>{{row.desktopEtGuid}}</td>
+            <td>{{row.playerCommonInfo}}</td>
+            <td>{{row.preflopInfo}}</td>
+            <td>{{row.flopInfo}}</td>
+            <td>{{row.turnInfo}}</td>
+            <td>{{row.riverInfo}}</td>
+            <td>{{row.showDownInfo}}</td>
+            <td>{{row.endInfo|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>

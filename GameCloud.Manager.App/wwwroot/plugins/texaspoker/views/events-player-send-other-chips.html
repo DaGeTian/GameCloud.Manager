@@ -9,12 +9,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="row in raws">
-            <td>{{row.SendPlayerEtGuid}}</td>
-            <td>{{row.TargetPlayerEtGuid}}</td>
-            <td>{{row.SendChipsNum}}</td>
-            <td>{{row.AfterSendChipsNum}}</td>
-            <td>{{row.EventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+        <tr ng-repeat="row in data.raws">
+            <td>{{row.sendPlayerEtGuid}}</td>
+            <td>{{row.targetPlayerEtGuid}}</td>
+            <td>{{row.sendChipsNum}}</td>
+            <td>{{row.afterSendChipsNum}}</td>
+            <td>{{row.eventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>

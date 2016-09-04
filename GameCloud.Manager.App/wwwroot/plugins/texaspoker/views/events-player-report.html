@@ -8,11 +8,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="row in raws">
-            <td>{{row.EventTm}}</td>
-            <td>{{row.ReportPlayer}}</td>
-            <td>{{row.BeingReportedPlayer}}</td>
-            <td>{{row.ReportType|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+        <tr ng-repeat="row in data.raws">
+            <td>{{row.eventTm}}</td>
+            <td>{{row.reportPlayer}}</td>
+            <td>{{row.beingReportedPlayer}}</td>
+            <td>{{row.reportType|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>

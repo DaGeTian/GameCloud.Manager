@@ -9,12 +9,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="row in raws">
-            <td>{{row.BuyPlayerEtGuid}}</td>
-            <td>{{row.BuyVIPDays}}</td>
-            <td>{{row.AfterBuyDays}}</td>
-            <td>{{row.CostMoney}}</td>
-            <td>{{row.EventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+        <tr ng-repeat="row in data.raws">
+            <td>{{row.buyPlayerEtGuid}}</td>
+            <td>{{row.buyVIPDays}}</td>
+            <td>{{row.afterBuyDays}}</td>
+            <td>{{row.costMoney}}</td>
+            <td>{{row.eventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>
