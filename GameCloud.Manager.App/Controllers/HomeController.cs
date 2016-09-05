@@ -23,12 +23,21 @@ namespace GameCloud.Manager.App.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(this.manager.Plugins);
         }
 
-        public IActionResult Plugin()
+        public IActionResult Plugin(string name)
         {
-            return View();
+            if (!string.IsNullOrEmpty(name))
+            {
+                var plugin = this.manager.GetPlugin(name);
+                if (plugin != null)
+                {
+                    return View(plugin);
+                }
+            }
+
+            return NotFound();
         }
 
         public IActionResult About()
@@ -48,27 +57,6 @@ namespace GameCloud.Manager.App.Controllers
         public IActionResult Error()
         {
             return View();
-        }
-
-        public override void OnActionExecuted(ActionExecutedContext context)
-        {
-            try
-            {
-                var descriptor = context.ActionDescriptor as ControllerActionDescriptor;
-                if (descriptor != null && (descriptor.ActionName.ToLower() == "index" || descriptor.ActionName.ToLower() == "plugin"))
-                {
-                    this.ViewBag.StartupScript =
-                        string.Format(CultureInfo.InvariantCulture,
-                        "var $plugins={0};",
-                        JsonConvert.SerializeObject(this.manager.Plugins));
-                }
-            }
-            catch (Exception ex)
-            {
-                // CustomTrace.TraceError(ex, "Inject plugin json failed");
-            }
-
-            base.OnActionExecuted(context);
         }
     }
 }

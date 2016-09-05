@@ -75,6 +75,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
 
         var observerCallbacks = [];
 
+        this.plugin = $plugin;
         //register an observer
         this.registerObserverCallback = function (callback) {
             observerCallbacks.push(callback);
@@ -87,60 +88,26 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
             });
         };
 
-        this.setCurrent = function (path) {
-            var paths = path.split('/');
-            var plugin = null;
-            var category = null;
-            var item = null;
-            for (var i = 0; i < paths.length; i++) {
-                var p = paths[i];
-                if (p) {
-                    var kv = p.split(':');
-                    var k = kv[0];
-                    var v = kv[1];
-                    switch (k) {
-                        case 'p':
-                            plugin = find(this.plugins, v);
-                            break;
-                        case 'c':
-                            if (plugin) {
-                                category = find(plugin.categories, v);
-                            }
-                            break;
-                        case 'i':
-                            if (category) {
-                                item = find(category.items, v);
-                            } else if (plugin) {
-                                item = find(plugin.items, v);
-                            }
-                            break;
-                    }
-                }
+        this.setCurrent = function (route) {
+            var regex = /\/category\/([^\/]*)\/item\/([^\/]*)/;
+            var match = regex.exec(route);
+            if (match != null) {
+                var categoryName = match[1];
+                var itemName = match[2];
+
             }
-            this.plugin = plugin;
-            this.category = category;
-            this.item = item;
+            this.category = find(this.plugin.categories, categoryName);
+            if (this.category) {
+                this.item = find(this.category.items, itemName);
+            } else {
+                this.item = null;
+            }
         };
 
         var _this = this;
-        this.init = function (route, data) {
-            this.plugins = data || this.plugins;
-            if (!this.plugins) {
-                $http.get('/api/plugins').then(function (response) {
-                    _this.plugins = response.data;
-                    _this.init(route);
-                    initRouteProvider(_this.plugins);
-                    $location.url($location.url());
-                }, function (response) {
-                    console.log('get plugin list error:', response);
-                });
-            } else {
-                if (this.plugins && route) {
-                    this.setCurrent(route);
-                }
-
-                notifyObservers();
-            }
+        this.init = function (route) {
+            this.setCurrent(route);
+            notifyObservers();
         };
     }])
     .controller('baseController', ['$scope', '$http', '$location', '$templateCache', 'pluginService', function ($scope, $http, $location, $templateCache, pluginService) {
@@ -276,40 +243,35 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         $scope.fetch();
     }])
     .config(['$routeProvider', function ($routeProvider) {
-        if ($plugins) {
-            $plugins.forEach(function (p) {
-                $routeProvider.when('/p:' + p.name, {
-                    templateUrl: '/plugins/_templates/views/plugin.html',
-                    controller: 'pluginController'
-                });
-
-                if (p.categories) {
-                    p.categories.forEach(function (c) {
-                        $routeProvider.when('/p:' + p.name + '/c:' + c.name, {
-                            templateUrl: '/plugins/_templates/views/category.html',
-                            controller: 'categoryController'
-                        });
-
-                        if (c.items) {
-                            c.items.forEach(function (i) {
-                                $routeProvider.when('/p:' + p.name + '/c:' + c.name + '/i:' + i.name, {
-                                    templateUrl: '/plugins/_templates/views/' + i.type + '.html',
-                                    controller: i.controller
-                                });
-                            })
-                        }
+        if ($plugin) {
+            if ($plugin.categories) {
+                $plugin.categories.forEach(function (c) {
+                    $routeProvider.when('/category/' + c.name, {
+                        templateUrl: '/plugins/_templates/views/category.html',
+                        controller: 'categoryController'
                     });
-                }
-            });
-            $routeProvider.otherwise({
-                templateUrl: '/plugins/_templates/views/error.html'
-            });
+
+                    if (c.items) {
+                        c.items.forEach(function (i) {
+                            $routeProvider.when('/category/' + c.name + '/item/' + i.name, {
+                                templateUrl: '/plugins/_templates/views/' + i.type + '.html',
+                                controller: i.controller
+                            });
+                        })
+                    }
+                });
+            }
         }
+
+        $routeProvider.otherwise({
+            templateUrl: '/plugins/_templates/views/plugin.html',
+            controller: 'pluginController'
+        });
     }])
     .run(['$rootScope', '$location', '$http', 'pluginService', function ($rootScope, $location, $http, pluginService) {
         $rootScope.$on('$routeChangeStart', function (next, current) {
             pluginService.init($location.path());
         });
 
-        pluginService.init($location.path(), $plugins);
+        pluginService.init($location.path());
     }]);

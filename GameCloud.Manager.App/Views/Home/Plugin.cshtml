@@ -1,10 +1,17 @@
-﻿@{
+﻿@using GameCloud.Manager.App.Models;
+@using Newtonsoft.Json;
+@model Plugin
+@{
     ViewBag.Title = "Plugin";
 }
 
+<script type="text/javascript">
+    var $plugin=@Html.Raw(JsonConvert.SerializeObject(Model));
+</script>
+
 <div id="wrapper">
     <!-- Navigation -->
-    <nav ng-controller="navController" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -13,22 +20,26 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">Home</a>
-            <a class="navbar-brand" href="/Home/Plugin/{{plugin.name+'/#p:'+plugin.name}}">{{plugin.displayName}}</a>
+            <a class="navbar-brand" href="/Home/Plugin/@Model.Name">@Model.DisplayName</a>
         </div>
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
-                    <li ng-repeat="c in plugin.categories">
-                        <a href="#{{'p:'+plugin.name+'/c:'+c.name}}" ng-click="setCategory(c)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gamepad"></i> {{c.displayName}} <b class="caret"></b></a>
-                        <ul class="nav nav-second-level">
-                            <li ng-repeat="item in c.items">
-                                <a href="#p:{{plugin.name+'/c:'+c.name+'/i:'+item.name}}" ng-click="setItem(item)">{{item.displayName}}</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li ng-repeat="i in plugin.items">
-                        <a href="#p:{{plugin.name+'/i:'+i.name}}" ng-click="setItem(c)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gamepad"></i> {{i.displayName}} </a>
-                    </li>
+                    @foreach (var c in Model.Categories)
+                    {
+                        <li>
+                            <a href="#category/@c.Name" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gamepad"></i> @c.DisplayName <b class="caret"></b></a>
+                            <ul class="nav nav-second-level">
+                                @foreach (var i in c.Items)
+                                {
+                                    <li>
+                                        <a href="#category/@c.Name/item/@i.Name">@i.DisplayName</a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+
+                    }
                 </ul>
                 <!-- /#side-menu -->
             </div>
@@ -44,7 +55,7 @@
     </div>
 
     @section scripts {
-        @if (Model != null)
+        @if (Model != null && Model.Scripts != null)
         {
             foreach (var script in Model.Scripts)
             {

@@ -28,6 +28,11 @@ namespace GameCloud.Manager.App.Manager
             }
         }
 
+        public Plugin GetPlugin(string name)
+        {
+            return this.Plugins.FirstOrDefault(p => p.Name == name);
+        }
+
         public PluginItem GetPluginItem(string pluginName, string categoryName, string itemName)
         {
             var plugin = this.Plugins.Single(p => p.Name == pluginName);
