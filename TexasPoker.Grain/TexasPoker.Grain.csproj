@@ -102,15 +102,15 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TexasPoker.GrainInterface\TexasPoker.GrainInterface.csproj">
-      <Project>{39f4f6dd-3c91-4175-8266-e0b926a36f24}</Project>
-      <Name>TexasPoker.GrainInterface</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="OrleansConfiguration.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TexasPoker.GrainInterface\TexasPoker.GrainInterface.csproj">
+      <Project>{d663ed56-b800-4230-96dc-5bd24f728de8}</Project>
+      <Name>TexasPoker.GrainInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Orleans.OrleansCodeGenerator.Build.1.2.3\build\Microsoft.Orleans.OrleansCodeGenerator.Build.targets" Condition="Exists('..\packages\Microsoft.Orleans.OrleansCodeGenerator.Build.1.2.3\build\Microsoft.Orleans.OrleansCodeGenerator.Build.targets')" />

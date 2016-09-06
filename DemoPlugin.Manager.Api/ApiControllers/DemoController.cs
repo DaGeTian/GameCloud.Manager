@@ -17,15 +17,15 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
 
         [HttpPost]
         [Route("api/demo/list")]
-        public PluginPaginationResponse<DemoPluginRawData> GetDataForDemoList([FromBody]PluginRequestInfo request)
+        public PluginPaginationResponse<DemoPluginRawData> GetDataForDemoList([FromBody]SearchRequestInfo request)
         {
             var list = ParallelEnumerable.Range(0, 1000)
                 .Select(i => new DemoPluginRawData() { Id = i, Name = "demo data " + i.ToString(), Type = (DemoEnumType)(i % 3) })
                 .ToList();
 
-            var keyword = request.GetParameterValue<string>("keyword");
-            var page = request.GetParameterValue<int>("page", 1);
-            var pageSize = request.GetParameterValue<int>("pageSize", 10);
+            var keyword = request.Keyword;
+            var page = request.Page;
+            var pageSize = request.PageSize;
 
             IEnumerable<DemoPluginRawData> raws = list;
             if (!string.IsNullOrEmpty(keyword))
@@ -48,7 +48,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
 
         [HttpPost]
         [Route("api/demo/update")]
-        public DemoPluginSettings GetDataForDemoUpdate([FromBody]PluginRequestInfo request)
+        public DemoPluginSettings GetDataForDemoUpdate([FromBody]UpdateRequestInfo<DemoPluginSettings> request)
         {
             if (GlobalSettings == null)
             {
@@ -62,7 +62,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             {
                 var data = request.GetParameterValue<DemoPluginSettings>("data");
                 GlobalSettings.FormData1 = data.FormData1;
-                GlobalSettings.FormData1 = data.FormData2;
+                GlobalSettings.FormData2 = data.FormData2;
                 GlobalSettings.UpdateTime = DateTime.UtcNow;
             }
 

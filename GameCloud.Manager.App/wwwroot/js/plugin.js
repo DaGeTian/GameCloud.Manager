@@ -89,17 +89,20 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         };
 
         this.setCurrent = function (route) {
-            var regex = /\/category\/([^\/]*)\/item\/([^\/]*)/;
+            var regex = /\/category\/([^\/]*)(\/item\/([^\/]*))?/;
             var match = regex.exec(route);
             if (match != null) {
                 var categoryName = match[1];
-                var itemName = match[2];
+                var itemName = match[3];
 
-            }
-            this.category = find(this.plugin.categories, categoryName);
-            if (this.category) {
-                this.item = find(this.category.items, itemName);
+                this.category = find(this.plugin.categories, categoryName);
+                if (this.category && itemName) {
+                    this.item = find(this.category.items, itemName);
+                } else {
+                    this.item = null;
+                }
             } else {
+                this.category = null;
                 this.item = null;
             }
         };

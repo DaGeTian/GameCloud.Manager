@@ -42,7 +42,7 @@ namespace GameCloud.Manager.App.Manager
             catch (Exception ex)
             {
                 // todo: trace exception.
-                return default(TResponse);
+                throw;
             }
         }
     }

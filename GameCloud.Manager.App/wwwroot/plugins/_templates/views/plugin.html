@@ -1,25 +1,16 @@
-﻿<div class="jumbotron">
-    <h1>{{plugin.displayName}}</h1>
+﻿<div class="page-header">
+    <h1>{{plugin.displayName}}<small>{{plugin.name}}</small></h1>
     <p>{{plugin.description}}</p>
+    <p class="cap-title">该插件包含以下分类：</p>
 </div>
-<div ng-repeat="g in plugin.categories | group:4" class="row">
-    <div ng-repeat="category in g" class="col-sm-3">
-        <div class="thumbnail container">
-            <div class="caption">
-                <h3>{{category.displayName}}</h3>
+<div class="container-fluid">
+    <div ng-repeat="g in plugin.categories | group:4" class="row">
+
+        <div class="row">
+            <div ng-repeat="category in g" class="col-md-3">
+                <h3>{{category.displayName}}<small>{{category.name}}</small></h3>
                 <p>{{category.description}}</p>
-                <p><a href="#p:{{plugin.name+'/c:'+category.name}}" class="btn btn-primary" role="button">GO &raquo;</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div ng-repeat="g in plugin.items | group:4" class="row">
-    <div ng-repeat="item in g" class="col-sm-3">
-        <div class="thumbnail container">
-            <div class="caption">
-                <h3>{{item.displayName}}</h3>
-                <p>{{item.description}}</p>
-                <p><a href="#p:{{plugin.name+'/i:'+item.name}}" class="btn btn-primary" role="button">GO &raquo;</a></p>
+                <p><a href="#/category/{{category.name}}" class="btn btn-primary" role="button">GO &raquo;</a></p>
             </div>
         </div>
     </div>

@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TexasPoker.GrainInterface\TexasPoker.GrainInterface.csproj">
-      <Project>{39F4F6DD-3C91-4175-8266-E0B926A36F24}</Project>
+      <Project>{d663ed56-b800-4230-96dc-5bd24f728de8}</Project>
       <Name>TexasPoker.GrainInterface</Name>
     </ProjectReference>
   </ItemGroup>

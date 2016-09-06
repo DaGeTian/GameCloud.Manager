@@ -38,15 +38,8 @@ namespace GameCloud.Manager.App.ApiControllers
                 .Select(kv => new PluginRequestParameter() { Name = kv.Key, Value = kv.Value })
                 .ToList();
             var requestInfo = new PluginRequestInfo(request.Method, parameters);
-            try
-            {
-                return await client.SendAsync<PluginRequestInfo, object>(item, requestInfo, token);
-            }
-            catch (Exception ex)
-            {
-                // CustomTrace.TraceError(ex, "Execute plugin action error: Plugin:{0}, Item: {2}", plugin.Name, item.Name);
-                return null;
-            }
+
+            return await client.SendAsync<PluginRequestInfo, object>(item, requestInfo, token);
         }
     }
 }
