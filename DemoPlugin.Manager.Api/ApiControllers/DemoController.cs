@@ -60,9 +60,8 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
 
             if (request.Method == PluginRequestMethod.Update)
             {
-                var data = request.GetParameterValue<DemoPluginSettings>("data");
-                GlobalSettings.FormData1 = data.FormData1;
-                GlobalSettings.FormData2 = data.FormData2;
+                GlobalSettings.FormData1 = request.Body.FormData1;
+                GlobalSettings.FormData2 = request.Body.FormData2;
                 GlobalSettings.UpdateTime = DateTime.UtcNow;
             }
 
