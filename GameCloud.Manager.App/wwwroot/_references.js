@@ -1,7 +1,6 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="js/angular.js" />
 /// <reference path="js/angular-chart.js" />
-/// <reference path="js/angular-echarts/angular-echarts.js" />
 /// <reference path="js/angular-route.js" />
 /// <reference path="js/angular-ui/ui-bootstrap.js" />
 /// <reference path="js/angular-ui/ui-bootstrap-tpls.js" />

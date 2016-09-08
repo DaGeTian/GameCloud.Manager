@@ -210,7 +210,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         };
     }]).controller('pluginsController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
-    }]).controller('listController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+    }]).controller('tableController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
         $scope.maxShowPages = 7;
         $scope.params.pageSize = 10;
@@ -232,7 +232,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         };
 
         $scope.fetch();
-    }]).controller('updateController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+    }]).controller('formController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
 
         $scope.updateData = function () {
@@ -241,7 +241,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         }
 
         $scope.fetch();
-    }]).controller('reportController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+    }]).controller('chartController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
         $scope.fetch();
     }])

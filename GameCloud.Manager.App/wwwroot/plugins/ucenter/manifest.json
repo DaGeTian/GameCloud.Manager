@@ -13,14 +13,14 @@
         {
           "Name": "appsearch",
           "DisplayName": "App管理",
-          "Type": "List",
+          "Type": "Table",
           "Route": "apps",
           "View": "app-search.html"
         },
         {
           "Name": "account-search",
           "DisplayName": "玩家管理",
-          "Type": "List",
+          "Type": "Table",
           "Route": "users",
           "View": "account-search.html"
         }
@@ -34,14 +34,14 @@
         {
           "Name": "account-event-search",
           "DisplayName": "玩家事件",
-          "Type": "List",
+          "Type": "Table",
           "Route": "accountEvents",
           "View": "account-event-search.html"
         },
         {
           "Name": "error-event-search",
           "DisplayName": "错误事件",
-          "Type": "List",
+          "Type": "Table",
           "Route": "errorEvents",
           "View": "error-event-search.html"
         }
@@ -55,25 +55,25 @@
         {
           "Name": "newusers",
           "DisplayName": "新增玩家",
-          "Type": "Report",
+          "Type": "Chart",
           "View": "new-users.html"
         },
         {
           "Name": "activeusers",
           "DisplayName": "活跃玩家",
-          "Type": "Report",
+          "Type": "Chart",
           "View": "active-users.html"
         },
         {
           "Name": "staystatistics",
           "DisplayName": "留存统计",
-          "Type": "Report",
+          "Type": "Chart",
           "View": "stay-statistics.html"
         },
         {
           "Name": "loststatistics",
           "DisplayName": "流失统计",
-          "Type": "Report",
+          "Type": "Chart",
           "View": "lost-statistics.html"
         }
       ]
@@ -86,7 +86,7 @@
         {
           "Name": "onlineanalytics",
           "DisplayName": "在线分析",
-          "Type": "Report",
+          "Type": "Chart",
           "View": "online-behaviour.html"
         }
       ]
@@ -100,13 +100,13 @@
         {
           "Name": "realtimeglance",
           "DisplayName": "实时状况",
-          "Type": "Report",
+          "Type": "Chart",
           "View": "realtime-glance.html"
         },
         {
           "Name": "onlinebehaviour",
           "DisplayName": "在线习惯",
-          "Type": "Report",
+          "Type": "Chart",
           "View": "online-behaviour.html"
         }
       ]

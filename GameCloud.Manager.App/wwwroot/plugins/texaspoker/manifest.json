@@ -13,14 +13,14 @@
         {
           "Name": "player-search",
           "DisplayName": "玩家查询",
-          "Type": "List",
+          "Type": "Table",
           "Route": "players",
           "View": "player-search.html"
         },
         {
           "Name": "bot-search",
           "DisplayName": "机器人查询",
-          "Type": "List",
+          "Type": "Table",
           "Route": "bots",
           "View": "bot-search.html"
         }
@@ -34,99 +34,98 @@
         {
           "Name": "events-buy-chips",
           "DisplayName": "购买筹码",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/BuyChips",
           "View": "events-buy-chips.html"
         },
         {
           "Name": "event-buy-coins",
           "DisplayName": "购买金币",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/BuyCoins",
           "View": "events-buy-coins.html"
         },
         {
           "Name": "events-buy-vip",
           "DisplayName": "购买VIP",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/BuyVIP",
           "View": "events-buy-vip.html"
         },
         {
           "Name": "events-chip-buy-gift",
           "DisplayName": "筹码购买礼物",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/ChipBuyGift",
           "View": "events-chip-buy-gift.html"
         },
         {
           "Name": "events-chip-buy-item",
           "DisplayName": "筹码购买道具",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/ChipBuyItem",
           "View": "events-chip-buy-item.html"
         },
         {
           "Name": "events-chips-change-by-manager",
           "DisplayName": "管理员修改筹码",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/ChipsChangeByManager",
           "View": "events-chips-change-by-manager.html"
         },
         {
           "Name": "events-coin-buy-gift",
           "DisplayName": "金币购买礼物",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/CoinBuyGift",
           "View": "events-coin-buy-gift.html"
         },
         {
           "Name": "events-coin-buy-item",
           "DisplayName": "金币购买道具",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/CoinBuyItem",
           "View": "events-coin-buy-item.html"
         },
         {
           "Name": "events-daily-get-chips-events",
           "DisplayName": "每日领取筹码",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/DailyGetChips",
           "View": "events-daily-get-chips-events.html"
         },
         {
           "Name": "events-lost-all-send-chips",
           "DisplayName": "输光赠送筹码",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/LostAllSendChips",
           "View": "events-lost-all-send-chips.html"
         },
         {
           "Name": "events-player-get-chips-from-other",
           "DisplayName": "玩家接收筹码",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/PlayerGetChipsFromOther",
           "View": "events-player-get-chips-from-other.html"
         },
         {
           "Name": "events-player-report",
           "DisplayName": "玩家举报",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/PlayerReport",
           "View": "events-player-report.html"
         },
         {
           "Name": "events-player-send-other-chips",
           "DisplayName": "玩家赠送筹码",
-          "Type": "List",
+          "Type": "Table",
           "Route": "events/PlayerSendOtherChips",
           "View": "events-player-send-other-chips.html"
         },
-
         {
           "Name": "events-texaspoker",
           "DisplayName": "牌局",
-          "Type": "List",
+          "Type": "Table",
           "Route": "api/events/TexasPoker",
           "View": "events-texaspoker.html"
         }
@@ -140,7 +139,7 @@
         {
           "Name": "onlineanalytics",
           "DisplayName": "整体统计",
-          "Type": "Report",
+          "Type": "Chart",
           "Route": "xxxxxxxxxx",
           "View": "xxxxxxxxxxxxxxxxxx.html"
         }
@@ -154,7 +153,7 @@
         {
           "Name": "onlineanalytics",
           "DisplayName": "抽水率",
-          "Type": "Report",
+          "Type": "Chart",
           "Route": "xxxxxxxxxx",
           "View": "xxxxxxxxxxxxxxxxxx.html"
         }

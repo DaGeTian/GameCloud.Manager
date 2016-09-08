@@ -16,7 +16,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         private static DemoPluginSettings GlobalSettings;
 
         [HttpPost]
-        [Route("api/demo/list")]
+        [Route("api/demo/table")]
         public PluginPaginationResponse<DemoPluginRawData> GetDataForDemoList([FromBody]SearchRequestInfo request)
         {
             var list = ParallelEnumerable.Range(0, 1000)
@@ -47,7 +47,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         }
 
         [HttpPost]
-        [Route("api/demo/update")]
+        [Route("api/demo/form")]
         public DemoPluginSettings GetDataForDemoUpdate([FromBody]UpdateRequestInfo<DemoPluginSettings> request)
         {
             if (GlobalSettings == null)
@@ -69,7 +69,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         }
 
         [HttpPost]
-        [Route("api/demo/report")]
+        [Route("api/demo/chart")]
         public IReadOnlyList<object> GetDataForDemoReport([FromBody]PluginRequestInfo request)
         {
             var pieData = new

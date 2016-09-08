@@ -2,9 +2,9 @@
 {
     public enum PluginItemType
     {
-        List,
-        Report,
-        Update,
+        Table,
+        Form,
+        Chart,
         Custom
     }
 }
