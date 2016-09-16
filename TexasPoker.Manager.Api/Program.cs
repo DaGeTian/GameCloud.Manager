@@ -17,6 +17,7 @@ namespace TexasPoker.Manager.Api
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://10.0.0.4:5001")
                 .Build();
 
             host.Run();

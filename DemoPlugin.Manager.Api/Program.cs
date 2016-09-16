@@ -17,6 +17,7 @@ namespace DemoPlugin.Manager.Api
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://10.0.0.4:5002")
                 .Build();
 
             host.Run();
