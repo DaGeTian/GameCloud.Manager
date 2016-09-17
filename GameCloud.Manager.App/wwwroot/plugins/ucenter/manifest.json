@@ -21,7 +21,7 @@
           "Name": "account-search",
           "DisplayName": "玩家管理",
           "Type": "Table",
-          "Route": "users",
+          "Route": "accounts",
           "View": "account-search.html"
         }
       ]
