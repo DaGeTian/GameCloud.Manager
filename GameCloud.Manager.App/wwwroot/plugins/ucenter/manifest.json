@@ -40,10 +40,17 @@
         },
         {
           "Name": "error-event-search",
-          "DisplayName": "错误事件",
+          "DisplayName": "玩家错误事件",
           "Type": "Table",
-          "Route": "errorEvents",
-          "View": "error-event-search.html"
+          "Route": "accountErrorEvents",
+          "View": "account-error-event-search.html"
+        },
+        {
+          "Name": "exception-event-search",
+          "DisplayName": "程序异常事件",
+          "Type": "Table",
+          "Route": "exceptionEvents",
+          "View": "exception-event-search.html"
         }
       ]
     },

@@ -82,7 +82,7 @@ namespace GameCloud.UCenter.Database
         }
 
         /// <summary>
-        /// Gets the guest device adapter.
+        /// Gets the device record adapter.
         /// </summary>
         public ICollectionAdapter<GuestDeviceEntity> GuestDevices
         {

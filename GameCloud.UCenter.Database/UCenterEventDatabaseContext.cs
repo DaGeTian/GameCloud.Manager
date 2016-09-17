@@ -21,7 +21,7 @@ namespace GameCloud.UCenter.Database
         }
 
         /// <summary>
-        /// Gets the account event database adapter.
+        /// Gets the account event adapter.
         /// </summary>
         public ICollectionAdapter<AccountEventEntity> AccountEvents
         {
@@ -32,13 +32,24 @@ namespace GameCloud.UCenter.Database
         }
 
         /// <summary>
-        /// Gets the error event database adapter.
+        /// Gets the account error event adapter.
         /// </summary>
-        public ICollectionAdapter<ErrorEventEntity> ErrorEvents
+        public ICollectionAdapter<AccountErrorEventEntity> AccountErrorEvents
         {
             get
             {
-                return this.GetAdapter<ErrorEventEntity>();
+                return this.GetAdapter<AccountErrorEventEntity>();
+            }
+        }
+
+        /// <summary>
+        /// Gets the exception event adapter.
+        /// </summary>
+        public ICollectionAdapter<ExceptionEventEntity> ExceptionEvents
+        {
+            get
+            {
+                return this.GetAdapter<ExceptionEventEntity>();
             }
         }
     }

@@ -20,16 +20,16 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
     /// </summary>
     [Export]
     [PartCreationPolicy(CreationPolicy.NonShared)]
-    public class UsersController : ApiControllerBase
+    public class AccountsController : ApiControllerBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UsersController" /> class.
+        /// Initializes a new instance of the <see cref="AccountsController" /> class.
         /// </summary>
         /// <param name="ucenterDb">Indicating the database context.</param>
         /// <param name="ucenterventDb">Indicating the database context.</param>
         /// <param name="settings">Indicating the settings.</param>
         [ImportingConstructor]
-        public UsersController(
+        public AccountsController(
             UCenterDatabaseContext ucenterDb,
             UCenterEventDatabaseContext ucenterventDb,
             Settings settings)
@@ -42,7 +42,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// </summary>
         /// <param name="request">Indicating the count.</param>
         /// <returns>Async return user list.</returns>
-        [Route("api/users")]
+        [Route("api/accounts")]
         public async Task<PluginPaginationResponse<AccountEntity>> Post([FromBody]PluginRequestInfo request)
         {
             string keyword = request.GetParameterValue<string>("keyword");

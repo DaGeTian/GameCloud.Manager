@@ -2,11 +2,11 @@
     <thead>
         <tr>
             <th>账号</th>
+            <th>类型</th>
+            <th>状态</th>
             <th>姓名</th>
             <th>头像</th>
             <th>性别</th>
-            <th>类型</th>
-            <th>状态</th>
             <th>邮箱</th>
             <th>手机</th>
             <th>注册日期</th>
@@ -16,11 +16,11 @@
     <tbody>
         <tr ng-repeat="row in data.raws">
             <td>{{row.accountName}}</td>
+            <td>{{row.accountTyle}}</td>
+            <td>{{row.accountStatus}}</td>
             <td>{{row.name}}</td>
             <td><img src="{{row.profileThumbnail}}" width="50" /></td>
             <td>{{row.gender|enums:'gender'}}</td>
-            <td>{{row.accountTyle}}</td>
-            <td>{{row.accountStatus}}</td>
             <td>{{row.email}}</td>
             <td>{{row.phoneNum}}</td>
             <td>{{row.createdTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
