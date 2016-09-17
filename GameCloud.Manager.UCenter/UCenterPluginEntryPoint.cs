@@ -107,7 +107,7 @@ namespace GameCloud.Manager.UCenter
         }
 
         [PluginItemMetadata(Name = "error-event-search", Category = "events", DisplayName = "错误事件", Type = PluginItemType.List)]
-        public async Task<PluginPaginationResponse<ErrorEventEntity>> GetErrorEvents(PluginRequestInfo request)
+        public async Task<PluginPaginationResponse<AccountErrorEventEntity>> GetErrorEvents(PluginRequestInfo request)
         {
             //Expression<Func<ErrorEventEntity, bool>> filter = null;
             //string keyword = request.GetParameterValue<string>("keyword");

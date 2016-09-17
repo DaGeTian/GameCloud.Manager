@@ -42,7 +42,7 @@ namespace GameCloud.UCenter.Manager.ApiControllers
         /// <param name="page">Indicating the page number.</param>
         /// <param name="count">Indicating the count.</param>
         /// <returns>Async return user list.</returns>
-        public async Task<PaginationResponse<ErrorEventEntity>> Get(
+        public async Task<PaginationResponse<AccountErrorEventEntity>> Get(
             CancellationToken token,
             [FromUri] string keyword = null,
             [FromUri] string orderby = null,
@@ -86,7 +86,7 @@ namespace GameCloud.UCenter.Manager.ApiControllers
         /// <param name="id">Indicating the user id.</param>
         /// <param name="token">Indicating the cancellation token.</param>
         /// <returns>Async return user details.</returns>
-        public async Task<ErrorEventEntity> Get(string id, CancellationToken token)
+        public async Task<AccountErrorEventEntity> Get(string id, CancellationToken token)
         {
             //var result = await this.Database.ErrorEvents.GetSingleAsync(id, token);
 
