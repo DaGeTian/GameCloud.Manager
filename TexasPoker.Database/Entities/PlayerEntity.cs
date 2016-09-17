@@ -76,7 +76,7 @@ namespace TexasPoker.Database.Entities
         public object DefPlayerRanking { get; set; }
     }
 
-    [CollectionName("EtPlayer")]
+    [CollectionName("Player")]
     public class PlayerEntity : EntityBase
     {
         public object entity_children { get; set; }

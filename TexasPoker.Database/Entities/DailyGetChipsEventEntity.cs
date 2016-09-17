@@ -3,7 +3,7 @@ using GameCloud.Database.Attributes;
 
 namespace TexasPoker.Database.Entities
 {
-    [CollectionName("DailyGetChipsEvent")]
+    [CollectionName("EventDailyGetChips")]
     public class DailyGetChipsEventEntity : EntityBase
     {
         public string GetPlayerEtGuid { get; set; }

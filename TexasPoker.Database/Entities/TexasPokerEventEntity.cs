@@ -37,7 +37,7 @@ namespace TexasPoker.Database.Entities
         public int BeforeSysGetWinChips { get; set; }
     }
 
-    [CollectionName("TexasPokerEvent")]
+    [CollectionName("EventTexasPoker")]
     public class TexasPokerEventEntity : EntityBase
     {
         //public string _id { get; set; }
