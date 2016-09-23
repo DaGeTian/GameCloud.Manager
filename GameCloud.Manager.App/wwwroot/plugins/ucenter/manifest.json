@@ -12,17 +12,24 @@
       "Items": [
         {
           "Name": "appsearch",
-          "DisplayName": "App管理",
+          "DisplayName": "App列表",
           "Type": "Table",
           "Route": "apps",
           "View": "app-search.html"
         },
         {
           "Name": "account-search",
-          "DisplayName": "玩家管理",
+          "DisplayName": "账号列表",
           "Type": "Table",
           "Route": "accounts",
           "View": "account-search.html"
+        },
+        {
+          "Name": "device-search",
+          "DisplayName": "设备列表",
+          "Type": "Table",
+          "Route": "devices",
+          "View": "device-search.html"
         }
       ]
     },
