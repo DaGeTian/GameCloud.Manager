@@ -30,6 +30,13 @@
           "Type": "Table",
           "Route": "devices",
           "View": "device-search.html"
+        },
+        {
+          "Name": "order-search",
+          "DisplayName": "Order列表",
+          "Type": "Table",
+          "Route": "orders",
+          "View": "order-search.html"
         }
       ]
     },
