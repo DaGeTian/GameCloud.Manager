@@ -195,6 +195,7 @@
     <Content Include="plugins\_templates\views\category.html" />
     <Content Include="plugins\_templates\views\custom.html" />
     <Content Include="plugins\_templates\views\error.html" />
+    <Content Include="plugins\_templates\views\header.html" />
     <Content Include="plugins\_templates\views\report.html" />
     <Content Include="plugins\_templates\views\plugin.html" />
     <Content Include="plugins\_templates\views\plugins.html" />

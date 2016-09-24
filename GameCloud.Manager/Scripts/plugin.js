@@ -199,6 +199,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         $scope.beforeFetch = function () { };
 
         var post = function (method) {
+            $scope.loading = true;
             $scope.code = null;
             $scope.response = null;
             var params = [];
@@ -222,9 +223,11 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                     cache: $templateCache
                 }).
                 then(function (response) {
+                    $scope.loading = false;
                     $scope.status = response.status;
                     $scope.data = response.data;
                 }, function (response) {
+                    $scope.loading = false;
                     $scope.data = response.data || "Request failed";
                     $scope.status = response.status;
                 });
