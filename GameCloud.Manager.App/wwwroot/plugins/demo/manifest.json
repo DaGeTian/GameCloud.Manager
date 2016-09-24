@@ -4,6 +4,9 @@
   "Description": "UCenter plugin",
   "Certificate": { "Thumbnail": "" },
   "Url": "http://tp-uc.chinacloudapp.cn:5002/api",
+  "Scripts": [
+    "demo-scripts.js"
+  ],
   "Categories": [
     {
       "Name": "tabledemo",

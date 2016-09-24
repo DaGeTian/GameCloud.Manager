@@ -178,6 +178,8 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                 }
             }
 
+            $scope.loading = true;
+
             $http.post(
                 '/api/plugins',
                 {
@@ -192,10 +194,11 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                     cache: $templateCache
                 }).
                 then(function (response) {
-                    console.log(response);
+                    $scope.loading = false;
                     $scope.status = response.status;
                     $scope.data = response.data;
                 }, function (response) {
+                    $scope.loading = false;
                     $scope.data = response.data || "Request failed";
                     $scope.status = response.status;
                 });
