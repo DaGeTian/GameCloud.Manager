@@ -1,9 +1,18 @@
 (function ($enums) {
 
-    var demoTypeEnum = {};
-    demoTypeEnum[demoTypeEnum['Type1'] = 0] = '类型1';
-    demoTypeEnum[demoTypeEnum['Type3'] = 1] = '类型2';
-    demoTypeEnum[demoTypeEnum['Type3'] = 2] = '类型3';
+    var demoTypeEnum = [{
+        name: 'type1',
+        displayName: '类型1',
+        value: 0
+    }, {
+        name: 'type2',
+        displayName: '类型2',
+        value: 1
+    }, {
+        name: 'type3',
+        displayName: '类型3',
+        value: 2
+    }];
 
-    $enums.demoTypeEnum = demoTypeEnum;
+    $enums.items.push({ name: 'demoTypeEnum', items: demoTypeEnum });
 })($enums || ($enums = {}));

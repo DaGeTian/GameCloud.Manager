@@ -35,5 +35,26 @@ namespace GameCloud.Manager.PluginContract.Requests
                 return this.GetParameterValue<string>("keyword", string.Empty);
             }
         }
+
+        public T GetRawData<T>()
+        {
+            return this.GetParameterValue<T>("raw");
+        }
+    }
+
+    public class SearchRequestInfo<TRaw> : SearchRequestInfo
+    {
+        public SearchRequestInfo(PluginRequestMethod method, List<PluginRequestParameter> parameters)
+            : base(method, parameters)
+        {
+        }
+
+        public TRaw RawData
+        {
+            get
+            {
+                return this.GetRawData<TRaw>();
+            }
+        }
     }
 }

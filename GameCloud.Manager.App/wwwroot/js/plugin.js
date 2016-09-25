@@ -1,29 +1,52 @@
 ﻿var $enums = $enums || {};
 (function (enums) {
+    enums.items = [];
+    var gender = [{
+        name: 'Male',
+        displayName: '男',
+        value: 0
+    }, {
+        name: 'Female',
+        displayName: '女',
+        value: 1
+    }, {
+        name: 'DeclineToState',
+        displayName: '拒绝透漏',
+        value: 2
+    }];
+    enums.items.push({
+        name: 'gender',
+        items: gender
+    });
 
-    var gender = {};
-    gender[gender['Male'] = 0] = '男';
-    gender[gender['Female'] = 1] = '女';
-    gender[gender['DeclineToState'] = 2] = '拒绝透漏';
+    enums.find = function (name, value) {
+        var item = enums.items.find(function (i) {
+            return i.name == name;
+        });
 
-    enums.gender = gender;
+        if (typeof (value) == 'undefined') {
+            return item;
+        }
+
+        if (!item) {
+            return value;
+        }
+
+        let result = item.items.find(function (ele) {
+            return ele.value === value || ele.name === value;
+        });
+
+        return result;
+    };
 })($enums || ($enums = {}));
 
 $groupCache = {};
 // var $plugins = null;
-var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRoute'])
+var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRoute', 'gc.bootstrap.modal'])
     .filter('enums', function () {
         return function (input, enumName) {
-            var items = $enums[enumName];
-            if (!items) {
-                return input;
-            }
-
-            if (typeof (input) === 'number') {
-                return items[input];
-            } else {
-                return items[items[input]];
-            }
+            var item = $enums.find(enumName, input);
+            return item ? item.displayName : input;
         }
     }).filter('yesNo', function () {
         return function (input) {
@@ -114,7 +137,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         };
     }])
     .controller('baseController', ['$scope', '$http', '$location', '$templateCache', 'pluginService', function ($scope, $http, $location, $templateCache, pluginService) {
-
+        $scope.$enums = $enums;
         var group = function (items, length) {
             if (!items) {
                 return null;
@@ -167,6 +190,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         $controller('baseController', { $scope: $scope });
         $scope.params = {};
         $scope.beforeFetch = function () { };
+        $scope.loadingText = "Loading...";
 
         var post = function (method) {
             $scope.code = null;
@@ -204,12 +228,19 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                 });
         }
 
-        $scope.fetch = function () {
+        $scope._fetch = function () {
+            $scope.loadingText = "Loading...";
             post('Read');
         };
 
-        $scope.update = function () {
+        $scope._update = function () {
+            $scope.loadingText = "Updating...";
             post('Update');
+        };
+
+        $scope._delete = function () {
+            $scope.loadingText = "Deleting...";
+            post('Delete');
         };
     }]).controller('pluginsController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
@@ -221,12 +252,12 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         $scope.beforeFetch = function () { };
 
         $scope.onPageChange = function () {
-            $scope.fetch();
+            $scope._fetch();
         }
 
         $scope.onPageSizeChange = function (size) {
             $scope.params.pageSize = size;
-            $scope.fetch();
+            $scope._fetch();
         }
 
         $scope.updateModel = function (method, url) {
@@ -234,19 +265,42 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
             $scope.url = url;
         };
 
-        $scope.fetch();
-    }]).controller('formController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+        $scope.open = function (raw) {
+            $scope.raw = raw;
+            $scope.showModal = true;
+        };
+
+        $scope.save = function () {
+            $scope.params.raw = JSON.stringify($scope.raw);
+            $scope._update();
+            $scope.showModal = false;
+        };
+
+        $scope.delete = function (raw) {
+            $scope.params.raw = JSON.stringify($scope.raw);
+            $scope._delete();
+            $scope.showModel = false;
+        };
+
+        $scope.cancel = function () {
+            $scope.showModal = false;
+        };
+
+        $scope._fetch();
+    }])
+    .controller('formController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
 
         $scope.updateData = function () {
             $scope.params.data = JSON.stringify($scope.data);
-            $scope.update();
+            $scope._update();
         }
 
-        $scope.fetch();
-    }]).controller('chartController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+        $scope._fetch();
+    }])
+    .controller('chartController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
-        $scope.fetch();
+        $scope._fetch();
     }])
     .config(['$routeProvider', function ($routeProvider) {
         if ($plugin) {
