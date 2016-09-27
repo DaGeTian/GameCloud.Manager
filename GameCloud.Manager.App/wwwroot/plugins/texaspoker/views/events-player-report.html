@@ -1,18 +1,18 @@
 ﻿<table class="table table-bordered table-striped table-condensed">
     <thead>
-        <tr>
-            <th>事件时间</th>
+        <tr>            
             <th>举报人</th>
             <th>被举报人</th>
             <th>类型</th>
+            <th>事件时间</th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="row in data.raws">
-            <td>{{row.eventTm}}</td>
+        <tr ng-repeat="row in data.raws">            
             <td>{{row.reportPlayer}}</td>
             <td>{{row.beingReportedPlayer}}</td>
-            <td>{{row.reportType|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.reportType}}</td>
+            <td>{{row.eventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>

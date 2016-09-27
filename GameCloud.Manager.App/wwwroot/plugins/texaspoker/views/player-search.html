@@ -22,23 +22,23 @@
     </thead>
     <tbody>
         <tr ng-repeat="row in data.raws">
-            <td>{{row.map_component.defActor.nickName}}</td>
-            <td>{{row.map_component.defActor.ipAddress}}</td>
-            <td>{{row.map_component.defActor.gender|enums:'gender'}}</td>
-            <td>{{row.map_component.defActor.level}}</td>
-            <td>{{row.map_component.defActor.experience}}</td>
-            <td>{{row.map_component.defActor.chipAcc}}</td>
-            <td>{{row.map_component.defActor.chipBank}}</td>
-            <td>{{row.map_component.defActor.gold}}</td>
-            <td>{{row.map_component.defActor.isVIP|yesNo}}</td>
-            <td>{{row.map_component.defActor.vIPDataTime |date:'yyyy/MM/dd HH:mm:ss'}}</td>
-            <td>{{row.map_component.defActor.vIPPoint}}</td>
-            <td>{{row.map_component.defActor.gameTotal}}</td>
-            <td>{{row.map_component.defActor.gameWin}}</td>
-            <td>{{row.map_component.defActor.joinDataTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
-            <td>{{row.map_component.defActor.loginDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
-            <td>{{row.map_component.defActor.logoutDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
-            <td>{{row.map_component.defActor.sendChipsTm}}</td>
+            <td>{{row.nickName}}</td>
+            <td>{{row.ipAddress}}</td>
+            <td>{{row.gender|enums:'gender'}}</td>
+            <td>{{row.level}}</td>
+            <td>{{row.experience}}</td>
+            <td>{{row.chipAcc}}</td>
+            <td>{{row.chipBank}}</td>
+            <td>{{row.gold}}</td>
+            <td>{{row.isVIP|yesNo}}</td>
+            <td>{{row.vIPDataTime |date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.vIPPoint}}</td>
+            <td>{{row.gameTotal}}</td>
+            <td>{{row.gameWin}}</td>
+            <td>{{row.joinDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.loginDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.logoutDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.sendChipsTm}}</td>
         </tr>
     </tbody>
 </table>

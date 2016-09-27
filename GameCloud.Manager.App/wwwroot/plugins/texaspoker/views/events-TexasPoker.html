@@ -15,6 +15,7 @@
             <th>RiverInfo</th>
             <th>ShowDownInfo</th>
             <th>EndInfo</th>
+            <th>事件时间</th>
         </tr>
     </thead>
     <tbody>
@@ -24,7 +25,7 @@
             <td>{{row.seatNum}}</td>
             <td>{{row.gameSpeed}}</td>
             <td>{{row.desktopTbId}}</td>
-            <td>{{row.megaBetNum}}</td>
+            <td>{{row.desktopTbId}}</td>
             <td>{{row.desktopEtGuid}}</td>
             <td>{{row.playerCommonInfo}}</td>
             <td>{{row.preflopInfo}}</td>
@@ -32,7 +33,8 @@
             <td>{{row.turnInfo}}</td>
             <td>{{row.riverInfo}}</td>
             <td>{{row.showDownInfo}}</td>
-            <td>{{row.endInfo|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.endInfo}}</td>
+            <td>{{row.eventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>
 </table>
