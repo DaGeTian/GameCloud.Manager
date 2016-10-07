@@ -1,28 +1,34 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using GameCloud.Manager.App.Common;
 using GameCloud.Manager.App.Manager;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Controllers;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Newtonsoft.Json;
+using Microsoft.Extensions.Options;
 
 namespace GameCloud.Manager.App.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IHostingEnvironment hostingEnvironment;
+        private readonly IOptions<AppSettings> appSettings;
         private readonly PluginManager manager;
 
-        public HomeController(PluginManager manager, IHostingEnvironment hostingEnvironment)
+        public HomeController(
+            IHostingEnvironment hostingEnvironment,
+            IOptions<AppSettings> appSettings,
+            PluginManager manager
+            )
         {
             this.hostingEnvironment = hostingEnvironment;
+            this.appSettings = appSettings;
             this.manager = manager;
         }
 
         public IActionResult Index()
         {
+            ViewData["BuildVersion"] = "v" + appSettings.Value.BuildVersion;
             return View(this.manager.Plugins);
         }
 

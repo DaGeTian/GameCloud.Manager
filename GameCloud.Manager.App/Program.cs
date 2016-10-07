@@ -16,7 +16,6 @@ namespace GameCloud.Manager.App
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseUrls("http://10.0.0.4:8080")
                 .Build();
 
             host.Run();

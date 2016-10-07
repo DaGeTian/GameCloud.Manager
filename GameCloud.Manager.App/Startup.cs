@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using GameCloud.Manager.App.Common;
 using GameCloud.Manager.App.Manager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -37,6 +38,11 @@ namespace GameCloud.Manager.App
             // Add framework services.
             services.AddSingleton<PluginManager>(manager);
             services.AddMvc();
+
+            // Add functionality to inject IOptions<T>
+            services.AddOptions();
+
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
