@@ -2,7 +2,7 @@
   "Name": "UCenter",
   "DisplayName": "UCenter管理平台",
   "Description": "UCenter plugin",
-  "Url": "http://tp-uc.chinacloudapp.cn:5000/api",
+  "Url": "http://tp-ucenter-manager.azurewebsites.net/api",
   "Certificate": { "Thumbnail": "" },
   "Categories": [
     {
