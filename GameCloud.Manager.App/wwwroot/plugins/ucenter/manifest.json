@@ -129,6 +129,13 @@
           "DisplayName": "在线习惯",
           "Type": "Chart",
           "View": "online-behaviour.html"
+        },
+        {
+          "Name": "configcenter",
+          "DisplayName": "配置中心",
+          "Route": "configcenter",
+          "Type": "Form",
+          "View": "config-center.html"
         }
       ]
     }
