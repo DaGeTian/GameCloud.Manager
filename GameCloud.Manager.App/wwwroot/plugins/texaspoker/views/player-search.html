@@ -3,14 +3,14 @@
         <tr>
             <th>名称</th>
             <th>Ip</th>
-            <th>性别</th>
+            <th>Id</th>
             <th>等级</th>
             <th>经验值</th>
             <th>账户筹码</th>
             <th>银行筹码</th>
             <th>金币</th>
             <th>会员</th>
-            <th>会员加入时间</th>
+            <th>会员到期时间</th>
             <th>会员点数</th>
             <th>游戏总局数</th>
             <th>游戏赢局数</th>
@@ -24,7 +24,7 @@
         <tr ng-repeat="row in data.raws">
             <td>{{row.nickName}}</td>
             <td>{{row.ipAddress}}</td>
-            <td>{{row.gender|enums:'gender'}}</td>
+            <td>{{row.actorId}}</td>
             <td>{{row.level}}</td>
             <td>{{row.experience}}</td>
             <td>{{row.chipAcc}}</td>

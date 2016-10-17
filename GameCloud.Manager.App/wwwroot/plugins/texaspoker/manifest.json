@@ -32,6 +32,13 @@
       "Description": "事件查看",
       "Items": [
         {
+          "Name": "events-newplayer-login",
+          "DisplayName": "玩家注册",
+          "Type": "Table",
+          "Route": "events/NewPlayerLogin",
+          "View": "events-newplayer-login.html"
+        },
+        {
           "Name": "events-buy-chips",
           "DisplayName": "购买筹码",
           "Type": "Table",
@@ -67,11 +74,25 @@
           "View": "events-chip-buy-item.html"
         },
         {
+          "Name": "events-sell-chips-item",
+          "DisplayName": "出售筹码道具",
+          "Type": "Table",
+          "Route": "events/SellChipsItem",
+          "View": "events-sell-chips-item.html"
+        },
+        {
           "Name": "events-chips-change-by-manager",
           "DisplayName": "管理员修改筹码",
           "Type": "Table",
           "Route": "events/ChipsChangeByManager",
           "View": "events-chips-change-by-manager.html"
+        },
+        {
+          "Name": "events-coin-change-by-manager",
+          "DisplayName": "管理员修改金币",
+          "Type": "Table",
+          "Route": "events/CoinChangeByManager",
+          "View": "events-coin-change-by-manager.html"
         },
         {
           "Name": "events-coin-buy-gift",
@@ -86,6 +107,13 @@
           "Type": "Table",
           "Route": "events/CoinBuyItem",
           "View": "events-coin-buy-item.html"
+        },
+        {
+          "Name": "events-sell-coin-item",
+          "DisplayName": "出售金币道具",
+          "Type": "Table",
+          "Route": "events/SellCoinItem",
+          "View": "events-sell-coin-item.html"
         },
         {
           "Name": "events-daily-get-chips-events",
@@ -121,6 +149,13 @@
           "Type": "Table",
           "Route": "events/PlayerSendOtherChips",
           "View": "events-player-send-other-chips.html"
+        },
+        {
+          "Name": "events-player-win",
+          "DisplayName": "玩家赢",
+          "Type": "Table",
+          "Route": "events/PlayerWin",
+          "View": "events-player-win.html"
         },
         {
           "Name": "events-texaspoker",
