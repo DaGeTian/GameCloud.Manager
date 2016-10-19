@@ -4,6 +4,9 @@
   "Description": "UCenter plugin",
   "Url": "http://tp-ucenter-manager.azurewebsites.net/api",
   "Certificate": { "Thumbnail": "" },
+  "Scripts": [
+    "ucenter-scripts.js"
+  ],
   "Categories": [
     {
       "Name": "data",

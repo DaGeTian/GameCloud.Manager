@@ -43,11 +43,23 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         /// <param name="request">Indicating the count.</param>
         /// <returns>Async return user list.</returns>
         [Route("api/accounts")]
-        public async Task<PluginPaginationResponse<AccountEntity>> Post([FromBody]PluginRequestInfo request)
+        public async Task<PluginPaginationResponse<AccountEntity>> Post([FromBody]SearchRequestInfo<AccountEntity> request, CancellationToken token)
         {
-            string keyword = request.GetParameterValue<string>("keyword");
-            int page = request.GetParameterValue<int>("page", 1);
-            int count = request.GetParameterValue<int>("pageSize", 10);
+            if (request.Method == PluginRequestMethod.Update)
+            {
+                var updateRawData = request.RawData;
+                if (updateRawData != null)
+                {
+                    // todo: update the other properties here.
+                    var updateFilter = Builders<AccountEntity>.Filter.Where(e => e.Id == updateRawData.Id);
+                    var updateDefinition = Builders<AccountEntity>.Update.Set(e => e.AccountStatus, updateRawData.AccountStatus);
+                    await this.UCenterDatabase.Accounts.UpdateOneAsync(updateRawData, updateFilter, updateDefinition, token);
+                }
+            }
+
+            string keyword = request.Keyword;
+            int page = request.Page;
+            int count = request.PageSize;
 
             Expression<Func<AccountEntity, bool>> filter = null;
 
