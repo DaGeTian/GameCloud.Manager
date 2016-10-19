@@ -2,6 +2,7 @@
   "dependencies": {
     "BundlerMinifier.Core": "2.2.281",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
+    "Microsoft.AspNetCore.Identity.MongoDB": "1.0.1",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview2-final",

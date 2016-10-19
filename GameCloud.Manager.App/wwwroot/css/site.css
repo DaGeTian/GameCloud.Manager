@@ -19,3 +19,7 @@
 .gc-error-btn {
     cursor: pointer;
 }
+
+.navbar-right {
+    margin-right: 0 !important;
+}

@@ -3,5 +3,7 @@
     public class AppSettings
     {
         public string BuildVersion { get; set; }
+
+        public string ConnectionString { get; set; }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition.Hosting;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCore.WebApp.MongoDB.Services;
 using GameCloud.Manager.App.Common;
 using GameCloud.Manager.App.Manager;
 using Microsoft.AspNetCore.Builder;
@@ -35,14 +37,20 @@ namespace GameCloud.Manager.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.AddIdentityWithMongoStores(Configuration.GetConnectionString("DefaultConnection"))
+                .AddDefaultTokenProviders();
+
             // Add framework services.
             services.AddSingleton<PluginManager>(manager);
             services.AddMvc();
 
             // Add functionality to inject IOptions<T>
             services.AddOptions();
+            // Add application services.
+            services.AddTransient<IEmailSender, AuthMessageSender>();
+            services.AddTransient<ISmsSender, AuthMessageSender>();
 
-            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

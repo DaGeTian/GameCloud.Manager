@@ -3,12 +3,14 @@ using System.Globalization;
 using System.IO;
 using GameCloud.Manager.App.Common;
 using GameCloud.Manager.App.Manager;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
 namespace GameCloud.Manager.App.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IHostingEnvironment hostingEnvironment;
