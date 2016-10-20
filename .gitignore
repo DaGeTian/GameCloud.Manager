@@ -44,6 +44,7 @@ dlldata.c
 project.lock.json
 project.fragment.lock.json
 artifacts/
+Properties/launchSettings.json
 
 *_i.c
 *_p.c
@@ -109,6 +110,10 @@ _TeamCity*
 
 # DotCover is a Code Coverage Tool
 *.dotCover
+
+# Visual Studio code coverage results
+*.coverage
+*.coveragexml
 
 # NCrunch
 _NCrunch_*
@@ -189,6 +194,7 @@ ClientBin/
 *~
 *.dbmdl
 *.dbproj.schemaview
+*.jfm
 *.pfx
 *.publishsettings
 node_modules/
@@ -196,7 +202,7 @@ orleans.codegen.cs
 
 # Since there are multiple workflows, uncomment next line to ignore bower_components
 # (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
-#bower_components/
+bower_components/
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -233,6 +239,9 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
+# Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
+*.vbw
+
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts
 **/*.DesktopClient/GeneratedArtifacts
@@ -251,3 +260,13 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# CodeRush
+.cr/
+
+# Python Tools for Visual Studio (PTVS)
+__pycache__/
+*.pyc
+
+# Cake - Uncomment if you are using it
+# tools/
