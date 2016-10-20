@@ -18,6 +18,7 @@
             <th>最后登录时间</th>
             <th>最后登出时间</th>
             <th>当日发送筹码次数</th>
+            <th style="width:100px;">操作</th>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +40,68 @@
             <td>{{row.loginDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
             <td>{{row.logoutDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
             <td>{{row.sendChipsTm}}</td>
+            <td>
+                <button class="btn btn-primary" ng-click="open(row)"><i class="fa fa-edit"></i> Edit</button>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<div>
+    <div modal="showModal" close="cancel()">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>编辑信息</h4>
+                    <h6>输入的筹码，金币都为变更值</h6>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">昵称</label>
+                            <div class="col-sm-10">
+                                <span class="form-control">{{raw.nickName}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">筹码</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="chipAcc" ng-model="raw.chipAcc" placeholder="输入筹码变更数量.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">银行筹码</label>
+                            <div class="col-sm-10">                                
+                                <input type="text" class="form-control" id="chipBank" ng-model="raw.chipBank" placeholder="输入筹码变更数量.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">金币</label>
+                            <div class="col-sm-10">                                
+                                <input type="text" class="form-control" id="gold" ng-model="raw.gold" placeholder="输入金币变更数量.">
+                            </div>
+                        </div>
+                        <!--<div class="form-group">
+                            <label class="col-sm-2 control-label">用户类型</label>
+                            <div class="col-sm-10">
+                                <span class="form-control">{{raw.accountType|enums:'accountTypeEnum'}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">状态</label>
+                            <div class="col-sm-10">
+                                <select class="form-control"
+                                        ng-model="raw.accountStatus"
+                                        ng-options="t.value as t.displayName for t in $enums.find('accountStatusEnum').items"></select>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" ng-click="save()">保存</button>
+                    <button class="btn" ng-click="cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

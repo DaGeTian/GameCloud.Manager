@@ -1,4 +1,4 @@
-﻿<table class="table table-bordered table-striped table-condensed">
+﻿<table class="table table-bordered table-striped table-condensed" style="width:100%">
     <thead>
         <tr>
             <th>牌桌类型</th>
@@ -8,6 +8,7 @@
             <th>桌子TbId</th>
             <th>Mega底注大小</th>
             <th>桌子EtGuid</th>
+            <th>测试样式</th>
             <th>玩家座位信息</th>
             <th>首轮押注信息</th>
             <th>FlopInfo</th>
@@ -27,13 +28,33 @@
             <td>{{row.desktopTbId}}</td>
             <td>{{row.desktopTbId}}</td>
             <td>{{row.desktopEtGuid}}</td>
+            <td>
+                <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>aid</th>
+                            <th>operate</th>
+                            <th>chips</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="f in row.playerCommonInfo">
+                            <td>{{f.playerNickName}}</td>
+                            <td>{{f.playerActorId}}</td>
+                            <td>{{f.playerOperate}}</td>
+                            <td>{{f.operateChips}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
             <td>{{row.playerCommonInfo}}</td>
             <td>{{row.preflopInfo}}</td>
-            <td>{{row.flopInfo}}</td>
-            <td>{{row.turnInfo}}</td>
-            <td>{{row.riverInfo}}</td>
-            <td>{{row.showDownInfo}}</td>
-            <td>{{row.endInfo}}</td>
+            <td>{{row.flopInfo|json}}</td>
+            <td>{{row.turnInfo|json}}</td>
+            <td>{{row.riverInfo|json}}</td>
+            <td>{{row.showDownInfo|json}}</td>
+            <td>{{row.endInfo|json}}</td>
             <td>{{row.eventTm|date:'yyyy/MM/dd HH:mm:ss'}}</td>
         </tr>
     </tbody>

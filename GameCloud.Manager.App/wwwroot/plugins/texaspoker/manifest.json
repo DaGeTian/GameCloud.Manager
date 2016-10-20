@@ -2,7 +2,7 @@
   "Name": "TexasPoker",
   "DisplayName": "TexasPoker管理平台",
   "Description": "TexasPoker插件",
-  "Url": "http://tp-texaspoker-manager.azurewebsites.net/api",
+  "Url": "http://localhost:5001/api",
   "Certificate": { "Thumbnail": "" },
   "Categories": [
     {
@@ -152,16 +152,16 @@
         },
         {
           "Name": "events-player-win",
-          "DisplayName": "玩家赢",
+          "DisplayName": "玩家牌局",
           "Type": "Table",
-          "Route": "events/PlayerWin",
+          "Route": "events/PlayerPlayData",
           "View": "events-player-win.html"
         },
         {
           "Name": "events-texaspoker",
           "DisplayName": "牌局",
           "Type": "Table",
-          "Route": "api/events/TexasPoker",
+          "Route": "events/TexasPoker",
           "View": "events-texaspoker.html"
         }
       ]
