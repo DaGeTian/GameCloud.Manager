@@ -1,23 +1,6 @@
 ﻿var $enums = $enums || {};
 (function (enums) {
     enums.items = [];
-    var gender = [{
-        name: 'Male',
-        displayName: '男',
-        value: 0
-    }, {
-        name: 'Female',
-        displayName: '女',
-        value: 1
-    }, {
-        name: 'DeclineToState',
-        displayName: '拒绝透漏',
-        value: 2
-    }];
-    enums.items.push({
-        name: 'gender',
-        items: gender
-    });
 
     enums.find = function (name, value) {
         var item = enums.items.find(function (i) {
@@ -47,10 +30,6 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         return function (input, enumName) {
             var item = $enums.find(enumName, input);
             return item ? item.displayName : input;
-        }
-    }).filter('yesNo', function () {
-        return function (input) {
-            return input ? '是' : '否';
         }
     }).filter('group', function () {
         return function (input, length) {
@@ -332,7 +311,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                                 templateUrl: '/plugins/_templates/views/' + i.type + '.html',
                                 controller: i.controller
                             });
-                        })
+                        });
                     }
                 });
             }
