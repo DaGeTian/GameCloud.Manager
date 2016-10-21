@@ -181,19 +181,19 @@
       ]
     },
     {
-      "Name": "onlineanalytics",
+      "Name": "configs",
       "DisplayName": "游戏配置",
       "Description": "游戏配置",
       "Items": [
         {
-          "Name": "onlineanalytics",
+          "Name": "getDesktopConfig",
           "DisplayName": "桌子配置",
           "Type": "Form",
           "Route": "getDesktopConfig",
           "View": "desktop-config.html"
         },
         {
-          "Name": "onlineanalytics",
+          "Name": "getClientConfig",
           "DisplayName": "客户端显示配置",
           "Type": "Form",
           "Route": "getClientConfig",
