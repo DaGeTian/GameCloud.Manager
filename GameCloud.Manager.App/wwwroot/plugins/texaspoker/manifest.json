@@ -4,6 +4,9 @@
   "Description": "TexasPoker插件",
   "Url": "http://localhost:5001/api",
   "Certificate": { "Thumbnail": "" },
+  "Scripts": [
+    "texaspoker-scripts.js"
+  ],
   "Categories": [
     {
       "Name": "player",
@@ -188,14 +191,14 @@
         {
           "Name": "getDesktopConfig",
           "DisplayName": "桌子配置",
-          "Type": "Form",
+          "Type": "Table",
           "Route": "getDesktopConfig",
           "View": "desktop-config.html"
         },
         {
           "Name": "getClientConfig",
           "DisplayName": "客户端显示配置",
-          "Type": "Form",
+          "Type": "Table",
           "Route": "getClientConfig",
           "View": "client-config.html"
         }
