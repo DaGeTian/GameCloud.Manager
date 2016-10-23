@@ -1,7 +1,7 @@
 ﻿{
   "Name": "Demo",
-  "DisplayName": "Demo管理平台",
-  "Description": "UCenter plugin",
+  "DisplayName": "Demo Plugin",
+  "Description": "Demo plugin",
   "Certificate": { "Thumbnail": "" },
   "Url": "http://tp-uc.chinacloudapp.cn:5002/api",
   "Scripts": [

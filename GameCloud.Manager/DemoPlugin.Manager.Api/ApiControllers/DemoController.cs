@@ -27,7 +27,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
                 var updateRawData = request.RawData;
                 if (updateRawData != null)
                 {
-                    var dbRawData = SampleDatas.Where(d => d.Id == updateRawData.Id).FirstOrDefault();
+                    var dbRawData = SampleDatas.FirstOrDefault(d => d.Id == updateRawData.Id);
                     if (dbRawData != null)
                     {
                         dbRawData.Name = updateRawData.Name;
@@ -102,7 +102,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             var pieData = new
             {
                 Labels = ParallelEnumerable.Range(0, 24).Select(i => i.ToString()).ToArray(),
-                Series = new string[] { "小时设备激活" },
+                Series = new string[] { "小时物品" },
                 Datas = this.RandomNumbers(24),
             };
             var lineData = new
