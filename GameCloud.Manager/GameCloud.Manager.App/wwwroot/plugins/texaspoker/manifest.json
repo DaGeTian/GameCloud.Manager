@@ -91,6 +91,13 @@
           "View": "events-chips-change-by-manager.html"
         },
         {
+          "Name": "events-chips-bank-change-by-manager",
+          "DisplayName": "管理员修改银行筹码",
+          "Type": "Table",
+          "Route": "events/ChipsBankChangeByManager",
+          "View": "events-chips-bank-change-by-manager.html"
+        },
+        {
           "Name": "events-coin-change-by-manager",
           "DisplayName": "管理员修改金币",
           "Type": "Table",
@@ -152,6 +159,20 @@
           "Type": "Table",
           "Route": "events/PlayerSendOtherChips",
           "View": "events-player-send-other-chips.html"
+        },
+        {
+          "Name": "events-bot-getchips-from-group",
+          "DisplayName": "机器人获取筹码",
+          "Type": "Table",
+          "Route": "events/BotsGetChipsFromGroup",
+          "View": "events-bot-getchips-from-group.html"
+        },
+        {
+          "Name": "events-group-get-bots-seatfee",
+          "DisplayName": "机器人获取筹码",
+          "Type": "Table",
+          "Route": "events/GroupGetBotsSeatFee",
+          "View": "events-group-get-bots-seatfee.html"
         },
         {
           "Name": "events-player-win",
