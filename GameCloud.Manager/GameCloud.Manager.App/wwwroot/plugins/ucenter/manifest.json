@@ -2,7 +2,7 @@
   "Name": "UCenter",
   "DisplayName": "UCenter管理平台",
   "Description": "UCenter plugin",
-  "Url": "http://tp-ucenter-manager.azurewebsites.net/api",
+  "Url": "http://tp-ucenter.azurewebsites.net/api/manager",
   "Certificate": { "Thumbnail": "" },
   "Scripts": [
     "ucenter-scripts.js"
