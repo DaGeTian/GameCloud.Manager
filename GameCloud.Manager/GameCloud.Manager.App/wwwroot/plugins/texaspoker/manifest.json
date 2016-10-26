@@ -42,6 +42,13 @@
           "View": "events-newplayer-login.html"
         },
         {
+          "Name": "events-newbot-login",
+          "DisplayName": "新机器人登录",
+          "Type": "Table",
+          "Route": "events/NewBotLogin",
+          "View": "events-newbot-login.html"
+        },
+        {
           "Name": "events-buy-chips",
           "DisplayName": "购买筹码",
           "Type": "Table",
@@ -169,7 +176,7 @@
         },
         {
           "Name": "events-group-get-bots-seatfee",
-          "DisplayName": "机器人获取筹码",
+          "DisplayName": "机器人组获取台费",
           "Type": "Table",
           "Route": "events/GroupGetBotsSeatFee",
           "View": "events-group-get-bots-seatfee.html"
