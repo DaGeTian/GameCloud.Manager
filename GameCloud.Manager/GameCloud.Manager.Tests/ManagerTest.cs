@@ -7,11 +7,10 @@ namespace GameCloud.Manager.Tests
     [TestClass]
     public class ManagerTest
     {
-        private static ExportProvider ExportProvider;
-
         [AssemblyInitialize]
         public static void AssemblyInitialize(TestContext context)
         {
+            // todo: add ininialize code here.
         }
     }
 }
