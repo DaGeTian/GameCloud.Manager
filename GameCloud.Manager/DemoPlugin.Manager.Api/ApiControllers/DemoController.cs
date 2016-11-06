@@ -82,6 +82,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
                 GlobalSettings = new DemoPluginSettings();
                 GlobalSettings.FormData1 = "FormData1-Default";
                 GlobalSettings.FormData2 = "FormData2-Default";
+                GlobalSettings.TestDate = DateTime.Now;
                 GlobalSettings.UpdateTime = DateTime.UtcNow;
             }
 
@@ -89,6 +90,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             {
                 GlobalSettings.FormData1 = request.Body.FormData1;
                 GlobalSettings.FormData2 = request.Body.FormData2;
+                GlobalSettings.TestDate = request.Body.TestDate;
                 GlobalSettings.UpdateTime = DateTime.UtcNow;
             }
 
