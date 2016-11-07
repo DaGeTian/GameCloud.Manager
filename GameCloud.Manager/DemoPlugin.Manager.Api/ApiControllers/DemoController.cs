@@ -27,7 +27,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
                 var updateRawData = request.RawData;
                 if (updateRawData != null)
                 {
-                    var dbRawData = SampleDatas.FirstOrDefault(d => d.Id == updateRawData.Id);
+                    var dbRawData = SampleDatas.Where(d => d.Id == updateRawData.Id).FirstOrDefault();
                     if (dbRawData != null)
                     {
                         dbRawData.Name = updateRawData.Name;
@@ -42,7 +42,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
                 var deleteRawData = request.RawData;
                 if (deleteRawData != null)
                 {
-                    if(SampleDatas.Any(d=>d.Id == deleteRawData.Id))
+                    if (SampleDatas.Any(d => d.Id == deleteRawData.Id))
                     {
                         // delete the raw data here.
                         SampleDatas.Remove(SampleDatas.First(d => d.Id == deleteRawData.Id));
@@ -104,7 +104,7 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             var pieData = new
             {
                 Labels = ParallelEnumerable.Range(0, 24).Select(i => i.ToString()).ToArray(),
-                Series = new string[] { "小时物品" },
+                Series = new string[] { "小时数值" },
                 Datas = this.RandomNumbers(24),
             };
             var lineData = new
@@ -136,6 +136,8 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
         public string FormData1 { get; set; }
 
         public string FormData2 { get; set; }
+
+        public DateTime TestDate { get; set; }
 
         public DateTime UpdateTime { get; set; }
     }

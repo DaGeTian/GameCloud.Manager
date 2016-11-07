@@ -17,5 +17,8 @@ namespace GameCloud.Manager.App.Models
 
         [DataMember(Name = "categories")]
         public List<PluginCategory> Categories { get; set; }
+
+        [DataMember(Name = "refreshInterval")]
+        public int RefreshInterval { get; set; }
     }
 }

@@ -4,6 +4,7 @@
   "Description": "Demo plugin",
   "Certificate": { "Thumbnail": "" },
   "Url": "http://tp-uc.chinacloudapp.cn:5002/api",
+  "RefreshInterval": 5000,
   "Scripts": [
     "demo-scripts.js"
   ],

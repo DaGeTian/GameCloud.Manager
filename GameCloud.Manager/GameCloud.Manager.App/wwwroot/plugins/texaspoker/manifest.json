@@ -4,6 +4,7 @@
   "Description": "TexasPoker插件",
   "Url": "http://tp-texaspoker-manager.azurewebsites.net/api",
   "Certificate": { "Thumbnail": "" },
+  "RefreshInterval": 5000,
   "Scripts": [
     "texaspoker-scripts.js"
   ],

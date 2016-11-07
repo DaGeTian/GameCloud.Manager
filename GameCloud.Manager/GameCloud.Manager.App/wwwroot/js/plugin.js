@@ -156,7 +156,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         $scope.params = {};
         $scope.beforeFetch = function () { };
 
-        var post = function (method) {
+        var post = function (method, callback) {
             $scope.code = null;
             $scope.response = null;
             var params = [];
@@ -186,6 +186,10 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                     $scope.loadingText = loading.done;
                     $scope.status = response.status;
                     $scope.data = response.data;
+
+                    if (callback) {
+                        callback(true, response);
+                    }
                 }, function (response) {
                     $scope.loadingText = loading.done;
                     console.log(response);
@@ -193,6 +197,10 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                         status: response.status,
                         message: response.data || (response.status == "-1" ? "请求超时，服务器没有在有效时间内做出相应" : "发生未知错误")
                     };
+
+                    if (callback) {
+                        callback(false, response);
+                    }
                 });
         }
 
@@ -200,19 +208,39 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
             $scope.error = null;
         };
 
-        $scope._fetch = function () {
+        $scope._fetch = function (callback) {
             $scope.loadingText = loading.fetch;
-            post('Read');
+            post('Read', callback);
         };
 
-        $scope._update = function () {
+        $scope._update = function (callback) {
             $scope.loadingText = loading.update;
-            post('Update');
+            post('Update', callback);
         };
 
-        $scope._delete = function () {
+        $scope._delete = function (callback) {
             $scope.loadingText = loading.delete;
-            post('Delete');
+            post('Delete', callback);
+        };
+
+        $scope._sync = function () {
+            if (!$scope.item) {
+                return;
+            }
+
+            var interval = $scope.item.refreshInterval || $scope.plugin.refreshInterval;
+            if (interval > 0) {
+                var callback = function (isSuccess, response) {
+                    setTimeout(function () {
+                        $scope._fetch(callback);
+                    },
+                    interval);
+                }
+
+                $scope._fetch(callback);
+            } else {
+                $scope._fetch();
+            }
         };
     }]).controller('pluginsController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
@@ -258,7 +286,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
             $scope.showModal = false;
         };
 
-        $scope._fetch();
+        $scope._sync();
     }])
     .controller('formController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
@@ -268,11 +296,12 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
             $scope._update();
         }
 
+        // auto sync should only on table & report type plugin.
         $scope._fetch();
     }])
     .controller('chartController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
         $controller('apiController', { $scope: $scope });
-        $scope._fetch();
+        $scope._sync();
     }])
     .config(['$routeProvider', function ($routeProvider) {
         if ($plugin) {
