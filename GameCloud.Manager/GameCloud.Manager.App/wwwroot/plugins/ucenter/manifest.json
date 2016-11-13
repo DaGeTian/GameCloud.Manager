@@ -83,22 +83,11 @@
           "View": "new-users.html"
         },
         {
-          "Name": "activeusers",
-          "DisplayName": "活跃玩家",
-          "Type": "Chart",
-          "View": "active-users.html"
-        },
-        {
           "Name": "staystatistics",
-          "DisplayName": "留存统计",
+          "DisplayName": "玩家统计",
           "Type": "Chart",
-          "View": "stay-statistics.html"
-        },
-        {
-          "Name": "loststatistics",
-          "DisplayName": "流失统计",
-          "Type": "Chart",
-          "View": "lost-statistics.html"
+          "Route": "userstatistics",
+          "View": "user-statistics.html"
         }
       ]
     },

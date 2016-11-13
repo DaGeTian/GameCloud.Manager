@@ -53,7 +53,6 @@ namespace GameCloud.Manager.App.Manager
         {
             var files = Directory.GetFiles(path, "manifest.json", SearchOption.AllDirectories);
             var result = new List<Plugin>();
-
             foreach (var file in files)
             {
 
