@@ -23,4 +23,28 @@
     }];
 
     $enums.items.push({ name: 'canShowSendChips', items: canShowSendChips });
+
+    var sysNoticeType = [{
+        name: 'Sys',
+        displayName: '系统',
+        value: 1
+    }, {
+        name: 'Player',
+        displayName: '玩家',
+        value: 2
+    }];
+
+    $enums.items.push({ name: 'sysNoticeType', items: sysNoticeType });
+
+    var sysNoticeLevel = [{
+        name: 'Normal',
+        displayName: '普通',
+        value: 1
+    }, {
+        name: 'Important',
+        displayName: '重要',
+        value: 2
+    }];
+
+    $enums.items.push({ name: 'sysNoticeLevel', items: sysNoticeLevel });
 })($enums || ($enums = {}));

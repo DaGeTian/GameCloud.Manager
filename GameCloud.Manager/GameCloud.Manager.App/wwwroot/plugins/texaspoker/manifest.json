@@ -230,6 +230,13 @@
           "Type": "Table",
           "Route": "getClientConfig",
           "View": "client-config.html"
+        },
+        {
+          "Name": "getSysNotice",
+          "DisplayName": "系统公告",
+          "Type": "Table",
+          "Route": "getSysNotice",
+          "View": "sys-notice.html"
         }
       ]
     }
