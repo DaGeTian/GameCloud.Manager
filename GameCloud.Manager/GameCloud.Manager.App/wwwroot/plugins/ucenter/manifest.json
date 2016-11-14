@@ -2,7 +2,8 @@
   "Name": "UCenter",
   "DisplayName": "UCenter管理平台",
   "Description": "UCenter plugin",
-  "Url": "http://tp-ucenter.azurewebsites.net/api/manager",
+  "DebugUrl": "http://localhost:5001/api/manager",
+  "Url": "http://localhost:5000/api/manager",
   "Certificate": { "Thumbnail": "" },
   "Scripts": [
     "ucenter-scripts.js"

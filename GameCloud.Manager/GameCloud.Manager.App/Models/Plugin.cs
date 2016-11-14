@@ -9,6 +9,9 @@ namespace GameCloud.Manager.App.Models
         [DataMember(Name = "url")]
         public string Url { get; set; }
 
+        [DataMember(Name = "DebugUrl")]
+        public string DebugUrl { get; set; }
+
         [DataMember(Name = "scripts")]
         public List<string> Scripts { get; set; }
 
