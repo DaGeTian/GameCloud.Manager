@@ -204,11 +204,11 @@
       "Description": "整体统计",
       "Items": [
         {
-          "Name": "onlineanalytics",
-          "DisplayName": "整体统计",
+          "Name": "getBotGroupCurrentChips",
+          "DisplayName": "机器人组当前筹码统计",
           "Type": "Chart",
-          "Route": "xxxxxxxxxx",
-          "View": "xxxxxxxxxxxxxxxxxx.html"
+          "Route": "getBotGroupCurrentChips",
+          "View": "events-statistics-botgroup-currentchips.html"
         }
       ]
     },
