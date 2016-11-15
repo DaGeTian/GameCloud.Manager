@@ -22,6 +22,25 @@
         return result;
     };
 })($enums || ($enums = {}));
+Date.today = function () {
+    let today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return today;
+};
+
+Date.prototype.add = function (value, period) {
+    if (period == 'days') {
+        this.setDate(this.getDate() + value);
+    } else {
+        console.log('not support period.');
+    }
+}
+
+Date.yesterday = function () {
+    var today = Date.today();
+    today.add(-1, 'days');
+    return today;
+}
 
 $groupCache = {};
 // var $plugins = null;
@@ -186,7 +205,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                     $scope.loadingText = loading.done;
                     $scope.status = response.status;
                     $scope.data = response.data;
-
+                    console.log(response);
                     if (callback) {
                         callback(true, response);
                     }
@@ -223,23 +242,27 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
             post('Delete', callback);
         };
 
-        $scope._sync = function () {
+        $scope._sync = function (callback) {
             if (!$scope.item) {
                 return;
             }
 
             var interval = $scope.item.refreshInterval || $scope.plugin.refreshInterval;
             if (interval > 0) {
-                var callback = function (isSuccess, response) {
+                var _callback = function (isSuccess, response) {
+                    if (callback) {
+                        callback(isSuccess, response);
+                    }
+
                     setTimeout(function () {
-                        $scope._fetch(callback);
+                        $scope._fetch(_callback);
                     },
                     interval);
                 }
 
-                $scope._fetch(callback);
+                $scope._fetch(_callback);
             } else {
-                $scope._fetch();
+                $scope._fetch(callback);
             }
         };
     }]).controller('pluginsController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {

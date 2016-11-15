@@ -81,6 +81,8 @@
           "Name": "newusers",
           "DisplayName": "新增玩家",
           "Type": "Chart",
+          "Route": "newusers",
+          "Controller": "ucenterNewUsersController",
           "View": "new-users.html"
         },
         {
@@ -88,6 +90,7 @@
           "DisplayName": "玩家统计",
           "Type": "Chart",
           "Route": "userstatistics",
+          "Controller": "ucenterUserStatisticsController",
           "View": "user-statistics.html"
         }
       ]
