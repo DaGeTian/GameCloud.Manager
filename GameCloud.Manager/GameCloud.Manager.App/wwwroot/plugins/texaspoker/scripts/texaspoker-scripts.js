@@ -47,4 +47,28 @@
     }];
 
     $enums.items.push({ name: 'sysNoticeLevel', items: sysNoticeLevel });
+
+    var produceChipType = [{
+        name: 'BuyInGame',
+        displayName: '游戏内购买',
+        value: 1
+    }, {
+        name: 'BuyFromGM',
+        displayName: '通过后台购买',
+        value: 2
+    }, {
+        name: 'DailySendBySys',
+        displayName: '每日赠送',
+        value: 3
+    }, {
+        name: 'LostAllThenSendBySys',
+        displayName: '输光后赠送',
+        value: 4
+    }, {
+        name: 'BotSysSeedMoney',
+        displayName: '机器人系统初始资金',
+        value: 5
+    }];
+
+    $enums.items.push({ name: 'produceChipType', items: produceChipType });
 })($enums || ($enums = {}));

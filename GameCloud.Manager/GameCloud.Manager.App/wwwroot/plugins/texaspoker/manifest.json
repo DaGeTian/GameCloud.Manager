@@ -208,7 +208,14 @@
           "DisplayName": "机器人组当前筹码统计",
           "Type": "Chart",
           "Route": "getBotGroupCurrentChips",
-          "View": "events-statistics-botgroup-currentchips.html"
+          "View": "events-statistics-history-botgroup-currentchips.html"
+        },
+        {
+          "Name": "getRealTimeSysChipBankProduceInfo",
+          "DisplayName": "系统当前产出筹码统计",
+          "Type": "Chart",
+          "Route": "getRealTimeSysChipBankProduceInfo",
+          "View": "events-statistics-realtime-syschipbank-totalchipsinfo.html"
         }
       ]
     },
