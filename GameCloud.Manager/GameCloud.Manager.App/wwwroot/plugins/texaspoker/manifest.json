@@ -216,6 +216,13 @@
           "Type": "Chart",
           "Route": "getRealTimeSysChipBankProduceInfo",
           "View": "events-statistics-realtime-syschipbank-totalchipsinfo.html"
+        },
+        {
+          "Name": "getRealTimeSysGoldBankProduceInfo",
+          "DisplayName": "系统当前产出金币统计",
+          "Type": "Chart",
+          "Route": "getRealTimeSysGoldBankProduceInfo",
+          "View": "events-statistics-realtime-sysgoldbank-totalgoldsinfo.html"
         }
       ]
     },

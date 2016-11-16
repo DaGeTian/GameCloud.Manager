@@ -71,4 +71,16 @@
     }];
 
     $enums.items.push({ name: 'produceChipType', items: produceChipType });
+
+    var produceGoldType = [{
+        name: 'BuyInGame',
+        displayName: '游戏内购买',
+        value: 1
+    }, {
+        name: 'BuyFromGM',
+        displayName: '通过后台购买',
+        value: 2
+    }];
+
+    $enums.items.push({ name: 'produceGoldType', items: produceGoldType });
 })($enums || ($enums = {}));
