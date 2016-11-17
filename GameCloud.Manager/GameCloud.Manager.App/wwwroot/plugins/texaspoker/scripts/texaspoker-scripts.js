@@ -24,6 +24,18 @@
 
     $enums.items.push({ name: 'canShowSendChips', items: canShowSendChips });
 
+    var commonTrueFalse = [{
+        name: 'true',
+        displayName: '是',
+        value: true
+    }, {
+        name: 'false',
+        displayName: '不是',
+        value: false
+    }];
+
+    $enums.items.push({ name: 'commonTrueFalse', items: commonTrueFalse });
+
     var sysNoticeType = [{
         name: 'Sys',
         displayName: '系统',

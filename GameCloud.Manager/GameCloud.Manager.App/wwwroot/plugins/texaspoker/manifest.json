@@ -286,6 +286,13 @@
           "Type": "Table",
           "Route": "getBotWinOrLooseChipPercentConfig",
           "View": "bot-win-loose-chippersent-config.html"
+        },
+        {
+          "Name": "getBotActionConfig",
+          "DisplayName": "机器人行为配置",
+          "Type": "Table",
+          "Route": "getBotActionConfig",
+          "View": "bot-action-config.html"
         }
       ]
     }
