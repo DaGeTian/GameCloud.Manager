@@ -279,6 +279,13 @@
           "Type": "Table",
           "Route": "getPlayerDailyReward",
           "View": "daily-reward-config.html"
+        },
+        {
+          "Name": "getBotWinOrLooseChipPercentConfig",
+          "DisplayName": "机器人输赢转折总筹码百分比配置",
+          "Type": "Table",
+          "Route": "getBotWinOrLooseChipPercentConfig",
+          "View": "bot-win-loose-chippersent-config.html"
         }
       ]
     }
