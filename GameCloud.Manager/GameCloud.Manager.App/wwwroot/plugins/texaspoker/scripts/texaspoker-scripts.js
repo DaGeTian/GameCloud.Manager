@@ -92,6 +92,30 @@
 
     $enums.items.push({ name: 'produceGoldType', items: produceGoldType });
 
+    var recoverChipType = [{
+        name: 'BuyGiftTmp',
+        displayName: '购买临时礼物',
+        value: 1
+    }, {
+        name: 'BuyItem',
+        displayName: '购买属性',
+        value: 2
+    }, {
+        name: 'SeatFee',
+        displayName: '台费',
+        value: 3
+    }, {
+        name: 'SysPumping',
+        displayName: '抽水',
+        value: 4
+    }, {
+        name: 'RecoverByGM',
+        displayName: '通过后台回收',
+        value: 5
+    }];
+
+    $enums.items.push({ name: 'recoverChipType', items: recoverChipType });
+
     var recoverGoldType = [{
         name: 'BuyGiftTmp',
         displayName: '购买临时礼物',
@@ -107,4 +131,16 @@
     }];
 
     $enums.items.push({ name: 'recoverGoldType', items: recoverGoldType });
+
+    var isClassic = [{
+        name: 'false',
+        displayName: '必下',
+        value: false
+    }, {
+        name: 'true',
+        displayName: '经典',
+        value: true
+    }];
+
+    $enums.items.push({ name: 'isClassic', items: isClassic });
 })($enums || ($enums = {}));
