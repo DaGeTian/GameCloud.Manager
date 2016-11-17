@@ -47,4 +47,64 @@
     }];
 
     $enums.items.push({ name: 'sysNoticeLevel', items: sysNoticeLevel });
+
+    var produceChipType = [{
+        name: 'BuyInGame',
+        displayName: '游戏内购买',
+        value: 1
+    }, {
+        name: 'BuyFromGM',
+        displayName: '通过后台购买',
+        value: 2
+    }, {
+        name: 'DailySendBySys',
+        displayName: '每日赠送',
+        value: 3
+    }, {
+        name: 'LostAllThenSendBySys',
+        displayName: '输光后赠送',
+        value: 4
+    }, {
+        name: 'SellItem',
+        displayName: '卖属性',
+        value: 5
+    }, {
+        name: 'BotSysSeedMoney',
+        displayName: '机器人系统初始资金',
+        value: 6
+    }];
+
+    $enums.items.push({ name: 'produceChipType', items: produceChipType });
+
+    var produceGoldType = [{
+        name: 'BuyInGame',
+        displayName: '游戏内购买',
+        value: 1
+    }, {
+        name: 'BuyFromGM',
+        displayName: '通过后台购买',
+        value: 2
+    }, {
+        name: 'SellItem',
+        displayName: '卖属性',
+        value: 3
+    }];
+
+    $enums.items.push({ name: 'produceGoldType', items: produceGoldType });
+
+    var recoverGoldType = [{
+        name: 'BuyGiftTmp',
+        displayName: '购买临时礼物',
+        value: 1
+    }, {
+        name: 'BuyItem',
+        displayName: '购买属性',
+        value: 2
+    }, {
+        name: 'RecoverByGM',
+        displayName: '通过后台回收',
+        value: 3
+    }];
+
+    $enums.items.push({ name: 'recoverGoldType', items: recoverGoldType });
 })($enums || ($enums = {}));
