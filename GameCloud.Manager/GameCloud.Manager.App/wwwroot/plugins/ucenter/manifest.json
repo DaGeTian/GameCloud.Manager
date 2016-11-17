@@ -4,7 +4,7 @@
   "Description": "UCenter plugin",
   "DebugUrl": "http://localhost:5001/api/manager",
   "Url": "http://localhost:5000/api/manager",
-  "Certificate": { "Thumbnail": "" },
+  "Certificate": { "Thumbnail": " " },
   "Scripts": [
     "ucenter-scripts.js"
   ],
@@ -81,6 +81,8 @@
           "Name": "newusers",
           "DisplayName": "新增玩家",
           "Type": "Chart",
+          "Route": "newusers",
+          "Controller": "ucenterNewUsersController",
           "View": "new-users.html"
         },
         {
@@ -88,7 +90,24 @@
           "DisplayName": "玩家统计",
           "Type": "Chart",
           "Route": "userstatistics",
+          "Controller": "ucenterUserStatisticsController",
           "View": "user-statistics.html"
+        },
+        {
+          "Name": "user-staystatistics",
+          "DisplayName": "留存统计",
+          "Type": "Chart",
+          "Route": "userstatistics2",
+          "Controller": "ucenterUserStayStatisticsController",
+          "View": "user-statistics-new.html"
+        },
+        {
+          "Name": "user-loststatistics",
+          "DisplayName": "流失统计",
+          "Type": "Chart",
+          "Route": "userstatistics2",
+          "Controller": "ucenterUserLostStatisticsController",
+          "View": "user-statistics-new.html"
         }
       ]
     },
