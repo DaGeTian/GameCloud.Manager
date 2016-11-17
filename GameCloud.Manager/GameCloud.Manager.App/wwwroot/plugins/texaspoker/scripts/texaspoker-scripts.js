@@ -223,4 +223,36 @@
     }];
 
     $enums.items.push({ name: 'handRankType', items: handRankType });
+
+    var weekDisplay = [{
+        name: '1',
+        displayName: '周一',
+        value: '1'
+    }, {
+        name: '2',
+        displayName: '周二',
+        value: '2'
+    }, {
+        name: '3',
+        displayName: '周三',
+        value: '3'
+    }, {
+        name: '4',
+        displayName: '周四',
+        value: '4'
+    }, {
+        name: '5',
+        displayName: '周五',
+        value: '5'
+    }, {
+        name: '6',
+        displayName: '周六',
+        value: '6'
+    }, {
+        name: '0',
+        displayName: '周日',
+        value: '0'
+    }];
+
+    $enums.items.push({ name: 'weekDisplay', items: weekDisplay });
 })($enums || ($enums = {}));
