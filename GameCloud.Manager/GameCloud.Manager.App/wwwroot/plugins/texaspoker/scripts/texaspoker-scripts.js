@@ -83,4 +83,20 @@
     }];
 
     $enums.items.push({ name: 'produceGoldType', items: produceGoldType });
+
+    var recoverGoldType = [{
+        name: 'BuyGiftTmp',
+        displayName: '购买临时礼物',
+        value: 1
+    }, {
+        name: 'BuyItem',
+        displayName: '购买属性',
+        value: 2
+    }, {
+        name: 'RecoverByGM',
+        displayName: '通过后台回收',
+        value: 3
+    }];
+
+    $enums.items.push({ name: 'recoverGoldType', items: recoverGoldType });
 })($enums || ($enums = {}));

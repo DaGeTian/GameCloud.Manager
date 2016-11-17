@@ -215,14 +215,21 @@
           "DisplayName": "系统当前产出筹码统计",
           "Type": "Chart",
           "Route": "getRealTimeSysChipBankProduceInfo",
-          "View": "events-statistics-realtime-syschipbank-totalchipsinfo.html"
+          "View": "events-statistics-produce-realtime-syschipbank-totalchipsinfo.html"
         },
         {
           "Name": "getRealTimeSysGoldBankProduceInfo",
           "DisplayName": "系统当前产出金币统计",
           "Type": "Chart",
           "Route": "getRealTimeSysGoldBankProduceInfo",
-          "View": "events-statistics-realtime-sysgoldbank-totalgoldsinfo.html"
+          "View": "events-statistics-produce-realtime-sysgoldbank-totalgoldsinfo.html"
+        },
+        {
+          "Name": "getRealTimeSysGoldBankRecoverInfo",
+          "DisplayName": "系统当前回收金币统计",
+          "Type": "Chart",
+          "Route": "getRealTimeSysGoldBankRecoverInfo",
+          "View": "events-statistics-recover-realtime-sysgoldbank-totalgoldsinfo.html"
         }
       ]
     },
