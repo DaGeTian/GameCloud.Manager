@@ -39,44 +39,15 @@
             <div class="col-sm-12">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h3>留存率</h3>
+                        <h3>{{title}}</h3>
                         <p>
                             <canvas class="chart chart-bar"
+                                    chart-colors="colors"
                                     chart-options="options"
-                                    chart-data="data.remainRate.data"
-                                    chart-labels="data.remainRate.labels"
-                                    chart-series="data.remainRate.series"
-                                    chart-dataset-override="data.remainRate.overrides"></canvas>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h3>流失率</h3>
-                        <p>
-                            <canvas class="chart chart-line"
-                                    chart-data="data.lostRate.data"
-                                    chart-labels="data.lostRate.labels"
-                                    chart-series="data.lostRate.series"></canvas>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h3>生命周期</h3>
-                        <p>
-                            <canvas class="chart chart-line"
-                                    chart-data="data.lifeCycle.data"
-                                    chart-labels="data.lifeCycle.labels"
-                                    chart-series="data.lifeCycle.series"></canvas>
+                                    chart-data="data.data"
+                                    chart-labels="data.labels"
+                                    chart-series="data.series"
+                                    chart-dataset-override="override"></canvas>
                         </p>
                     </div>
                 </div>

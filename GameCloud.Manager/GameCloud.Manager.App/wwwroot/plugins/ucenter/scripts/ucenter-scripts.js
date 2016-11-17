@@ -31,6 +31,39 @@ $pluginApp.controller('ucenterUserStatisticsController', ['$scope', '$http', '$t
     lastMonth.setMonth(lastMonth.getMonth() - 1);
     $scope.params.startDate = lastMonth;
     $scope.params.endDate = Date.today();
+    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+    $scope.options = {
+        legend: { display: true },
+        scales: {
+            yAxes: [
+              {
+                  id: 'y-axis-1',
+                  type: 'linear',
+                  display: true,
+                  position: 'left'
+              },
+              {
+                  id: 'y-axis-2',
+                  type: 'linear',
+                  display: true,
+                  position: 'right'
+              }
+            ]
+        }
+    };
+
+    $scope.createOverride = function () {
+        $scope.override = [{
+            label: $scope.type + "率",
+            type: "line",
+            yAxisID: "y-axis-1"
+        }, {
+            label: $scope.type + "总数",
+            type: "bar",
+            yAxisID: "y-axis-2"
+        }];
+    }
+
     $scope._sync();
 }])
 .controller('ucenterNewUsersController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {

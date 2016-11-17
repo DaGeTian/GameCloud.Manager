@@ -9,13 +9,31 @@ namespace GameCloud.Manager.App.Manager
 {
     public class PluginManager
     {
+        private const string ManifestFileName = "manifest.json";
         private readonly ConcurrentDictionary<string, PluginClient> clients = new ConcurrentDictionary<string, PluginClient>();
 
-        private readonly IReadOnlyList<Plugin> plugins;
+        private IReadOnlyList<Plugin> plugins;
+        private readonly TimeSpan syncInterval = TimeSpan.FromSeconds(5);
+        private readonly FileSystemWatcher watcher;
+        private readonly string path;
 
         public PluginManager(string path)
         {
+            this.path = path;
             this.plugins = this.GetPlugins(path);
+            this.watcher = new FileSystemWatcher(path, "*" + ManifestFileName);
+            this.watcher.IncludeSubdirectories = true;
+            this.watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.Size;
+            this.watcher.Changed += Watcher_Changed;
+            this.watcher.Deleted += Watcher_Changed;
+            this.watcher.Created += Watcher_Changed;
+            this.watcher.EnableRaisingEvents = true;
+        }
+
+        private void Watcher_Changed(object sender, FileSystemEventArgs e)
+        {
+            Console.WriteLine("Find file change: {0}", e.FullPath);
+            this.SyncPlugins();
         }
 
         public IReadOnlyList<Plugin> Plugins
@@ -49,13 +67,27 @@ namespace GameCloud.Manager.App.Manager
             });
         }
 
+        private void SyncPlugins()
+        {
+            try
+            {
+                Console.WriteLine("Start to sync plugins.");
+                var plugins = this.GetPlugins(this.path);
+                this.plugins = plugins;
+                Console.WriteLine("Finish sync pluings");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Sync plugins error. {0}", ex);
+            }
+        }
+
         private IReadOnlyList<Plugin> GetPlugins(string path)
         {
-            var files = Directory.GetFiles(path, "manifest.json", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(path, ManifestFileName, SearchOption.AllDirectories);
             var result = new List<Plugin>();
             foreach (var file in files)
             {
-
                 var plugin = JsonConvert.DeserializeObject<Plugin>(File.ReadAllText(file));
                 result.Add(plugin);
             }
