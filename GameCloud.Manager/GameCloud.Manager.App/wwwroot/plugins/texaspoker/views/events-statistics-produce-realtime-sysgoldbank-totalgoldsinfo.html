@@ -3,6 +3,7 @@
         <tr>
             <th>{{data[0].produceGoldType|enums:'produceGoldType'}}</th>
             <th>{{data[1].produceGoldType|enums:'produceGoldType'}}</th>
+            <th>{{data[2].produceGoldType|enums:'produceGoldType'}}</th>
             <th>总值</th>
         </tr>
     </thead>
@@ -10,7 +11,8 @@
         <tr>
             <td>{{data[0].totalGolds}}</td>
             <td>{{data[1].totalGolds}}</td>
-            <td>{{data[0].totalGolds+data[1].totalGolds}}</td>
+            <td>{{data[2].totalGolds}}</td>
+            <td>{{data[0].totalGolds+data[1].totalGolds+data[2].totalGolds}}</td>
         </tr>
     </tbody>
 </table>

@@ -65,9 +65,13 @@
         displayName: '输光后赠送',
         value: 4
     }, {
+        name: 'SellItem',
+        displayName: '卖属性',
+        value: 5
+    }, {
         name: 'BotSysSeedMoney',
         displayName: '机器人系统初始资金',
-        value: 5
+        value: 6
     }];
 
     $enums.items.push({ name: 'produceChipType', items: produceChipType });
@@ -80,6 +84,10 @@
         name: 'BuyFromGM',
         displayName: '通过后台购买',
         value: 2
+    }, {
+        name: 'SellItem',
+        displayName: '卖属性',
+        value: 3
     }];
 
     $enums.items.push({ name: 'produceGoldType', items: produceGoldType });
