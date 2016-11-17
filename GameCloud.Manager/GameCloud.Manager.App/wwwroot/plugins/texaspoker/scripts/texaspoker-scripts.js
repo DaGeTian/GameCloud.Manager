@@ -143,4 +143,84 @@
     }];
 
     $enums.items.push({ name: 'isClassic', items: isClassic });
+
+    var cardSuit = [{
+        name: 'club',
+        displayName: '♣',
+        value: 0
+    }, {
+        name: 'diamond',
+        displayName: '♦',
+        value: 1
+    }, {
+        name: 'heart',
+        displayName: '♥',
+        value: 2
+    }, {
+        name: 'spade',
+        displayName: '♠',
+        value: 3
+    }];
+
+    $enums.items.push({ name: 'cardSuit', items: cardSuit });
+
+    var cardType = [{
+        name: 'jack',
+        displayName: 'J',
+        value: 11
+    }, {
+        name: 'queen',
+        displayName: 'Q',
+        value: 12
+    }, {
+        name: 'king',
+        displayName: 'K',
+        value: 13
+    }, {
+        name: 'ace',
+        displayName: 'A',
+        value: 14
+    }];
+
+    $enums.items.push({ name: 'cardType', items: cardType });
+
+    var handRankType = [{
+        name: 'highCard',
+        displayName: '高牌',
+        value: 1000
+    }, {
+        name: 'pair',
+        displayName: '一对',
+        value: 2000
+    }, {
+        name: 'twoPairs',
+        displayName: '两对',
+        value: 3000
+    }, {
+        name: 'threeOfAKind',
+        displayName: '三条',
+        value: 4000
+    }, {
+        name: 'straight',
+        displayName: '顺子',
+        value: 5000
+    }, {
+        name: 'flush',
+        displayName: '同花',
+        value: 6000
+    }, {
+        name: 'fullHouse',
+        displayName: '葫芦',
+        value: 7000
+    }, {
+        name: 'fourOfAKind',
+        displayName: '四条',
+        value: 8000
+    }, {
+        name: 'straightFlush',
+        displayName: '同花顺',
+        value: 9000
+    }];
+
+    $enums.items.push({ name: 'handRankType', items: handRankType });
 })($enums || ($enums = {}));

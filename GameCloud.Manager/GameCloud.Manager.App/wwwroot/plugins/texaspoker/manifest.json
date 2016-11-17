@@ -237,6 +237,13 @@
           "Type": "Chart",
           "Route": "getRealTimeSysBankRecoverInfoGold",
           "View": "events-statistics-recover-realtime-sysgoldbank-totalgoldsinfo.html"
+        },
+        {
+          "Name": "getAttentionPlayerDesktopInfo",
+          "DisplayName": "被关注玩家所在桌玩家手牌信息",
+          "Type": "Table",
+          "Route": "getAttentionPlayerDesktopInfo",
+          "View": "pay-attention-player-desktop-carddata-realtime.html"
         }
       ]
     },
