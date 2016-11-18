@@ -14,6 +14,7 @@
             <th>会员点数</th>
             <th>游戏总局数</th>
             <th>游戏赢局数</th>
+            <th>胜率</th>
             <th>加入时间</th>
             <th>最后登录时间</th>
             <th>最后登出时间</th>
@@ -36,6 +37,7 @@
             <td>{{row.vIPPoint}}</td>
             <td>{{row.gameTotal}}</td>
             <td>{{row.gameWin}}</td>
+            <td>{{(row.gameWin / row.gameTotal).toFixed(2)}}</td>
             <td>{{row.joinDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
             <td>{{row.loginDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
             <td>{{row.logoutDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
@@ -71,13 +73,13 @@
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">银行筹码</label>
-                            <div class="col-sm-10">                                
+                            <div class="col-sm-10">
                                 <input type="text" class="form-control" id="chipBank" ng-model="raw.chipBank" placeholder="输入筹码变更数量.">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">金币</label>
-                            <div class="col-sm-10">                                
+                            <div class="col-sm-10">
                                 <input type="text" class="form-control" id="gold" ng-model="raw.gold" placeholder="输入金币变更数量.">
                             </div>
                         </div>
