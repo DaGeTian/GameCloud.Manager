@@ -69,21 +69,25 @@
         displayName: '通过后台购买',
         value: 2
     }, {
+        name: 'BuyFromGMBank',
+        displayName: '通过后台购买存入银行',
+        value: 3
+    }, {
         name: 'DailySendBySys',
         displayName: '每日赠送',
-        value: 3
+        value: 4
     }, {
         name: 'LostAllThenSendBySys',
         displayName: '输光后赠送',
-        value: 4
+        value: 5
     }, {
         name: 'SellItem',
         displayName: '卖属性',
-        value: 5
+        value: 6
     }, {
         name: 'BotSysSeedMoney',
         displayName: '机器人系统初始资金',
-        value: 6
+        value: 7
     }];
 
     $enums.items.push({ name: 'produceChipType', items: produceChipType });
@@ -124,6 +128,10 @@
         name: 'RecoverByGM',
         displayName: '通过后台回收',
         value: 5
+    }, {
+        name: 'RecoverByGMBank',
+        displayName: '通过后台回收银行筹码',
+        value: 6
     }];
 
     $enums.items.push({ name: 'recoverChipType', items: recoverChipType });
