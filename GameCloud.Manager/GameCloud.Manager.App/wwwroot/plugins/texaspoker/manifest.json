@@ -208,35 +208,35 @@
           "DisplayName": "机器人组当前筹码统计",
           "Type": "Chart",
           "Route": "getBotGroupCurrentChips",
-          "View": "events-statistics-history-botgroup-currentchips.html"
+          "View": "statistics-history-botgroup-currentchips.html"
         },
         {
           "Name": "getRealTimeSysBankProduceInfoChip",
           "DisplayName": "系统当前产出筹码统计",
           "Type": "Chart",
           "Route": "getRealTimeSysBankProduceInfoChip",
-          "View": "events-statistics-produce-realtime-syschipbank-totalchipsinfo.html"
+          "View": "statistics-produce-realtime-syschipbank-totalchipsinfo.html"
         },
         {
           "Name": "getRealTimeSysBankProduceInfoGold",
           "DisplayName": "系统当前产出金币统计",
           "Type": "Chart",
           "Route": "getRealTimeSysBankProduceInfoGold",
-          "View": "events-statistics-produce-realtime-sysgoldbank-totalgoldsinfo.html"
+          "View": "statistics-produce-realtime-sysgoldbank-totalgoldsinfo.html"
         },
         {
           "Name": "getRealTimeSysBankRecoverInfoChip",
           "DisplayName": "系统当前回收筹码统计",
           "Type": "Chart",
           "Route": "getRealTimeSysBankRecoverInfoChip",
-          "View": "events-statistics-recover-realtime-syschipbank-totalchipsinfo.html"
+          "View": "statistics-recover-realtime-syschipbank-totalchipsinfo.html"
         },
         {
           "Name": "getRealTimeSysBankRecoverInfoGold",
           "DisplayName": "系统当前回收金币统计",
           "Type": "Chart",
           "Route": "getRealTimeSysBankRecoverInfoGold",
-          "View": "events-statistics-recover-realtime-sysgoldbank-totalgoldsinfo.html"
+          "View": "statistics-recover-realtime-sysgoldbank-totalgoldsinfo.html"
         },
         {
           "Name": "getAttentionPlayerDesktopInfo",
