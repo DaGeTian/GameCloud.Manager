@@ -15,11 +15,18 @@
       "Description": "数据查看",
       "Items": [
         {
-          "Name": "appsearch",
+          "Name": "app-search",
           "DisplayName": "App列表",
           "Type": "Table",
           "Route": "apps",
           "View": "app-search.html"
+        },
+        {
+          "Name": "app-configuration-search",
+          "DisplayName": "App配置",
+          "Type": "Table",
+          "Route": "appconfigurations",
+          "View": "app-configuration-search.html"
         },
         {
           "Name": "account-search",
@@ -57,7 +64,7 @@
           "View": "account-event-search.html"
         },
         {
-          "Name": "error-event-search",
+          "Name": "account-error-event-search",
           "DisplayName": "玩家错误事件",
           "Type": "Table",
           "Route": "accountErrorEvents",
@@ -112,38 +119,12 @@
       ]
     },
     {
-      "Name": "onlineanalytics",
-      "DisplayName": "在线分析",
-      "Description": "在线分析",
-      "Items": [
-        {
-          "Name": "onlineanalytics",
-          "DisplayName": "在线分析",
-          "Type": "Chart",
-          "View": "online-behaviour.html"
-        }
-      ]
-    },
-    {
       "Name": "others",
       "DisplayName": "其他",
       "Description": "其他",
       "Items": [
-
         {
-          "Name": "realtimeglance",
-          "DisplayName": "实时状况",
-          "Type": "Chart",
-          "View": "realtime-glance.html"
-        },
-        {
-          "Name": "onlinebehaviour",
-          "DisplayName": "在线习惯",
-          "Type": "Chart",
-          "View": "online-behaviour.html"
-        },
-        {
-          "Name": "configcenter",
+          "Name": "config-center",
           "DisplayName": "配置中心",
           "Route": "configcenter",
           "Type": "Form",

@@ -12,14 +12,16 @@ namespace DemoPlugin.Manager.Api
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
+            var builder = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
-                .UseStartup<Startup>()
-                .UseUrls("http://10.0.0.4:5002")
-                .Build();
+                .UseStartup<Startup>();
 
+#if DEBUG
+            builder.UseUrls("http://localhost:5001");
+#endif
+            var host = builder.Build();
             host.Run();
         }
     }

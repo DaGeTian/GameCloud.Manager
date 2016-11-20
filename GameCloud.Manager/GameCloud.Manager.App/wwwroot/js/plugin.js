@@ -300,7 +300,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         };
 
         $scope.delete = function (raw) {
-            $scope.params.raw = JSON.stringify($scope.raw);
+            $scope.params.raw = JSON.stringify(raw);
             $scope._delete();
             $scope.showModel = false;
         };

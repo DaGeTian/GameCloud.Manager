@@ -3,6 +3,7 @@
   "DisplayName": "Demo Plugin",
   "Description": "Demo plugin",
   "Certificate": { "Thumbnail": "" },
+  "DebugUrl": "http://localhost:5001/api",
   "Url": "http://tp-uc.chinacloudapp.cn:5002/api",
   "RefreshInterval": 5000,
   "Scripts": [

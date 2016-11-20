@@ -36,6 +36,9 @@ namespace GameCloud.Manager.App.Controllers
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+
+            // TODO: Check if this class is Singlation
+            CreateDefaultAdministratorAsync().Wait();
         }
 
         //
@@ -465,5 +468,12 @@ namespace GameCloud.Manager.App.Controllers
         }
 
         #endregion
+
+        private async Task<bool> CreateDefaultAdministratorAsync()
+        {
+            var user = new IdentityUser { UserName = "admin", Email = "admin@gamecloud.com" };
+            var result = await _userManager.CreateAsync(user, "Gamecloud@123");
+            return result.Succeeded;
+        }
     }
 }
