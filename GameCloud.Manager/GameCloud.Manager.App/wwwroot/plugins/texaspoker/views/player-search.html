@@ -19,29 +19,31 @@
             <th>最后登录时间</th>
             <th>最后登出时间</th>
             <th>当日发送筹码次数</th>
+            <th>是否是被关注玩家</th>
             <th style="width:100px;">操作</th>
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="row in data.raws">
-            <td>{{row.nickName}}</td>
-            <td>{{row.ipAddress}}</td>
-            <td>{{row.actorId}}</td>
-            <td>{{row.level}}</td>
-            <td>{{row.experience}}</td>
-            <td>{{row.chipAcc}}</td>
-            <td>{{row.chipBank}}</td>
-            <td>{{row.gold}}</td>
-            <td>{{row.isVIP}}</td>
-            <td>{{row.vIPDataTime |date:'yyyy/MM/dd HH:mm:ss'}}</td>
-            <td>{{row.vIPPoint}}</td>
-            <td>{{row.gameTotal}}</td>
-            <td>{{row.gameWin}}</td>
-            <td>{{(row.gameWin / row.gameTotal).toFixed(2)}}</td>
-            <td>{{row.joinDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
-            <td>{{row.loginDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
-            <td>{{row.logoutDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
-            <td>{{row.sendChipsTm}}</td>
+            <td>{{row.dataPlayer.nickName}}</td>
+            <td>{{row.dataPlayer.ipAddress}}</td>
+            <td>{{row.dataPlayer.actorId}}</td>
+            <td>{{row.dataPlayer.level}}</td>
+            <td>{{row.dataPlayer.experience}}</td>
+            <td>{{row.dataPlayer.chipAcc}}</td>
+            <td>{{row.dataPlayer.chipBank}}</td>
+            <td>{{row.dataPlayer.gold}}</td>
+            <td>{{row.dataPlayer.isVIP|enums:'commonTrueFalse'}}</td>
+            <td>{{row.dataPlayer.vipDataTime |date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.dataPlayer.vipPoint}}</td>
+            <td>{{row.dataPlayer.gameTotal}}</td>
+            <td>{{row.dataPlayer.gameWin}}</td>
+            <td>{{(row.dataPlayer.gameWin / row.dataPlayer.gameTotal).toFixed(2)}}</td>
+            <td>{{row.dataPlayer.joinDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.dataPlayer.loginDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.dataPlayer.logoutDateTime|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+            <td>{{row.dataPlayer.sendChipsTm}}</td>            
+            <td>{{row.isPayAttentionPlayer|enums:'commonTrueFalse'}}</td>
             <td>
                 <button class="btn btn-primary" ng-click="open(row)"><i class="fa fa-edit"></i> Edit</button>
             </td>
@@ -62,41 +64,55 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">昵称</label>
                             <div class="col-sm-10">
-                                <span class="form-control">{{raw.nickName}}</span>
+                                <span class="form-control">{{raw.dataPlayer.nickName}}</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">筹码</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="chipAcc" ng-model="raw.chipAcc" placeholder="输入筹码变更数量.">
+                                <input type="text" class="form-control" id="chipAcc" ng-model="raw.dataPlayer.chipAcc" placeholder="输入筹码变更数量.">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">银行筹码</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="chipBank" ng-model="raw.chipBank" placeholder="输入筹码变更数量.">
+                                <input type="text" class="form-control" id="chipBank" ng-model="raw.dataPlayer.chipBank" placeholder="输入筹码变更数量.">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">金币</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="gold" ng-model="raw.gold" placeholder="输入金币变更数量.">
-                            </div>
-                        </div>
-                        <!--<div class="form-group">
-                            <label class="col-sm-2 control-label">用户类型</label>
-                            <div class="col-sm-10">
-                                <span class="form-control">{{raw.accountType|enums:'accountTypeEnum'}}</span>
+                                <input type="text" class="form-control" id="gold" ng-model="raw.dataPlayer.gold" placeholder="输入金币变更数量.">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">状态</label>
+                            <label class="col-sm-2 control-label">VIP</label>
                             <div class="col-sm-10">
                                 <select class="form-control"
-                                        ng-model="raw.accountStatus"
-                                        ng-options="t.value as t.displayName for t in $enums.find('accountStatusEnum').items"></select>
+                                        ng-model="raw.dataPlayer.isVIP"
+                                        ng-options="t.value as t.displayName for t in $enums.find('commonTrueFalse').items"></select>
                             </div>
-                        </div>-->
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">VIP到期时间</label>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon">起始日期</span>
+                                    <input type="text" class="form-control" uib-datepicker-popup ng-model="raw.dataPlayer.vipDataTime" is-open="startDateOpened" datepicker-options="dateOptions" ng-required="true" ng-click="startDateOpened=true" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="startDateOpened=true"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">关注玩家</label>
+                            <div class="col-sm-10">
+                                <select class="form-control"
+                                        ng-model="raw.isPayAttentionPlayer"
+                                        ng-options="t.value as t.displayName for t in $enums.find('commonTrueFalse').items"></select>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -33,18 +33,28 @@
     </div>
 </div>
 <hr />
-<div class="row" ng-repeat="d in data">
-    <div class="col-sm-6">
-        <div class="thumbnail">
-            <div class="caption">
-                <h3>{{d.title}}</h3>
-                <p>
-                    <canvas class="chart chart-line"
-                            chart-data="d.datas"
-                            chart-labels="d.labels"
-                            chart-series="d.series"></canvas>
-                </p>
+<div class="row">
+    <div class="col-sm-8" ng-repeat="d in data">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>{{d.title}}</h3>
+                        <p>
+                            <canvas class="chart chart-bar"
+                                    chart-options="options"
+                                    chart-data="d.datas"
+                                    chart-labels="d.labels"
+                                    chart-series="d.series"></canvas>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="col-sm-4">
+        <code ng-show="showDetails" style="word-wrap:break-word">
+            {{data}}
+        </code>
     </div>
 </div>

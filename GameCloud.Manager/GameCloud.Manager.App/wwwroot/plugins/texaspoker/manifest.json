@@ -4,7 +4,6 @@
   "Description": "TexasPoker插件",
   "Url": "http://tp-texaspoker-manager.azurewebsites.net/api",
   "Certificate": { "Thumbnail": "" },
-  "RefreshInterval": 5000,
   "Scripts": [
     "texaspoker-scripts.js"
   ],
@@ -199,51 +198,106 @@
       ]
     },
     {
-      "Name": "onlineanalytics",
-      "DisplayName": "整体统计",
-      "Description": "整体统计",
+      "Name": "onlineanalytics-realtime",
+      "DisplayName": "整体统计-当前",
+      "Description": "当前整体统计",
+      "Items": [
+        {
+          "Name": "getRealTimeSysBankProduceInfoChip",
+          "DisplayName": "系统产出筹码统计",
+          "Type": "Chart",
+          "Route": "getRealTimeSysBankProduceInfoChip",
+          "View": "statistics-produce-realtime-syschipbank-totalchipsinfo.html",
+          "RefreshInterval": 60000
+        },
+        {
+          "Name": "getRealTimeSysBankProduceInfoGold",
+          "DisplayName": "系统产出金币统计",
+          "Type": "Chart",
+          "Route": "getRealTimeSysBankProduceInfoGold",
+          "View": "statistics-produce-realtime-sysgoldbank-totalgoldsinfo.html",
+          "RefreshInterval": 60000
+        },
+        {
+          "Name": "getRealTimeSysBankRecoverInfoChip",
+          "DisplayName": "系统回收筹码统计",
+          "Type": "Chart",
+          "Route": "getRealTimeSysBankRecoverInfoChip",
+          "View": "statistics-recover-realtime-syschipbank-totalchipsinfo.html",
+          "RefreshInterval": 60000
+        },
+        {
+          "Name": "getRealTimeSysBankRecoverInfoGold",
+          "DisplayName": "系统回收金币统计",
+          "Type": "Chart",
+          "Route": "getRealTimeSysBankRecoverInfoGold",
+          "View": "statistics-recover-realtime-sysgoldbank-totalgoldsinfo.html",
+          "RefreshInterval": 60000
+        }
+      ]
+    },
+    {
+      "Name": "onlineanalytics-history",
+      "DisplayName": "整体统计-历史",
+      "Description": "历史整体统计",
+      "Items": [
+        {
+          "Name": "getHistorySysBankProduceInfoChip",
+          "DisplayName": "系统产出筹码统计",
+          "Type": "Chart",
+          "Route": "getHistorySysBankProduceInfoChip",
+          "View": "statistics-history-realtime-syschipbank-totalchipsinfo.html"
+        },
+        {
+          "Name": "getHistorySysBankProduceInfoGold",
+          "DisplayName": "系统产出金币统计",
+          "Type": "Chart",
+          "Route": "getHistorySysBankProduceInfoGold",
+          "View": "statistics-history-realtime-sysgoldbank-totalgoldsinfo.html"
+        },
+        {
+          "Name": "getHistorySysBankRecoverInfoChip",
+          "DisplayName": "系统回收筹码统计",
+          "Type": "Chart",
+          "Route": "getHistorySysBankRecoverInfoChip",
+          "View": "statistics-history-realtime-syschipbank-totalchipsinfo.html"
+        },
+        {
+          "Name": "getHistorySysBankRecoverInfoGold",
+          "DisplayName": "系统回收金币统计",
+          "Type": "Chart",
+          "Route": "getHistorySysBankRecoverInfoGold",
+          "View": "statistics-history-realtime-sysgoldbank-totalgoldsinfo.html"
+        }
+      ]
+    },
+    {
+      "Name": "botGroupStatisitcs",
+      "DisplayName": "机器人组统计",
+      "Description": "机器人组统计",
       "Items": [
         {
           "Name": "getBotGroupCurrentChips",
           "DisplayName": "机器人组当前筹码统计",
           "Type": "Chart",
           "Route": "getBotGroupCurrentChips",
-          "View": "statistics-history-botgroup-currentchips.html"
-        },
-        {
-          "Name": "getRealTimeSysBankProduceInfoChip",
-          "DisplayName": "系统当前产出筹码统计",
-          "Type": "Chart",
-          "Route": "getRealTimeSysBankProduceInfoChip",
-          "View": "statistics-produce-realtime-syschipbank-totalchipsinfo.html"
-        },
-        {
-          "Name": "getRealTimeSysBankProduceInfoGold",
-          "DisplayName": "系统当前产出金币统计",
-          "Type": "Chart",
-          "Route": "getRealTimeSysBankProduceInfoGold",
-          "View": "statistics-produce-realtime-sysgoldbank-totalgoldsinfo.html"
-        },
-        {
-          "Name": "getRealTimeSysBankRecoverInfoChip",
-          "DisplayName": "系统当前回收筹码统计",
-          "Type": "Chart",
-          "Route": "getRealTimeSysBankRecoverInfoChip",
-          "View": "statistics-recover-realtime-syschipbank-totalchipsinfo.html"
-        },
-        {
-          "Name": "getRealTimeSysBankRecoverInfoGold",
-          "DisplayName": "系统当前回收金币统计",
-          "Type": "Chart",
-          "Route": "getRealTimeSysBankRecoverInfoGold",
-          "View": "statistics-recover-realtime-sysgoldbank-totalgoldsinfo.html"
-        },
+          "View": "statistics-history-botgroup-currentchips.html",
+          "RefreshInterval": 60000
+        }
+      ]
+    },
+    {
+      "Name": "pay-attention-player",
+      "DisplayName": "关注玩家",
+      "Description": "关注玩家",
+      "Items": [
         {
           "Name": "getAttentionPlayerDesktopInfo",
           "DisplayName": "被关注玩家所在桌玩家手牌信息",
           "Type": "Table",
           "Route": "getAttentionPlayerDesktopInfo",
-          "View": "pay-attention-player-desktop-carddata-realtime.html"
+          "View": "pay-attention-player-desktop-carddata-realtime.html",
+          "RefreshInterval": 10000
         }
       ]
     },
