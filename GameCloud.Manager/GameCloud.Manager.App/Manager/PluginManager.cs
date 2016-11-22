@@ -90,6 +90,9 @@ namespace GameCloud.Manager.App.Manager
             foreach (var file in files)
             {
                 var plugin = JsonConvert.DeserializeObject<Plugin>(File.ReadAllText(file));
+
+                
+
                 result.Add(plugin);
             }
 

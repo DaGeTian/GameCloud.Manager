@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition.Hosting;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using AspNetCore.WebApp.MongoDB.Services;
 using GameCloud.Manager.App.Common;
 using GameCloud.Manager.App.Manager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.MongoDB;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

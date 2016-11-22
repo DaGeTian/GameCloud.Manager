@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using AspNetCore.WebApp.MongoDB.Services;
+using GameCloud.Manager.App.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.MongoDB;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using AspNetCore.WebApp.MongoDB.Services;
+using System.Linq;
+using System.Security.Claims;
 
 namespace GameCloud.Manager.App.Controllers
 {
-    using Microsoft.AspNetCore.Identity.MongoDB;
-    using Models;
-
     [Authorize]
     public class AccountController : Controller
     {
@@ -37,7 +34,6 @@ namespace GameCloud.Manager.App.Controllers
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
 
-            // TODO: Check if this class is Singlation
             CreateDefaultAdministratorAsync().Wait();
         }
 

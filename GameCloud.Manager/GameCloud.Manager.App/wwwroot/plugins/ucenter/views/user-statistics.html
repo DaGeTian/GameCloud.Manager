@@ -1,4 +1,5 @@
-﻿<div class="row">
+﻿{{params}}
+<div class="row">
     <div class="col-sm-3">
         <div class="input-group">
             <span class="input-group-addon">统计类型</span>
@@ -27,7 +28,7 @@
                 <button type="button" class="btn btn-default" ng-click="endDateOpened=true"><i class="glyphicon glyphicon-calendar"></i></button>
             </span>
         </div>
-        <div uib-timepicker ng-model="params.endTime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+        <div uib-timepicker ng-model="params.endTime" ng-change="changed()" show-meridian="ismeridian"></div>
     </div>
     <div class="col-sm-3">
         <button class="btn btn-primary" ng-click="_fetch()"><i class="glyphicon glyphicon-search"></i> 查询</button>
