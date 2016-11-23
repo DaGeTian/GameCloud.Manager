@@ -37,6 +37,15 @@
         "System.ComponentModel.Composition": "4.0.0.0"
       },
       "dependencies": {
+        "GameCloud.Common": {
+          "target": "project"
+        },
+        "GameCloud.Database": {
+          "target": "project"
+        },
+        "GameCloud.Manager.Database": {
+          "target": "project"
+        }
       }
     }
   },

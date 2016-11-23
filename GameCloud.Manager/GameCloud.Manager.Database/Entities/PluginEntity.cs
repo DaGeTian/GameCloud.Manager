@@ -26,11 +26,6 @@ namespace GameCloud.Manager.Database.Entities
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or sets the plugin debug url.
-        /// </summary>
-        public string DebugUrl { get; set; }
-
-        /// <summary>
         /// Gets or sets the plugin url.
         /// </summary>
         public string Url { get; set; }

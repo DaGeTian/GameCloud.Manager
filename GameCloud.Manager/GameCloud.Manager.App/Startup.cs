@@ -1,6 +1,9 @@
 ﻿using System;
+using System.ComponentModel.Composition.Hosting;
 using System.IO;
 using AspNetCore.WebApp.MongoDB.Services;
+using GameCloud.Common.MEF;
+using GameCloud.Common.Settings;
 using GameCloud.Manager.App.Common;
 using GameCloud.Manager.App.Manager;
 using Microsoft.AspNetCore.Builder;
@@ -8,11 +11,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using GameCloud.Database;
 
 namespace GameCloud.Manager.App
 {
     public class Startup
     {
+        private readonly ExportProvider exportProvider;
         private readonly PluginManager manager;
 
         public Startup(IHostingEnvironment env)
