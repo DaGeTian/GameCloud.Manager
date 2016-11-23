@@ -34,8 +34,8 @@
                                     </thead>
                                     <tbody>
                                         <tr ng-repeat="card in f.listCard">
-                                            <td>{{card.cardSuit}}</td>
-                                            <td>{{card.cardType}}</td>                                            
+                                            <td>{{card.suit|enums:'cardSuit'}}</td>
+                                            <td>{{card.type|enums:'cardType'}}</td>                                            
                                         </tr>
                                     </tbody>
                                 </table>

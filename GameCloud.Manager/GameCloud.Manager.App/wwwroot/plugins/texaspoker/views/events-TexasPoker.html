@@ -55,8 +55,8 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{f.firstCard.cardSuit}}</td>
-                                            <td>{{f.firstCard.cardType}}</td>
+                                            <td>{{f.firstCard.suit|enums:'cardSuit'}}</td>
+                                            <td>{{f.firstCard.type|enums:'cardType'}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -71,8 +71,8 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{f.secondCard.cardSuit}}</td>
-                                            <td>{{f.secondCard.cardType}}</td>
+                                            <td>{{f.secondCard.suit|enums:'cardSuit'}}</td>
+                                            <td>{{f.secondCard.type|enums:'cardType'}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -147,8 +147,8 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{row.flopInfo.firstCommonCard.cardSuit}}</td>
-                                            <td>{{row.flopInfo.firstCommonCard.cardType}}</td>
+                                            <td>{{row.flopInfo.firstCommonCard.suit|enums:'cardSuit'}}</td>
+                                            <td>{{row.flopInfo.firstCommonCard.type|enums:'cardType'}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -163,8 +163,8 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{row.flopInfo.secondCommonCard.cardSuit}}</td>
-                                            <td>{{row.flopInfo.secondCommonCard.cardType}}</td>
+                                            <td>{{row.flopInfo.secondCommonCard.suit|enums:'cardSuit'}}</td>
+                                            <td>{{row.flopInfo.secondCommonCard.type|enums:'cardType'}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -179,8 +179,8 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{row.flopInfo.thirdCommonCard.cardSuit}}</td>
-                                            <td>{{row.flopInfo.thirdCommonCard.cardType}}</td>
+                                            <td>{{row.flopInfo.thirdCommonCard.suit|enums:'cardSuit'}}</td>
+                                            <td>{{row.flopInfo.thirdCommonCard.type|enums:'cardType'}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -231,8 +231,8 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{row.turnInfo.turnCommonCard.cardSuit}}</td>
-                                            <td>{{row.turnInfo.turnCommonCard.cardType}}</td>
+                                            <td>{{row.turnInfo.turnCommonCard.suit|enums:'cardSuit'}}</td>
+                                            <td>{{row.turnInfo.turnCommonCard.type|enums:'cardType'}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -283,8 +283,8 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{row.riverInfo.riverCommonCard.cardSuit}}</td>
-                                            <td>{{row.riverInfo.riverCommonCard.cardType}}</td>
+                                            <td>{{row.riverInfo.riverCommonCard.suit|enums:'cardSuit'}}</td>
+                                            <td>{{row.riverInfo.riverCommonCard.type|enums:'cardType'}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
