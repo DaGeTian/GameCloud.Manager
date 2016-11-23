@@ -253,28 +253,28 @@
           "DisplayName": "系统产出筹码统计",
           "Type": "Chart",
           "Route": "getHistorySysBankProduceInfoChip",
-          "View": "statistics-history-realtime-syschipbank-totalchipsinfo.html"
+          "View": "statistics-produce-history-syschipbank-totalchipsinfo.html"
         },
         {
           "Name": "getHistorySysBankProduceInfoGold",
           "DisplayName": "系统产出金币统计",
           "Type": "Chart",
           "Route": "getHistorySysBankProduceInfoGold",
-          "View": "statistics-history-realtime-sysgoldbank-totalgoldsinfo.html"
+          "View": "statistics-produce-history-sysgoldbank-totalgoldsinfo.html"
         },
         {
           "Name": "getHistorySysBankRecoverInfoChip",
           "DisplayName": "系统回收筹码统计",
           "Type": "Chart",
           "Route": "getHistorySysBankRecoverInfoChip",
-          "View": "statistics-history-realtime-syschipbank-totalchipsinfo.html"
+          "View": "statistics-recover-history-syschipbank-totalchipsinfo.html"
         },
         {
           "Name": "getHistorySysBankRecoverInfoGold",
           "DisplayName": "系统回收金币统计",
           "Type": "Chart",
           "Route": "getHistorySysBankRecoverInfoGold",
-          "View": "statistics-history-realtime-sysgoldbank-totalgoldsinfo.html"
+          "View": "statistics-recover-history-sysgoldbank-totalgoldsinfo.html"
         }
       ]
     },
