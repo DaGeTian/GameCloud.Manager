@@ -31,8 +31,9 @@
                 <table class="table table-bordered table-striped table-condensed">
                     <thead>
                         <tr>
-                            <th>昵称</th>
-                            <th>Id</th>
+                            <!--<th>昵称</th>
+                            <th>Id</th>-->
+                            <th>玩家Guid</th>
                             <th>被抽筹码</th>
                             <th>第一张牌</th>
                             <th>第二张牌</th>
@@ -40,8 +41,9 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="f in row.playerCommonInfo">
-                            <td>{{f.playerNickName}}</td>
-                            <td>{{f.playerActorId}}</td>
+                            <!--<td>{{f.playerNickName}}</td>
+                            <td>{{f.playerActorId}}</td>-->
+                            <td>{{f.playerEtGuid}}</td>
                             <td>{{f.playerPayChips4Play}}</td>
                             <td>
                                 <table class="table table-bordered table-striped table-condensed">
@@ -83,16 +85,18 @@
                 <table class="table table-bordered table-striped table-condensed">
                     <thead>
                         <tr>
-                            <th>昵称</th>
-                            <th>Id</th>
+                            <!--<th>昵称</th>
+                            <th>Id</th>-->
+                            <th>玩家Guid</th>
                             <th>操作</th>
                             <th>操作筹码</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="f in row.preflopInfo">
-                            <td>{{f.playerNickName}}</td>
-                            <td>{{f.playerActorId}}</td>
+                            <!--<td>{{f.playerNickName}}</td>
+                            <td>{{f.playerActorId}}</td>-->
+                            <td>{{f.playerEtGuid}}</td>
                             <td>{{f.playerOperate}}</td>
                             <td>{{f.operateChips}}</td>
                         </tr>
@@ -115,16 +119,18 @@
                                 <table class="table table-bordered table-striped table-condensed">
                                     <thead>
                                         <tr>
-                                            <th>昵称</th>
-                                            <th>Id</th>
+                                            <!--<th>昵称</th>
+                                            <th>Id</th>-->
+                                            <th>玩家Guid</th>
                                             <th>操作</th>
                                             <th>操作筹码</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr ng-repeat="f in row.flopInfo.listPlayerOperateInfo">
-                                            <td>{{f.playerNickName}}</td>
-                                            <td>{{f.playerActorId}}</td>
+                                            <!--<td>{{f.playerNickName}}</td>
+                                            <td>{{f.playerActorId}}</td>-->
+                                            <td>{{f.playerEtGuid}}</td>
                                             <td>{{f.playerOperate}}</td>
                                             <td>{{f.operateChips}}</td>
                                         </tr>
@@ -197,16 +203,18 @@
                                 <table class="table table-bordered table-striped table-condensed">
                                     <thead>
                                         <tr>
-                                            <th>昵称</th>
-                                            <th>Id</th>
+                                            <!--<th>昵称</th>
+                                            <th>Id</th>-->
+                                            <th>玩家Guid</th>
                                             <th>操作</th>
                                             <th>操作筹码</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr ng-repeat="f in row.turnInfo.listPlayerOperateInfo">
-                                            <td>{{f.playerNickName}}</td>
-                                            <td>{{f.playerActorId}}</td>
+                                            <!--<td>{{f.playerNickName}}</td>
+                                            <td>{{f.playerActorId}}</td>-->
+                                            <td>{{f.playerEtGuid}}</td>
                                             <td>{{f.playerOperate}}</td>
                                             <td>{{f.operateChips}}</td>
                                         </tr>
@@ -247,16 +255,18 @@
                                 <table class="table table-bordered table-striped table-condensed">
                                     <thead>
                                         <tr>
-                                            <th>昵称</th>
-                                            <th>Id</th>
+                                            <!--<th>昵称</th>
+                                            <th>Id</th>-->
+                                            <th>玩家Guid</th>
                                             <th>操作</th>
                                             <th>操作筹码</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr ng-repeat="f in row.riverInfo.listPlayerOperateInfo">
-                                            <td>{{f.playerNickName}}</td>
-                                            <td>{{f.playerActorId}}</td>
+                                            <!--<td>{{f.playerNickName}}</td>
+                                            <td>{{f.playerActorId}}</td>-->
+                                            <td>{{f.playerEtGuid}}</td>
                                             <td>{{f.playerOperate}}</td>
                                             <td>{{f.operateChips}}</td>
                                         </tr>
@@ -301,15 +311,17 @@
                 <table class="table table-bordered table-striped table-condensed">
                     <thead>
                         <tr>
-                            <th>赢家昵称</th>
-                            <th>赢家Id</th>
+                            <!--<th>赢家昵称</th>
+                            <th>赢家Id</th>-->
+                            <th>赢家Guid</th>
                             <th>赢取筹码</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="f in row.endInfo">
-                            <td>{{f.playerNickName}}</td>
-                            <td>{{f.playerActorId}}</td>
+                            <!--<td>{{f.playerNickName}}</td>
+                            <td>{{f.playerActorId}}</td>-->
+                            <td>{{f.playerEtGuid}}</td>
                             <td>{{f.beforeSysGetWinChips}}</td>
                         </tr>
                     </tbody>

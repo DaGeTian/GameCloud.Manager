@@ -21,6 +21,13 @@
           "View": "player-search.html"
         },
         {
+          "Name": "player-online-search",
+          "DisplayName": "在线玩家查询",
+          "Type": "Table",
+          "Route": "getOnlinePlayers",
+          "View": "player-online-search.html"
+        },
+        {
           "Name": "bot-search",
           "DisplayName": "机器人查询",
           "Type": "Table",
