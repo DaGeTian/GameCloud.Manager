@@ -19,5 +19,10 @@
     <DnxInvisibleContent Include="bower.json" />
     <DnxInvisibleContent Include=".bowerrc" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Share\GameCloud.Common\GameCloud.Common.csproj" />
+    <ProjectReference Include="..\..\Share\GameCloud.Database\GameCloud.Database.csproj" />
+    <ProjectReference Include="..\GameCloud.Manager.Database\GameCloud.Manager.Database.csproj" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>

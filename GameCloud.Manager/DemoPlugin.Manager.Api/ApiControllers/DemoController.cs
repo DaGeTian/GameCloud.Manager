@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using GameCloud.Manager.PluginContract.Responses;
 using GameCloud.Manager.PluginContract.Requests;
+using GameCloud.Manager.PluginContract.Responses;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace GameCloud.UCenter.Manager.Api.ApiControllers
+namespace DemoPlugin.Manager.Api.ApiControllers
 {
 
     public class DemoController : Controller
@@ -105,12 +104,12 @@ namespace GameCloud.UCenter.Manager.Api.ApiControllers
             {
                 Labels = ParallelEnumerable.Range(0, 24).Select(i => i.ToString()).ToArray(),
                 Series = new string[] { "小时数值" },
-                Datas = this.RandomNumbers(24),
+                Data = this.RandomNumbers(24),
             };
             var lineData = new
             {
                 Labels = new string[] { "男", "女" },
-                Datas = this.RandomNumbers(2),
+                Data = this.RandomNumbers(2),
             };
 
             return new object[] { pieData, lineData };
