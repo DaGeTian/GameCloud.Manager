@@ -137,4 +137,36 @@ $pluginApp.controller('ucenterUserStatisticsController', ['$scope', '$http', '$t
     };
 
     $scope.fetch();
+}])
+.controller('ucenterStatisticsController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+    $controller('chartController', { $scope: $scope });
+    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+    $scope.params.startDate = Date.today();
+    $scope.params.endDate = Date.today();
+
+    $scope._setDates = function (startDate, endDate) {
+        $scope.params.startDate = startDate;
+        $scope.params.endDate = endDate;
+        $scope._sync();
+    };
+
+    $scope.today = function () {
+        var start = Date.today();
+        var end = Date.today();
+        $scope._setDates(start, end);
+    };
+
+    $scope.yesterday = function () {
+        var start = Date.yesterday();
+        var end = Date.yesterday();
+        $scope._setDates(start, end);
+    };
+
+    $scope.lastNDays = function (n) {
+        var start = Date.today().add(n,'days');
+        var end = Date.today();
+        $scope._setDates(start, end);
+    };
+
+    $scope._sync();
 }]);

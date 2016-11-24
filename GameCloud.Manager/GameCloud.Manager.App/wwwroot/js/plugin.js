@@ -31,6 +31,7 @@ Date.today = function () {
 Date.prototype.add = function (value, period) {
     if (period == 'days') {
         this.setDate(this.getDate() + value);
+        return this;
     } else {
         console.log('not support period.');
     }
