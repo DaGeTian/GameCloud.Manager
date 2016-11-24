@@ -27,10 +27,6 @@
             </span>
         </div>
     </div>
-    <div class="col-sm-3">
-        <button class="btn btn-primary" ng-click="_fetch()"><i class="glyphicon glyphicon-search"></i> 查询</button>
-        <button class="btn btn-info" ng-click="showDetails=!showDetails">显示数据</button>
-    </div>
 </div>
 <hr />
 <div class="row">
@@ -43,7 +39,7 @@
                         <p>
                             <canvas class="chart chart-line"
                                     chart-options="options"
-                                    chart-data="d.datas"
+                                    chart-data="d.data"
                                     chart-labels="d.labels"
                                     chart-series="d.series"></canvas>
                         </p>
@@ -51,10 +47,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-sm-4">
-        <code ng-show="showDetails" style="word-wrap:break-word">
-            {{data}}
-        </code>
     </div>
 </div>
