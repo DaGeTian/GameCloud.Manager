@@ -354,6 +354,13 @@
           "Type": "Table",
           "Route": "getBotActionConfig",
           "View": "bot-action-config.html"
+        },
+        {
+          "Name": "shutDownServer",
+          "DisplayName": "通知机器人停服",
+          "Type": "Form",
+          "Route": "shutDownServer",
+          "View": "shut-down-server.html"
         }
       ]
     }
