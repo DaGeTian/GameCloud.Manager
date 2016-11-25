@@ -82,35 +82,35 @@
       "Items": [
         {
           "Name": "newusers",
-          "DisplayName": "新增玩家",
+          "DisplayName": "新增统计",
           "Type": "Chart",
-          "Route": "newusers",
-          "Controller": "ucenterNewUsersController",
-          "View": "new-users.html"
+          "Route": "newusersanddevices",
+          "Controller": "ucenterStatisticsController",
+          "View": "statistics.html"
         },
         {
           "Name": "staystatistics",
-          "DisplayName": "玩家统计",
+          "DisplayName": "活跃统计",
           "Type": "Chart",
-          "Route": "userstatistics",
-          "Controller": "ucenterUserStatisticsController",
-          "View": "user-statistics.html"
+          "Route": "activeusers",
+          "Controller": "ucenterStatisticsController",
+          "View": "statistics.html"
         },
         {
           "Name": "user-staystatistics",
           "DisplayName": "留存统计",
           "Type": "Chart",
-          "Route": "userstatistics2",
-          "Controller": "ucenterUserStayStatisticsController",
-          "View": "user-statistics-new.html"
+          "Route": "staystatistics",
+          "Controller": "ucenterStatisticsController",
+          "View": "statistics.html"
         },
         {
           "Name": "user-loststatistics",
           "DisplayName": "流失统计",
           "Type": "Chart",
-          "Route": "userstatistics2",
-          "Controller": "ucenterUserLostStatisticsController",
-          "View": "user-statistics-new.html"
+          "Route": "loststatistics",
+          "Controller": "ucenterStatisticsController",
+          "View": "statistics.html"
         }
       ]
     },
