@@ -1,6 +1,6 @@
 ﻿{
   "Name": "TexasPoker",
-  "RefreshInterval": 5000,
+  "DebugUrl": "http://localhost:5001/api",
   "Scripts": [
     "texaspoker-scripts.js"
   ],
@@ -45,13 +45,13 @@
           "Route": "events/NewPlayerLogin",
           "View": "events-newplayer-login.html"
         },
-        {
-          "Name": "events-newbot-login",
-          "DisplayName": "新机器人登录",
-          "Type": "Table",
-          "Route": "events/NewBotLogin",
-          "View": "events-newbot-login.html"
-        },
+        //{
+        //  "Name": "events-newbot-login",
+        //  "DisplayName": "新机器人登录",
+        //  "Type": "Table",
+        //  "Route": "events/NewBotLogin",
+        //  "View": "events-newbot-login.html"
+        //},
         {
           "Name": "events-buy-chips",
           "DisplayName": "购买筹码",
