@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 
 namespace DemoPlugin.Manager.Api
 {
@@ -12,6 +13,11 @@ namespace DemoPlugin.Manager.Api
     {
         public static void Main(string[] args)
         {
+            var config = new ConfigurationBuilder()
+                .AddEnvironmentVariables()
+                .AddJsonFile("hosting.json", optional: true)
+                .Build();
+
             var builder = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
