@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace GameCloud.Manager.App
 {
@@ -13,12 +14,17 @@ namespace GameCloud.Manager.App
         {
             try
             {
+                var config = new ConfigurationBuilder()
+                    .AddEnvironmentVariables()
+                    .AddJsonFile("hosting.json", optional: true)
+                    .Build();
                 var host = new WebHostBuilder()
-                        .UseKestrel()
-                        .UseContentRoot(Directory.GetCurrentDirectory())
-                        .UseIISIntegration()
-                        .UseStartup<Startup>()
-                        .Build();
+                    .UseConfiguration(config)
+                    .UseKestrel()
+                    .UseContentRoot(Directory.GetCurrentDirectory())
+                    .UseIISIntegration()
+                    .UseStartup<Startup>()
+                    .Build();
 
                 host.Run();
             }

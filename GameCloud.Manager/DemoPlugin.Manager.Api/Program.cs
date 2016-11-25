@@ -17,8 +17,8 @@ namespace DemoPlugin.Manager.Api
                 .AddEnvironmentVariables()
                 .AddJsonFile("hosting.json", optional: true)
                 .Build();
-
             var builder = new WebHostBuilder()
+                .UseConfiguration(config)
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
