@@ -9,10 +9,10 @@
     <tbody>
         <tr ng-repeat="row in data.raws">
             <td>
-                {{row.showRanking}}
+                {{row.showRanking|enums:'canShowRanking'}}
             </td>
             <td>
-                {{row.showSendChips}}
+                {{row.showSendChips|enums:'canShowSendChips'}}
             </td>
             <td>
                 <button class="btn btn-primary" ng-click="open(row)"><i class="fa fa-edit"></i> Edit</button>
