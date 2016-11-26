@@ -138,16 +138,37 @@ $pluginApp.controller('ucenterUserStatisticsController', ['$scope', '$http', '$t
 
     $scope.fetch();
 }])
-.controller('ucenterStatisticsController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+.controller('ucenterStatisticsController', ['$scope', '$http', '$templateCache', '$controller', '$cacheFactory', 'pluginService', function ($scope, $http, $templateCache, $controller, $cacheFactory, pluginService) {
     $controller('chartController', { $scope: $scope });
+    var $cache = $cacheFactory.get("ucenter-statistics");
+    if (!$cache) {
+        $cache = $cacheFactory("ucenter-statistics");
+    }
+
+    var saveDateRange = function () {
+        $cache.put("startDate", $scope.params.startDate);
+        $cache.put("endDate", $scope.params.endDate);
+    };
+
+    var getDateRange = function () {
+        var start = $cache.get("startDate") || Date.today();
+        var end = $cache.get("endDate") || Date.today();
+        return [start, end];
+    };
+
     $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
-    $scope.params.startDate = Date.today();
-    $scope.params.endDate = Date.today();
+    $scope.options = {
+        legend: { display: true }
+    };
+
+    var range = getDateRange();
+    $scope.params.startDate = range[0];
+    $scope.params.endDate = range[1];
 
     $scope._setDates = function (startDate, endDate) {
         $scope.params.startDate = startDate;
         $scope.params.endDate = endDate;
-        $scope._sync();
+        $scope.sync();
     };
 
     $scope.today = function () {
@@ -163,10 +184,15 @@ $pluginApp.controller('ucenterUserStatisticsController', ['$scope', '$http', '$t
     };
 
     $scope.lastNDays = function (n) {
-        var start = Date.today().add(n,'days');
+        var start = Date.today().add(n, 'days');
         var end = Date.today();
         $scope._setDates(start, end);
     };
 
-    $scope._sync();
+    $scope.sync = function () {
+        saveDateRange();
+        $scope._sync();
+    };
+
+    $scope.sync();
 }]);

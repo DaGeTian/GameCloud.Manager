@@ -25,7 +25,7 @@
         <button class="btn btn-primary" ng-click="lastNDays(-90)">近90天</button>
     </div>
     <div class="col-sm-3">
-        <button class="btn btn-primary" ng-click="_fetch()"><i class="glyphicon glyphicon-search"></i> 查询</button>
+        <button class="btn btn-primary" ng-click="sync()"><i class="glyphicon glyphicon-search"></i> 查询</button>
         <button class="btn btn-info" ng-click="showDetails=!showDetails">显示数据</button>
     </div>
 </div>
@@ -38,6 +38,7 @@
                     <div class="caption">
                         <p>
                             <canvas class="chart chart-line"
+                                    chart-options="options"
                                     chart-colors="colors"
                                     chart-data="data.data"
                                     chart-labels="data.labels"
