@@ -102,6 +102,13 @@
           "View": "events-chips-change-by-manager.html"
         },
         {
+          "Name": "events-chips-recover-by-manager",
+          "DisplayName": "管理员回收筹码",
+          "Type": "Table",
+          "Route": "events/ChipsRecoverByManager",
+          "View": "events-chips-recover-by-manager.html"
+        },
+        {
           "Name": "events-chips-bank-change-by-manager",
           "DisplayName": "管理员修改银行筹码",
           "Type": "Table",
@@ -109,11 +116,25 @@
           "View": "events-chips-bank-change-by-manager.html"
         },
         {
+          "Name": "events-chips-bank-recover-by-manager",
+          "DisplayName": "管理员回收银行筹码",
+          "Type": "Table",
+          "Route": "events/ChipsBankRecoverByManager",
+          "View": "events-chips-bank-recover-by-manager.html"
+        },
+        {
           "Name": "events-coin-change-by-manager",
           "DisplayName": "管理员修改金币",
           "Type": "Table",
           "Route": "events/CoinChangeByManager",
           "View": "events-coin-change-by-manager.html"
+        },
+        {
+          "Name": "events-coin-recover-by-manager",
+          "DisplayName": "管理员回收金币",
+          "Type": "Table",
+          "Route": "events/CoinRecoverByManager",
+          "View": "events-coin-recover-by-manager.html"
         },
         {
           "Name": "events-coin-buy-gift",
@@ -179,11 +200,46 @@
           "View": "events-bot-getchips-from-group.html"
         },
         {
+          "Name": "events-bot-givechips-to-group",
+          "DisplayName": "机器人给组筹码",
+          "Type": "Table",
+          "Route": "events/BotGiveChipsToGroup",
+          "View": "events-bot-givechips-to-group.html"
+        },
+        {
+          "Name": "events-group-get-bots-buygiftchips",
+          "DisplayName": "机器人组获取买礼物筹码",
+          "Type": "Table",
+          "Route": "events/GroupGetBotsBuyGiftChips",
+          "View": "events-group-get-bots-buygiftchips.html"
+        },
+        {
           "Name": "events-group-get-bots-seatfee",
           "DisplayName": "机器人组获取台费",
           "Type": "Table",
           "Route": "events/GroupGetBotsSeatFee",
           "View": "events-group-get-bots-seatfee.html"
+        },
+        {
+          "Name": "events-group-get-bots-syspumping",
+          "DisplayName": "机器人组获取抽水",
+          "Type": "Table",
+          "Route": "events/GroupGetBotsSysPumping",
+          "View": "events-group-get-bots-syspumping.html"
+        },
+        {
+          "Name": "events-player-pay-syspumping",
+          "DisplayName": "玩家被抽水",
+          "Type": "Table",
+          "Route": "events/GetEventPlayerPaySysPumping",
+          "View": "events-player-pay-syspumping.html"
+        },
+        {
+          "Name": "events-player-pay-seatfee",
+          "DisplayName": "玩家支付台费",
+          "Type": "Table",
+          "Route": "events/GetEventPlayerPaySeatFee",
+          "View": "events-player-pay-seatfee.html"
         },
         {
           "Name": "events-player-win",
@@ -250,6 +306,7 @@
           "DisplayName": "系统产出筹码统计",
           "Type": "Chart",
           "Route": "getHistorySysBankProduceInfoChip",
+          "Controller": "tpStatisticsProduceChipsHistoryController",
           "View": "statistics-produce-history-syschipbank-totalchipsinfo.html"
         },
         {
@@ -257,6 +314,7 @@
           "DisplayName": "系统产出金币统计",
           "Type": "Chart",
           "Route": "getHistorySysBankProduceInfoGold",
+          "Controller": "tpStatisticsProduceGoldsHistoryController",
           "View": "statistics-produce-history-sysgoldbank-totalgoldsinfo.html"
         },
         {
@@ -264,6 +322,7 @@
           "DisplayName": "系统回收筹码统计",
           "Type": "Chart",
           "Route": "getHistorySysBankRecoverInfoChip",
+          "Controller": "tpStatisticsRecoverChipsHistoryController",
           "View": "statistics-recover-history-syschipbank-totalchipsinfo.html"
         },
         {
@@ -271,6 +330,7 @@
           "DisplayName": "系统回收金币统计",
           "Type": "Chart",
           "Route": "getHistorySysBankRecoverInfoGold",
+          "Controller": "tpStatisticsRecoverGoldsHistoryController",
           "View": "statistics-recover-history-sysgoldbank-totalgoldsinfo.html"
         }
       ]
@@ -285,6 +345,7 @@
           "DisplayName": "机器人组当前筹码统计",
           "Type": "Chart",
           "Route": "getBotGroupCurrentChips",
+          "Controller": "tpStatisticsBotGroupCurrentChipsController",
           "View": "statistics-history-botgroup-currentchips.html",
           "RefreshInterval": 60000
         }

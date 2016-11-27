@@ -276,3 +276,44 @@
 
     $enums.items.push({ name: 'weekDisplay', items: weekDisplay });
 })($enums || ($enums = {}));
+
+$pluginApp.controller('tpStatisticsBotGroupCurrentChipsController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+    $controller('chartController', { $scope: $scope });
+    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+    $scope.options = {
+        legend: { display: true },
+        elements: { line: { fill: false } }
+    };
+}])
+.controller('tpStatisticsProduceChipsHistoryController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+    $controller('chartController', { $scope: $scope });
+    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+    $scope.options = {
+        legend: { display: true },
+        elements: { line: { fill: false } }
+    };
+}])
+.controller('tpStatisticsProduceGoldsHistoryController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+    $controller('chartController', { $scope: $scope });
+    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+    $scope.options = {
+        legend: { display: true },
+        elements: { line: { fill: false } }
+    };
+}])
+.controller('tpStatisticsRecoverChipsHistoryController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+    $controller('chartController', { $scope: $scope });
+    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+    $scope.options = {
+        legend: { display: true },
+        elements: { line: { fill: false } }
+    };
+}])
+.controller('tpStatisticsRecoverGoldsHistoryController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
+    $controller('chartController', { $scope: $scope });
+    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+    $scope.options = {
+        legend: { display: true },
+        elements: { line: { fill: false } }
+    };
+}]);
