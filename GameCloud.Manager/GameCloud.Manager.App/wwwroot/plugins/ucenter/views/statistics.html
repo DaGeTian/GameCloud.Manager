@@ -17,21 +17,20 @@
             </span>
         </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <button class="btn btn-primary" ng-click="today()">今日</button>
         <button class="btn btn-primary" ng-click="yesterday()">昨日</button>
         <button class="btn btn-primary" ng-click="lastNDays(-7)">近7天</button>
         <button class="btn btn-primary" ng-click="lastNDays(-30)">近30天</button>
         <button class="btn btn-primary" ng-click="lastNDays(-90)">近90天</button>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2">
         <button class="btn btn-primary" ng-click="sync()"><i class="glyphicon glyphicon-search"></i> 查询</button>
-        <button class="btn btn-info" ng-click="showDetails=!showDetails">显示数据</button>
     </div>
 </div>
 <hr />
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-12">
         <div class="row">
             <div class="col-sm-12">
                 <div class="thumbnail">
@@ -48,10 +47,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-sm-4">
-        <code ng-show="showDetails" style="word-wrap:break-word">
-            {{data}}
-        </code>
     </div>
 </div>

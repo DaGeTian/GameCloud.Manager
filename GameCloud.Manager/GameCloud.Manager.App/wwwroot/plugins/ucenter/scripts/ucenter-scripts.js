@@ -158,7 +158,8 @@ $pluginApp.controller('ucenterUserStatisticsController', ['$scope', '$http', '$t
 
     $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
     $scope.options = {
-        legend: { display: true }
+        legend: { display: true },
+        elements: { line: { fill: false } }
     };
 
     var range = getDateRange();
