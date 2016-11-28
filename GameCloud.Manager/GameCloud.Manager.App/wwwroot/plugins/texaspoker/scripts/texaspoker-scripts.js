@@ -287,6 +287,10 @@ $pluginApp.controller('tpStatisticsBotGroupCurrentChipsController', ['$scope', '
 }])
 .controller('tpStatisticsProduceChipsHistoryController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
     $controller('chartController', { $scope: $scope });
+    var lastMonth = Date.today();
+    lastMonth.setMonth(lastMonth.getMonth() - 1);
+    $scope.params.startDate = lastMonth;
+    $scope.params.endDate = Date.today();
     $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
     $scope.options = {
         legend: { display: true },
@@ -295,6 +299,10 @@ $pluginApp.controller('tpStatisticsBotGroupCurrentChipsController', ['$scope', '
 }])
 .controller('tpStatisticsProduceGoldsHistoryController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
     $controller('chartController', { $scope: $scope });
+    var lastMonth = Date.today();
+    lastMonth.setMonth(lastMonth.getMonth() - 1);
+    $scope.params.startDate = lastMonth;
+    $scope.params.endDate = Date.today();
     $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
     $scope.options = {
         legend: { display: true },
@@ -303,6 +311,10 @@ $pluginApp.controller('tpStatisticsBotGroupCurrentChipsController', ['$scope', '
 }])
 .controller('tpStatisticsRecoverChipsHistoryController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
     $controller('chartController', { $scope: $scope });
+    var lastMonth = Date.today();
+    lastMonth.setMonth(lastMonth.getMonth() - 1);
+    $scope.params.startDate = lastMonth;
+    $scope.params.endDate = Date.today();
     $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
     $scope.options = {
         legend: { display: true },
@@ -311,6 +323,10 @@ $pluginApp.controller('tpStatisticsBotGroupCurrentChipsController', ['$scope', '
 }])
 .controller('tpStatisticsRecoverGoldsHistoryController', ['$scope', '$http', '$templateCache', '$controller', 'pluginService', function ($scope, $http, $templateCache, $controller, pluginService) {
     $controller('chartController', { $scope: $scope });
+    var lastMonth = Date.today();
+    lastMonth.setMonth(lastMonth.getMonth() - 1);
+    $scope.params.startDate = lastMonth;
+    $scope.params.endDate = Date.today();
     $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
     $scope.options = {
         legend: { display: true },
