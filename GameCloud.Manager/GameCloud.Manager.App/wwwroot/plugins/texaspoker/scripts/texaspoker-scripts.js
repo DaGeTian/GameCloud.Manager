@@ -150,6 +150,18 @@
         value: 3
     }];
 
+    var botNeedWinOrLoseState = [{
+        name: 'NeedWin',
+        displayName: '要赢',
+        value: 0
+    }, {
+        name: 'NeedLose',
+        displayName: '要输',
+        value: 1
+    }];
+
+    $enums.items.push({ name: 'botNeedWinOrLoseState', items: botNeedWinOrLoseState });
+
     $enums.items.push({ name: 'recoverGoldType', items: recoverGoldType });
 
     var isClassic = [{

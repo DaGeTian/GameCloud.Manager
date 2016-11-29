@@ -193,6 +193,13 @@
           "View": "events-player-send-other-chips.html"
         },
         {
+          "Name": "events-bot-win-loose-change",
+          "DisplayName": "机器人输赢更改变化",
+          "Type": "Table",
+          "Route": "events/GetEventBotWinOrLooseChange",
+          "View": "events-bot-win-loose-change.html"
+        },
+        {
           "Name": "events-bot-getchips-from-group",
           "DisplayName": "机器人获取筹码",
           "Type": "Table",
