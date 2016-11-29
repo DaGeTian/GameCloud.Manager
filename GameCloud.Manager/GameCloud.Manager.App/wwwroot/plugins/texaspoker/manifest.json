@@ -400,11 +400,11 @@
           "View": "daily-reward-config.html"
         },
         {
-          "Name": "getBotWinOrLooseChipPercentConfig",
-          "DisplayName": "机器人输赢转折总筹码百分比配置",
+          "Name": "getBotWinOrLooseChipReferenceConfig",
+          "DisplayName": "机器人输赢转折参考线总筹码配置",
           "Type": "Table",
-          "Route": "getBotWinOrLooseChipPercentConfig",
-          "View": "bot-win-loose-chippersent-config.html"
+          "Route": "getBotWinOrLooseChipReferenceConfig",
+          "View": "bot-win-loose-chipreference-config.html"
         },
         {
           "Name": "getBotActionConfig",
