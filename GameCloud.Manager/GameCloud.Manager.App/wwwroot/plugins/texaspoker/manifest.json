@@ -165,6 +165,13 @@
           "View": "events-daily-get-chips-events.html"
         },
         {
+          "Name": "events-daily-get-grow-reward-chips-events",
+          "DisplayName": "每日领取成长奖励筹码",
+          "Type": "Table",
+          "Route": "events/DailyGetGrowChips",
+          "View": "events-daily-get-grow-reward-chips-events.html"
+        },        
+        {
           "Name": "events-lost-all-send-chips",
           "DisplayName": "输光赠送筹码",
           "Type": "Table",
