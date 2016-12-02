@@ -159,6 +159,7 @@ $pluginApp.controller('ucenterUserStatisticsController', ['$scope', '$http', '$t
     $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
     $scope.options = {
         legend: { display: true },
+        scaleStartValue: 0,
         elements: { line: { fill: false } }
     };
 
