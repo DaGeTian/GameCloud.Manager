@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity.MongoDB;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Linq;
 using System.Security.Claims;
 
@@ -60,6 +61,10 @@ namespace GameCloud.Manager.App.Controllers
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+
+                string info = string.Format("Email={0}, Password={1}. Result={2}", model.Email, model.Password, result.ToString());
+                Console.WriteLine(info);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
@@ -467,8 +472,8 @@ namespace GameCloud.Manager.App.Controllers
 
         private async Task<bool> CreateDefaultAdministratorAsync()
         {
-            var user = new IdentityUser { UserName = "admin", Email = "admin@gamecloud.com" };
-            var result = await _userManager.CreateAsync(user, "Gamecloud@123");
+            var user = new IdentityUser { UserName = "admin@cragon.cn", Email = "admin@cragon.cn" };
+            var result = await _userManager.CreateAsync(user, "Cragon123456");
             return result.Succeeded;
         }
     }
