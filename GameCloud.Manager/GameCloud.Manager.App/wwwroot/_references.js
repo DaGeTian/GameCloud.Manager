@@ -15,4 +15,5 @@
 /// <reference path="lib/jquery/jquery.js" />
 /// <reference path="lib/metismenu/metismenu.min.js" />
 /// <reference path="plugins/demo/scripts/demo-scripts.js" />
+/// <reference path="plugins/topstar/scripts/topstar-scripts.js" />
 /// <reference path="plugins/ucenter/scripts/ucenter-scripts.js" />

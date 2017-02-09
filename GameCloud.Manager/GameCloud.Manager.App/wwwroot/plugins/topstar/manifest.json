@@ -1,8 +1,8 @@
 ﻿{
-  "Name": "TexasPoker",
+  "Name": "TopStar",
   "DebugUrl": "http://localhost:5001/api",
   "Scripts": [
-    "texaspoker-scripts.js"
+    "topstar-scripts.js"
   ],
   "Categories": [
     {
@@ -170,7 +170,7 @@
           "Type": "Table",
           "Route": "events/DailyGetGrowChips",
           "View": "events-daily-get-grow-reward-chips-events.html"
-        },        
+        },
         {
           "Name": "events-lost-all-send-chips",
           "DisplayName": "输光赠送筹码",
@@ -386,11 +386,18 @@
       "Description": "游戏配置",
       "Items": [
         {
-          "Name": "getDesktopConfig",
+          "Name": "getDesktopConfigTexas",
           "DisplayName": "桌子配置",
           "Type": "Table",
-          "Route": "getDesktopConfig",
+          "Route": "getDesktopConfigTexas",
           "View": "desktop-config.html"
+        },
+        {
+          "Name": "getDesktopHConfigTexas",
+          "DisplayName": "百人桌配置",
+          "Type": "Table",
+          "Route": "getDesktopHConfigTexas",
+          "View": "desktoph-config.html"
         },
         {
           "Name": "getClientConfig",
@@ -414,17 +421,17 @@
           "View": "daily-reward-config.html"
         },
         {
-          "Name": "getBotWinOrLooseChipReferenceConfig",
+          "Name": "getBotWinOrLooseChipReferenceConfigTexas",
           "DisplayName": "机器人输赢转折参考线总筹码配置",
           "Type": "Table",
-          "Route": "getBotWinOrLooseChipReferenceConfig",
+          "Route": "getBotWinOrLooseChipReferenceConfigTexas",
           "View": "bot-win-loose-chipreference-config.html"
         },
         {
-          "Name": "getBotActionConfig",
+          "Name": "getBotActionConfigTexas",
           "DisplayName": "机器人行为配置",
           "Type": "Table",
-          "Route": "getBotActionConfig",
+          "Route": "getBotActionConfigTexas",
           "View": "bot-action-config.html"
         },
         {

@@ -12,7 +12,7 @@
 
     $enums.items.push({ name: 'canShowRanking', items: canShowRanking });
 
-    var canShowSendChips = [{
+    var canShowSendGolds = [{
         name: 'true',
         displayName: '可赠送',
         value: true
@@ -22,7 +22,7 @@
         value: false
     }];
 
-    $enums.items.push({ name: 'canShowSendChips', items: canShowSendChips });
+    $enums.items.push({ name: 'canShowSendGolds', items: canShowSendGolds });
 
     var commonTrueFalse = [{
         name: 'true',
