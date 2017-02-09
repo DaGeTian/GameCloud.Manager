@@ -277,35 +277,35 @@
       "Description": "当前整体统计",
       "Items": [
         {
-          "Name": "getRealTimeSysBankProduceInfoChip",
+          "Name": "getRealTimeSysBankProduceInfoGold",
           "DisplayName": "系统产出筹码统计",
           "Type": "Chart",
-          "Route": "getRealTimeSysBankProduceInfoChip",
-          "View": "statistics-produce-realtime-syschipbank-totalchipsinfo.html",
+          "Route": "getRealTimeSysBankProduceInfoGold",
+          "View": "statistics-produce-realtime-sysgoldbank-totalchipsinfo.html",
           "RefreshInterval": 60000
         },
         {
-          "Name": "getRealTimeSysBankProduceInfoGold",
+          "Name": "getRealTimeSysBankProduceInfoDiamond",
           "DisplayName": "系统产出金币统计",
           "Type": "Chart",
-          "Route": "getRealTimeSysBankProduceInfoGold",
-          "View": "statistics-produce-realtime-sysgoldbank-totalgoldsinfo.html",
-          "RefreshInterval": 60000
-        },
-        {
-          "Name": "getRealTimeSysBankRecoverInfoChip",
-          "DisplayName": "系统回收筹码统计",
-          "Type": "Chart",
-          "Route": "getRealTimeSysBankRecoverInfoChip",
-          "View": "statistics-recover-realtime-syschipbank-totalchipsinfo.html",
+          "Route": "getRealTimeSysBankProduceInfoDiamond",
+          "View": "statistics-produce-realtime-sysdiamondbank-totalgoldsinfo.html",
           "RefreshInterval": 60000
         },
         {
           "Name": "getRealTimeSysBankRecoverInfoGold",
-          "DisplayName": "系统回收金币统计",
+          "DisplayName": "系统回收筹码统计",
           "Type": "Chart",
           "Route": "getRealTimeSysBankRecoverInfoGold",
-          "View": "statistics-recover-realtime-sysgoldbank-totalgoldsinfo.html",
+          "View": "statistics-recover-realtime-sysgoldbank-totalchipsinfo.html",
+          "RefreshInterval": 60000
+        },
+        {
+          "Name": "getRealTimeSysBankRecoverInfoDiamond",
+          "DisplayName": "系统回收金币统计",
+          "Type": "Chart",
+          "Route": "getRealTimeSysBankRecoverInfoDiamond",
+          "View": "statistics-recover-realtime-sysdiamondbank-totalgoldsinfo.html",
           "RefreshInterval": 60000
         }
       ]

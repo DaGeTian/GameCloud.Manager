@@ -1,21 +1,21 @@
 ﻿<table class="table table-bordered table-striped table-condensed">
     <thead>
         <tr>
-            <th>{{data[0].recoverChipType|enums:'recoverChipType'}}</th>
-            <th>{{data[1].recoverChipType|enums:'recoverChipType'}}</th>
-            <th>{{data[2].recoverChipType|enums:'recoverChipType'}}</th>
-            <th>{{data[3].recoverChipType|enums:'recoverChipType'}}</th>
-            <th>{{data[4].recoverChipType|enums:'recoverChipType'}}</th>
-            <th>{{data[5].recoverChipType|enums:'recoverChipType'}}</th>
+            <th>{{data[0].recoverGoldType|enums:'recoverGoldType'}}</th>
+            <th>{{data[1].recoverGoldType|enums:'recoverGoldType'}}</th>
+            <th>{{data[2].recoverGoldType|enums:'recoverGoldType'}}</th>
+            <th>{{data[3].recoverGoldType|enums:'recoverGoldType'}}</th>
+            <th>{{data[4].recoverGoldType|enums:'recoverGoldType'}}</th>
+            <th>{{data[5].recoverGoldType|enums:'recoverGoldType'}}</th>
             <th>总值</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>{{data[0].totalChips}}</td>
-            <td>{{data[1].totalChips}}</td>
-            <td>{{data[2].totalChips}}</td>
-            <td>{{data[3].totalChips}}</td>
+            <td>{{data[0].totalGolds}}</td>
+            <td>{{data[1].totalGolds}}</td>
+            <td>{{data[2].totalGolds}}</td>
+            <td>{{data[3].totalGolds}}</td>
             <td>
                 <table class="table table-bordered table-striped table-condensed">
                     <thead>
@@ -29,7 +29,7 @@
                         <tr ng-repeat="f in data[4].listDatas" style="width:500px">
                             <td>{{f.isClassicDesk|enums:'isClassic'}}</td>
                             <td>{{f.tbId}}</td>
-                            <td>{{f.recoverChips}}</td>
+                            <td>{{f.recoverGolds}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -47,12 +47,12 @@
                         <tr ng-repeat="f in data[5].listDatas" style="width:500px">
                             <td>{{f.isClassicDesk|enums:'isClassic'}}</td>
                             <td>{{f.tbId}}</td>
-                            <td>{{f.recoverChips}}</td>
+                            <td>{{f.recoverGolds}}</td>
                         </tr>
                     </tbody>
                 </table>
             </td>
-            <td>{{data[0].totalChips+data[1].totalChips+data[2].totalChips+data[3].totalChips+data[4].totalChips+data[5].totalChips}}</td>
+            <td>{{data[0].totalGolds+data[1].totalGolds+data[2].totalGolds+data[3].totalGolds+data[4].totalGolds+data[5].totalGolds}}</td>
         </tr>
     </tbody>
 </table>

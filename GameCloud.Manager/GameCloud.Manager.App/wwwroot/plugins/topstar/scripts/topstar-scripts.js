@@ -60,7 +60,7 @@
 
     $enums.items.push({ name: 'sysNoticeLevel', items: sysNoticeLevel });
 
-    var produceChipType = [{
+    var produceGoldType = [{
         name: 'BuyInGame',
         displayName: '游戏内购买',
         value: 1
@@ -90,9 +90,9 @@
         value: 7
     }];
 
-    $enums.items.push({ name: 'produceChipType', items: produceChipType });
+    $enums.items.push({ name: 'produceGoldType', items: produceGoldType });
 
-    var produceGoldType = [{
+    var produceDiamondType = [{
         name: 'BuyInGame',
         displayName: '游戏内购买',
         value: 1
@@ -106,9 +106,9 @@
         value: 3
     }];
 
-    $enums.items.push({ name: 'produceGoldType', items: produceGoldType });
+    $enums.items.push({ name: 'produceDiamondType', items: produceDiamondType });
 
-    var recoverChipType = [{
+    var recoverGoldType = [{
         name: 'BuyGiftTmp',
         displayName: '购买临时礼物',
         value: 1
@@ -134,9 +134,9 @@
         value: 6
     }];
 
-    $enums.items.push({ name: 'recoverChipType', items: recoverChipType });
+    $enums.items.push({ name: 'recoverGoldType', items: recoverGoldType });
 
-    var recoverGoldType = [{
+    var recoverDiamondType = [{
         name: 'BuyGiftTmp',
         displayName: '购买临时礼物',
         value: 1
@@ -159,10 +159,9 @@
         displayName: '要输',
         value: 1
     }];
+    $enums.items.push({ name: 'recoverDiamondType', items: recoverDiamondType });
 
-    $enums.items.push({ name: 'botNeedWinOrLoseState', items: botNeedWinOrLoseState });
-
-    $enums.items.push({ name: 'recoverGoldType', items: recoverGoldType });
+    $enums.items.push({ name: 'botNeedWinOrLoseState', items: botNeedWinOrLoseState });    
 
     var isClassic = [{
         name: 'false',
