@@ -221,25 +221,25 @@
           "View": "events-bot-givechips-to-group.html"
         },
         {
-          "Name": "events-group-get-bots-buygiftchips",
+          "Name": "events-sys-give-botgroup-buygiftgolds",
           "DisplayName": "机器人组获取买礼物筹码",
           "Type": "Table",
-          "Route": "events/GroupGetBotsBuyGiftChips",
-          "View": "events-group-get-bots-buygiftchips.html"
+          "Route": "events/SysGiveBotGroupBuyGiftGolds",
+          "View": "events-sys-give-botgroup-buygiftgolds.html"
         },
         {
-          "Name": "events-group-get-bots-seatfee",
+          "Name": "events-sys-give-botgroup-seatfee",
           "DisplayName": "机器人组获取台费",
           "Type": "Table",
-          "Route": "events/GroupGetBotsSeatFee",
-          "View": "events-group-get-bots-seatfee.html"
+          "Route": "events/SysGiveBotGroupSeatFee",
+          "View": "events-sys-give-botgroup-seatfee.html"
         },
         {
-          "Name": "events-group-get-bots-syspumping",
+          "Name": "events-sys-give-botgroup-syspumping",
           "DisplayName": "机器人组获取抽水",
           "Type": "Table",
-          "Route": "events/GroupGetBotsSysPumping",
-          "View": "events-group-get-bots-syspumping.html"
+          "Route": "events/SysGiveBotGroupSysPumping",
+          "View": "events-sys-give-botgroup-syspumping.html"
         },
         {
           "Name": "events-player-pay-syspumping",
