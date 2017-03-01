@@ -53,18 +53,18 @@
         //  "View": "events-newbot-login.html"
         //},
         {
-          "Name": "events-buy-chips",
+          "Name": "events-buy-golds",
           "DisplayName": "购买筹码",
           "Type": "Table",
-          "Route": "events/BuyChips",
-          "View": "events-buy-chips.html"
+          "Route": "events/BuyGolds",
+          "View": "events-buy-golds.html"
         },
         {
-          "Name": "event-buy-coins",
+          "Name": "event-buy-diamonds",
           "DisplayName": "购买金币",
           "Type": "Table",
-          "Route": "events/BuyCoins",
-          "View": "events-buy-coins.html"
+          "Route": "events/BuyDiamonds",
+          "View": "events-buy-diamonds.html"
         },
         {
           "Name": "events-buy-vip",
@@ -74,116 +74,116 @@
           "View": "events-buy-vip.html"
         },
         {
-          "Name": "events-chip-buy-gift",
+          "Name": "events-gold-buy-gift",
           "DisplayName": "筹码购买礼物",
           "Type": "Table",
-          "Route": "events/ChipBuyGift",
-          "View": "events-chip-buy-gift.html"
+          "Route": "events/GoldBuyGift",
+          "View": "events-gold-buy-gift.html"
         },
         {
-          "Name": "events-chip-buy-item",
+          "Name": "events-gold-buy-item",
           "DisplayName": "筹码购买道具",
           "Type": "Table",
-          "Route": "events/ChipBuyItem",
-          "View": "events-chip-buy-item.html"
+          "Route": "events/GoldBuyItem",
+          "View": "events-gold-buy-item.html"
         },
         {
-          "Name": "events-sell-chips-item",
+          "Name": "events-sell-golds-item",
           "DisplayName": "出售筹码道具",
           "Type": "Table",
-          "Route": "events/SellChipsItem",
-          "View": "events-sell-chips-item.html"
+          "Route": "events/SellGoldsItem",
+          "View": "events-sell-golds-item.html"
         },
         {
-          "Name": "events-chips-change-by-manager",
+          "Name": "events-golds-change-by-manager",
           "DisplayName": "管理员修改筹码",
           "Type": "Table",
-          "Route": "events/ChipsChangeByManager",
-          "View": "events-chips-change-by-manager.html"
+          "Route": "events/GoldsChangeByManager",
+          "View": "events-golds-change-by-manager.html"
         },
         {
-          "Name": "events-chips-recover-by-manager",
+          "Name": "events-golds-recover-by-manager",
           "DisplayName": "管理员回收筹码",
           "Type": "Table",
-          "Route": "events/ChipsRecoverByManager",
-          "View": "events-chips-recover-by-manager.html"
+          "Route": "events/GoldsRecoverByManager",
+          "View": "events-golds-recover-by-manager.html"
         },
         {
-          "Name": "events-chips-bank-change-by-manager",
+          "Name": "events-golds-bank-change-by-manager",
           "DisplayName": "管理员修改银行筹码",
           "Type": "Table",
-          "Route": "events/ChipsBankChangeByManager",
-          "View": "events-chips-bank-change-by-manager.html"
+          "Route": "events/GoldsBankChangeByManager",
+          "View": "events-golds-bank-change-by-manager.html"
         },
         {
-          "Name": "events-chips-bank-recover-by-manager",
+          "Name": "events-golds-bank-recover-by-manager",
           "DisplayName": "管理员回收银行筹码",
           "Type": "Table",
-          "Route": "events/ChipsBankRecoverByManager",
-          "View": "events-chips-bank-recover-by-manager.html"
+          "Route": "events/GoldsBankRecoverByManager",
+          "View": "events-golds-bank-recover-by-manager.html"
         },
         {
-          "Name": "events-coin-change-by-manager",
+          "Name": "events-diamond-change-by-manager",
           "DisplayName": "管理员修改金币",
           "Type": "Table",
-          "Route": "events/CoinChangeByManager",
-          "View": "events-coin-change-by-manager.html"
+          "Route": "events/DiamondChangeByManager",
+          "View": "events-diamond-change-by-manager.html"
         },
         {
-          "Name": "events-coin-recover-by-manager",
+          "Name": "events-diamond-recover-by-manager",
           "DisplayName": "管理员回收金币",
           "Type": "Table",
-          "Route": "events/CoinRecoverByManager",
-          "View": "events-coin-recover-by-manager.html"
+          "Route": "events/DiamondRecoverByManager",
+          "View": "events-diamond-recover-by-manager.html"
         },
         {
-          "Name": "events-coin-buy-gift",
+          "Name": "events-diamond-buy-gift",
           "DisplayName": "金币购买礼物",
           "Type": "Table",
-          "Route": "events/CoinBuyGift",
-          "View": "events-coin-buy-gift.html"
+          "Route": "events/DiamondBuyGift",
+          "View": "events-diamond-buy-gift.html"
         },
         {
-          "Name": "events-coin-buy-item",
+          "Name": "events-diamond-buy-item",
           "DisplayName": "金币购买道具",
           "Type": "Table",
-          "Route": "events/CoinBuyItem",
-          "View": "events-coin-buy-item.html"
+          "Route": "events/DiamondBuyItem",
+          "View": "events-diamond-buy-item.html"
         },
         {
-          "Name": "events-sell-coin-item",
+          "Name": "events-sell-diamond-item",
           "DisplayName": "出售金币道具",
           "Type": "Table",
-          "Route": "events/SellCoinItem",
-          "View": "events-sell-coin-item.html"
+          "Route": "events/SelldiamondItem",
+          "View": "events-sell-diamond-item.html"
         },
         {
-          "Name": "events-daily-get-chips-events",
+          "Name": "events-daily-get-golds-events",
           "DisplayName": "每日领取筹码",
           "Type": "Table",
-          "Route": "events/DailyGetChips",
-          "View": "events-daily-get-chips-events.html"
+          "Route": "events/DailyGetGolds",
+          "View": "events-daily-get-golds-events.html"
         },
         {
-          "Name": "events-daily-get-grow-reward-chips-events",
+          "Name": "events-daily-get-grow-reward-golds-events",
           "DisplayName": "每日领取成长奖励筹码",
           "Type": "Table",
-          "Route": "events/DailyGetGrowChips",
-          "View": "events-daily-get-grow-reward-chips-events.html"
+          "Route": "events/DailyGetGrowGolds",
+          "View": "events-daily-get-grow-reward-golds-events.html"
         },
         {
-          "Name": "events-lost-all-send-chips",
+          "Name": "events-lost-all-send-golds",
           "DisplayName": "输光赠送筹码",
           "Type": "Table",
-          "Route": "events/LostAllSendChips",
-          "View": "events-lost-all-send-chips.html"
+          "Route": "events/LostAllSendGolds",
+          "View": "events-lost-all-send-golds.html"
         },
         {
-          "Name": "events-player-get-chips-from-other",
+          "Name": "events-player-get-golds-from-other",
           "DisplayName": "玩家接收筹码",
           "Type": "Table",
-          "Route": "events/PlayerGetChipsFromOther",
-          "View": "events-player-get-chips-from-other.html"
+          "Route": "events/PlayerGetGoldsFromOther",
+          "View": "events-player-get-golds-from-other.html"
         },
         {
           "Name": "events-player-report",
@@ -193,11 +193,11 @@
           "View": "events-player-report.html"
         },
         {
-          "Name": "events-player-send-other-chips",
+          "Name": "events-player-send-other-golds",
           "DisplayName": "玩家赠送筹码",
           "Type": "Table",
-          "Route": "events/PlayerSendOtherChips",
-          "View": "events-player-send-other-chips.html"
+          "Route": "events/PlayerSendOtherGolds",
+          "View": "events-player-send-other-golds.html"
         },
         {
           "Name": "events-bot-win-loose-change",
@@ -207,18 +207,18 @@
           "View": "events-bot-win-loose-change.html"
         },
         {
-          "Name": "events-bot-getchips-from-group",
+          "Name": "events-bot-getgolds-from-group",
           "DisplayName": "机器人获取筹码",
           "Type": "Table",
-          "Route": "events/BotsGetChipsFromGroup",
-          "View": "events-bot-getchips-from-group.html"
+          "Route": "events/BotsGetGoldsFromGroup",
+          "View": "events-bot-getgolds-from-group.html"
         },
         {
-          "Name": "events-bot-givechips-to-group",
+          "Name": "events-bot-givegolds-to-group",
           "DisplayName": "机器人给组筹码",
           "Type": "Table",
-          "Route": "events/BotGiveChipsToGroup",
-          "View": "events-bot-givechips-to-group.html"
+          "Route": "events/BotGiveGoldsToGroup",
+          "View": "events-bot-givegolds-to-group.html"
         },
         {
           "Name": "events-sys-give-botgroup-buygiftgolds",
