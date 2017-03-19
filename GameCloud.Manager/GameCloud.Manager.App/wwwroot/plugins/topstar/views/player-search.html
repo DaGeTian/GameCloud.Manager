@@ -11,7 +11,7 @@
             <th>银行筹码</th>
             <th>总筹码</th>
             <th>金币</th>
-            <th>会员</th>
+            <th>会员等级</th>
             <th>会员到期时间</th>
             <th>会员点数</th>
             <th>游戏总局数</th>
@@ -38,7 +38,7 @@
             <td>{{row.dataPlayer.goldBank}}</td>
             <td>{{row.dataPlayer.goldAcc+row.dataPlayer.gold}}</td>
             <td>{{row.dataPlayer.diamond}}</td>
-            <td>{{row.dataPlayer.isVIP|enums:'commonTrueFalse'}}</td>
+            <td>{{row.dataPlayer.vipLevel}}</td>
             <td>{{row.dataPlayer.vipDataTime |date:'yyyy/MM/dd HH:mm:ss'}}</td>
             <td>{{row.dataPlayer.vipPoint}}</td>
             <td>{{row.dataPlayer.gameTotal}}</td>
@@ -100,9 +100,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">更改VIP</label>
                             <div class="col-sm-10">
-                                <select class="form-control"
-                                        ng-model="raw.dataPlayer.isVIP"
-                                        ng-options="t.value as t.displayName for t in $enums.find('commonTrueFalse').items"></select>
+                                <input type="text" class="form-control" id="growPoint" ng-model="raw.dataPlayer.vipLevel" placeholder="输入VIP等级.">
                             </div>
                         </div>
                         <div class="form-group">
