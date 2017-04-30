@@ -17,7 +17,6 @@ namespace GameCloud.Manager.App
 {
     public class Startup
     {
-        private readonly ExportProvider exportProvider;
         private readonly PluginManager manager;
 
         public Startup(IHostingEnvironment env)
