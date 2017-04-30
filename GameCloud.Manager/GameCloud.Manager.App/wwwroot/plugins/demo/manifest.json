@@ -1,6 +1,7 @@
 ﻿{
   "Name": "Demo",
-  "DebugUrl": "http://tp-uc.chinacloudapp.cn:5002/api",
+  "url": "",
+  "DebugUrl": "http://localhost:5001/api",
   "RefreshInterval": 5000,
   "Scripts": [
     "demo-scripts.js"

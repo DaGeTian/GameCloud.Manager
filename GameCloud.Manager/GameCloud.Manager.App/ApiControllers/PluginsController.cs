@@ -8,8 +8,6 @@ using GameCloud.Manager.App.Models;
 using GameCloud.Manager.PluginContract.Requests;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace GameCloud.Manager.App.ApiControllers
 {
     [Route("api/[controller]")]
