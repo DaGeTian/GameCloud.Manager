@@ -20,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!--
+    Force new version of System.Net.Http to workaround issue in 4.3.0 with net462, should be able to remove this line soon.
+    Issue is complaint of could not load file or assembly 'System.Diagnostics.DiagnosticSource'
+    Read https://github.com/aspnet/JavaScriptServices/issues/487 for detail
+    -->
+    <PackageReference Include="System.Net.Http" Version="4.3.1" />
     <PackageReference Include="BundlerMinifier.Core" Version="2.4.337" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.MongoDB" Version="1.0.1" />
@@ -34,7 +40,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1.1" />
-    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.3.0" />
   </ItemGroup>
