@@ -5,11 +5,8 @@ using GameCloud.Manager.PluginContract.Requests;
 using GameCloud.Manager.PluginContract.Responses;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace DemoPlugin.Manager.Api.ApiControllers
+namespace GameCloud.Manager.App.ApiControllers
 {
-
     public class DemoController : Controller
     {
         private static DemoPluginSettings GlobalSettings;

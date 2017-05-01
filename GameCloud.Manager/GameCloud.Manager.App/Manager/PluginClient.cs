@@ -24,13 +24,15 @@ namespace GameCloud.Manager.App.Manager
 
         public async Task<TResponse> SendAsync<TRequest, TResponse>(PluginItem item, TRequest request, CancellationToken token)
         {
+#if DEBUG
+            var uri = $"{this.plugin.DebugUrl ?? this.plugin.Url}/{item.Route}";
+#else
+            var uri = $"{this.plugin.Url}/{item.Route}";
+#endif
+
             try
             {
-#if DEBUG
-                var uri = $"{this.plugin.DebugUrl ?? this.plugin.Url}/{item.Route}";
-#else
-                var uri = $"{this.plugin.Url}/{item.Route}";
-#endif
+
                 using (HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Post, uri))
                 {
                     message.Content = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
@@ -45,7 +47,8 @@ namespace GameCloud.Manager.App.Manager
             }
             catch (Exception ex)
             {
-                // todo: trace exception.
+                Console.WriteLine($"Failed to invoke api {uri}, Exception message: {ex.Message}");
+                Console.WriteLine($"Exception stack trace: {ex.StackTrace}");
                 throw;
             }
         }
