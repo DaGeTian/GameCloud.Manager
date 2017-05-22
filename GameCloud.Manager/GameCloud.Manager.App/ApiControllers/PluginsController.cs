@@ -33,11 +33,11 @@ namespace GameCloud.Manager.App.ApiControllers
             var client = this.manager.GetClient(request.PluginName);
             var item = this.manager.GetPluginItem(request.PluginName, request.CategoryName, request.ItemName);
             var parameters = request.Content
-                .Select(kv => new PluginRequestParameter() { Name = kv.Key, Value = kv.Value })
+                .Select(kv => new ClientRequestParameter() { Name = kv.Key, Value = kv.Value })
                 .ToList();
-            var requestInfo = new PluginRequestInfo(request.Method, parameters);
+            var requestInfo = new ClientData(request.Method, parameters);
 
-            return await client.SendAsync<PluginRequestInfo, object>(item, requestInfo, token);
+            return await client.SendAsync<ClientData, object>(item, requestInfo, token);
         }
     }
 }

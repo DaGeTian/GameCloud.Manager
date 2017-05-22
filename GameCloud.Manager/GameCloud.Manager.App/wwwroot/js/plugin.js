@@ -4,10 +4,10 @@
 
     enums.find = function (name, value) {
         var item = enums.items.find(function (i) {
-            return i.name == name;
+            return i.name === name;
         });
 
-        if (typeof (value) == 'undefined') {
+        if (typeof value === 'undefined') {
             return item;
         }
 
@@ -50,7 +50,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         return function (input, enumName) {
             var item = $enums.find(enumName, input);
             return item ? item.displayName : input;
-        }
+        };
     }).filter('group', function () {
         return function (input, length) {
             if (!input) {
@@ -72,7 +72,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                 rows = [input];
             } else {
                 for (var i = 0; i < input.length; i++) {
-                    if (i % length == 0) {
+                    if (i % length === 0) {
                         row = [];
                         rows.push(row);
                     }
@@ -87,13 +87,13 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
     }).service('pluginService', ['$http', '$location', function ($http, $location) {
         var find = function (items, name) {
             for (var i = items.length - 1; i >= 0; i--) {
-                if (items[i].name == name) {
+                if (items[i].name === name) {
                     return items[i];
                 }
             }
 
             return items[0];
-        }
+        };
 
         var observerCallbacks = [];
 
@@ -113,7 +113,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         this.setCurrent = function (route) {
             var regex = /\/category\/([^\/]*)(\/item\/([^\/]*))?/;
             var match = regex.exec(route);
-            if (match != null) {
+            if (match !== null) {
                 var categoryName = match[1];
                 var itemName = match[3];
 
@@ -170,7 +170,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
             'fetch': '正在加载',
             'update': '正在更新',
             'delete': '正在删除',
-            'done': null,
+            'done': null
         };
 
         $scope.params = {};
@@ -206,7 +206,6 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                     $scope.loadingText = loading.done;
                     $scope.status = response.status;
                     $scope.data = response.data;
-                    console.log(response);
                     if (callback) {
                         callback(true, response);
                     }
@@ -215,14 +214,14 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                     console.log(response);
                     $scope.error = {
                         status: response.status,
-                        message: response.data || (response.status == "-1" ? "请求超时，服务器没有在有效时间内做出相应" : "发生未知错误")
+                        message: response.data || (response.status === "-1" ? "请求超时，服务器没有在有效时间内做出相应" : "发生未知错误")
                     };
 
                     if (callback) {
                         callback(false, response);
                     }
                 });
-        }
+        };
 
         $scope._hideError = function () {
             $scope.error = null;
@@ -259,7 +258,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                         $scope._fetch(_callback);
                     },
                     interval);
-                }
+                };
 
                 $scope._fetch(_callback);
             } else {
@@ -277,12 +276,12 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
 
         $scope.onPageChange = function () {
             $scope._fetch();
-        }
+        };
 
         $scope.onPageSizeChange = function (size) {
             $scope.params.pageSize = size;
             $scope._fetch();
-        }
+        };
 
         $scope.updateModel = function (method, url) {
             $scope.method = method;
@@ -318,7 +317,7 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
         $scope.updateData = function () {
             $scope.params.data = JSON.stringify($scope.data);
             $scope._update();
-        }
+        };
 
         // auto sync should only on table & report type plugin.
         $scope._fetch();
@@ -339,7 +338,8 @@ var $pluginApp = angular.module("pluginApp", ['ui.bootstrap', 'chart.js', 'ngRou
                     if (c.items) {
                         c.items.forEach(function (i) {
                             $routeProvider.when('/category/' + c.name + '/item/' + i.name, {
-                                templateUrl: '/plugins/_templates/views/' + i.type + '.html',
+                                templateUrl: '/plugins/_templates/views/default.html',
+                                //templateUrl: '/plugins/_templates/views/' + i.type + '.html',
                                 controller: i.controller
                             });
                         });

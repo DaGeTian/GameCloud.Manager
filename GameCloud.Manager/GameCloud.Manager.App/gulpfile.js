@@ -22,9 +22,9 @@ gulp.task('copy', function () {
         'angular-ui-bootstrap': 'angular-ui-bootstrap/dist/ui-bootstrap*.{js,css}',
         'angular-chart.js': 'angular-chart.js/dist/*.js',
         'angular-route': 'angular-route/angular-route.js',
-        'bootstrap': 'bootstrap/dist/**/*.{js,map,css,ttf,svg,woff,eot}',
+        'bootstrap': 'bootstrap/dist/**/*.{js,map,css,ttf,svg,woff,woff2,eot}',
         'chart.js': 'chart.js/dist/*Chart.js',
-        'font-awesome': 'font-awesome/**/*.{js,map,css,ttf,svg,woff,eot}',
+        'font-awesome': 'font-awesome/**/*.{js,map,css,ttf,svg,woff,woff2,eot}',
         'jquery': 'jquery/dist/jquery*.{js,map}',
         'metisMenu': 'metisMenu/dist/*.{js,css}'
     };

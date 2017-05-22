@@ -16,9 +16,9 @@ namespace GameCloud.Manager.App.ApiControllers
 
         [HttpPost]
         [Route("api/demo/table")]
-        public PluginPaginationResponse<DemoPluginRawData> GetDataForDemoList([FromBody]SearchRequestInfo<DemoPluginRawData> request)
+        public PagedTableResponse<DemoPluginRawData> GetDataForDemoList([FromBody]ClientTableData<DemoPluginRawData> request)
         {
-            if (request.Method == PluginRequestMethod.Update)
+            if (request.Method == ClientRequestMethod.Update)
             {
                 var updateRawData = request.RawData;
                 if (updateRawData != null)
@@ -71,7 +71,7 @@ namespace GameCloud.Manager.App.ApiControllers
 
         [HttpPost]
         [Route("api/demo/form")]
-        public DemoPluginSettings GetDataForDemoUpdate([FromBody]UpdateRequestInfo<DemoPluginSettings> request)
+        public DemoPluginSettings GetDataForDemoUpdate([FromBody]ClientFormData<DemoPluginSettings> request)
         {
             if (GlobalSettings == null)
             {
@@ -82,7 +82,7 @@ namespace GameCloud.Manager.App.ApiControllers
                 GlobalSettings.UpdateTime = DateTime.UtcNow;
             }
 
-            if (request.Method == PluginRequestMethod.Update)
+            if (request.Method == ClientRequestMethod.Update)
             {
                 GlobalSettings.FormData1 = request.Body.FormData1;
                 GlobalSettings.FormData2 = request.Body.FormData2;
@@ -95,7 +95,7 @@ namespace GameCloud.Manager.App.ApiControllers
 
         [HttpPost]
         [Route("api/demo/chart")]
-        public IReadOnlyList<object> GetDataForDemoReport([FromBody]PluginRequestInfo request)
+        public IReadOnlyList<object> GetDataForDemoReport([FromBody]ClientData request)
         {
             var pieData = new
             {
